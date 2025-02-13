@@ -17,8 +17,8 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/simulations/maths" className="px-3 py-2 rounded hover:bg-sky-200">
-              Maths
+            <Link href="/simulations/mathematics" className="px-3 py-2 rounded hover:bg-sky-200">
+              Mathematics
             </Link>
           </li>
           <li>

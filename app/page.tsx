@@ -8,11 +8,13 @@ import CommunitySection from "@/app/components/CommunitySection";
 import AboutSection from "@/app/components/AboutSection";
 import PuzzleSection from "@/app/components/PuzzleSection";
 import ExploreSection from "@/app/components/ExploreSection";
+import ThinkVisLearn from "./components/ThinkVisLearn";
 
 export default function Home() {
   return (    
-    <div className="space-y-16 p-4 md:p-8 lg:p-12">
+    <div className="space-y-16 p-4 md:p-8 lg:p-14">
       <HomeSection />
+      <ThinkVisLearn />
       <ExploreSection />
       <SubjectLinks />
       <QuotesSection />

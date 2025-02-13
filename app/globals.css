@@ -4,9 +4,10 @@
 
 /* Root Variables */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 200, 200, 240;
-  --background-end-rgb: 255, 200, 255;
+  --foreground-color: #000000; /* Black */
+  --background-start-color: #C8C8F0; /* Light Purple */
+  --background-end-color: #FFC8FF; /* Pinkish */
+
 }
 
 /* Body Styling */

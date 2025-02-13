@@ -5,10 +5,12 @@ export default function HomeSection() {
     <section
       className="relative text-center py-20 px-6"
       style={{
-        backgroundImage: "url('/hero-bg.jpg')", // Replace with your image
+        backgroundImage: 'url("/explore.jpg")',
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        //  height: "400px", 
+        // width: "100%",
       }}
     >
       {/* Overlay for better readability */}
