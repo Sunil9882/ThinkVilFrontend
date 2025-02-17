@@ -10,7 +10,7 @@ export default function Home() {
   return (    
     <div className="space-y-16 p-4 md:p-8 lg:p-14">
       <HomeSection />
-      <ThinkVisLearn />
+      {/* <ThinkVisLearn /> */}
       <ExploreSection />
       <ProvideSection />
       <MissionSection />

@@ -16,13 +16,13 @@ const ProvideSection = () => {
     },
     {
       title: "Learning through YouTube Videos",
-      link: "https://www.youtube.com/@TcYdv",
+      link: "https://www.youtube.com/@Thinkvil",
       image: "/youtube_logo.jpeg",
     },
   ];
 
   return (
-    <section className="py-12 px-6 rounded-xl bg-blue-100">
+    <section className="py-12 px-6 rounded-xl bg-gray-100">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
         What We Are Providing
       </h2>

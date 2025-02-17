@@ -13,8 +13,8 @@ const VernierCalipers = () => {
 
     setTimeout(() => {
       // Redirect to the HTML file placed in the 'public' folder
-      window.location.href = '/simulations/physics/Vernier_Calipers/Vernier_simulation/Vernier_Sim.html'; // Corrected path to Vernier_Sim.html
-    }, 3000); // Delay of 3 seconds
+      window.location.href = '/Vernier_simulation/Vernier_Sim.html'; // Corrected path to Vernier_Sim.html
+    }, 10); // Delay for 10 milliseconds
   };
 
   return (
