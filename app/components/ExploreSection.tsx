@@ -2,7 +2,14 @@ import Link from "next/link";
 
 export default function ExploreSection() {
   return (
-    <section id="explore" className="py-16 bg-gray-100 text-center">
+    <section className="py-16 bg-gradient-to-br from-blue-100 to-green-100 text-center rounded-xl"
+      style={{
+        // backgroundImage: 'url("/exp.jpg")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
         Explore Our Simulations
       </h2>
@@ -26,10 +33,10 @@ export default function ExploreSection() {
         </Link>
 
         {/* Maths */}
-        <Link href="/simulations/maths">
+        <Link href="/simulations/mathematics">
           <div className="group block p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer">
             <h3 className="text-xl font-semibold text-green-600 group-hover:underline">
-              Maths
+              Mathematics
             </h3>
             <p className="text-gray-600 mt-2">
               Master calculus, algebra, and geometry interactively.

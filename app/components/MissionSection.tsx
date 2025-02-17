@@ -1,6 +1,6 @@
 export default function VisionSection() {
   return (
-    <section className="bg-sky-100 py-12 px-6 rounded-lg text-center">
+    <section className="py-12 px-6 rounded-xl text-center bg-gray-100">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold text-sky-800 mb-6">Our Vision</h2>
         <p className="text-lg text-gray-700 leading-relaxed">

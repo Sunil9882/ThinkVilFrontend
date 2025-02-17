@@ -1,96 +1,204 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { Heart, DollarSign, Coffee, Gift } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Heart, DollarSign, Coffee, Gift } from "lucide-react";
+import Image from "next/image";
 
 const presetAmounts = [
-  { amount: 5, icon: Coffee, label: "Buy us a coffee" },
-  { amount: 10, icon: Gift, label: "Small gift" },
-  { amount: 25, icon: Heart, label: "Show some love" },
-  { amount: 50, icon: DollarSign, label: "Make an impact" },
-]
+  { amount: 1, icon: Coffee, label: "$1" },
+  { amount: 5, icon: Gift, label: "$5" },
+  { amount: 10, icon: Heart, label: "$10" },
+  { amount: 25, icon: DollarSign, label: "$25" },
+];
+
+const countries = {
+  India: ["Delhi", "Maharashtra", "Karnataka", "Tamil Nadu"],
+  USA: ["California", "Texas", "Florida", "New York"],
+  Canada: ["Ontario", "Quebec", "British Columbia", "Alberta"],
+  Australia: ["New South Wales", "Victoria", "Queensland", "Western Australia"],
+  UK: ["England", "Scotland", "Wales", "Northern Ireland"],
+};
 
 export default function Donate() {
-  const [selectedAmount, setSelectedAmount] = useState<number | "">("")
-  const [customAmount, setCustomAmount] = useState<string>("")
-  const router = useRouter()
+  const [customAmount, setCustomAmount] = useState<string>("");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [country, setCountry] = useState("");
+  const [state, setState] = useState("");
+  const [customCountry, setCustomCountry] = useState("");
+  const [customState, setCustomState] = useState("");
+  const router = useRouter();
+
+  const handleAmountClick = (amount: number) => {
+    setCustomAmount(amount.toString());
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const finalAmount = selectedAmount === "" ? Number(customAmount) : selectedAmount
-    console.log("Donation amount:", finalAmount)
-    router.push("/thank-you")
-  }
+    e.preventDefault();
+
+    if (!fullName.trim() || !email.trim() || Number(customAmount) <= 0) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    const selectedCountry = country === "Other" ? customCountry.trim() : country;
+    const selectedState = country === "Other" ? customState.trim() : state;
+
+    if (!selectedCountry) {
+      alert("Please enter your country.");
+      return;
+    }
+
+    if (!selectedState) {
+      alert("Please enter your state.");
+      return;
+    }
+
+    console.log("Donation Details:", {
+      fullName,
+      email,
+      country: selectedCountry,
+      state: selectedState,
+      amount: customAmount,
+    });
+
+    router.push("/thank-you");
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 py-12 px-4">
-      <div className="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-        <div className="text-center mb-8">
-          <Heart className="w-12 h-12 mx-auto mb-4 text-pink-500 animate-pulse" />
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-            Make a Donation
-          </h1>
-          <p className="text-gray-600 dark:text-gray-300">
-            Your generosity helps us continue our mission
-          </p>
-        </div>
+    <div className="min-h-screen flex bg-green-200 ">
+      <div className="w-1/2 relative hidden md:block">
+        <Image
+          src="/donation.jpeg"
+          alt="Donation Background"
+          fill
+          className="rounded-r-2xl object-cover"
+        />
+      </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="w-full md:w-1/2  p-10 shadow-lg flex flex-col justify-center bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl md:rounded-l-2xl">
+        <h1 className="text-3xl font-bold text-gray-900 text-center mb-6">
+        Donate Today. Inspire Tomorrow’s Innovators.
+        </h1>
+        <p className="text-gray-600 text-center mb-6">
+          Your generosity helps us continue our mission. Make a difference today!
+        </p>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="text"
+            placeholder="Full Name *"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email *"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+            required
+          />
+
+          {/* Country Selection */}
+          <select
+            value={country}
+            onChange={(e) => {
+              setCountry(e.target.value);
+              setState("");
+              setCustomCountry("");
+              setCustomState(""); // Reset both state fields when changing country
+            }}
+            className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+            required
+          >
+            <option value="" disabled>
+              Select Country *
+            </option>
+            {[...Object.keys(countries), "Other"].map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+
+          {country === "Other" && (
+            <input
+              type="text"
+              placeholder="Enter Country *"
+              value={customCountry}
+              onChange={(e) => setCustomCountry(e.target.value)}
+              className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+              required
+            />
+          )}
+
+          {/* State Selection */}
+          {country && country !== "Other" && (
+            <select
+              value={state}
+              onChange={(e) => setState(e.target.value)}
+              className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+              required
+            >
+              <option value="" disabled>
+                Select State *
+              </option>
+              {[...(countries[country] || []), "Other"].map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
+          )}
+
+          {country === "Other" || state === "Other" ? (
+            <input
+              type="text"
+              placeholder="Enter State *"
+              value={customState}
+              onChange={(e) => setCustomState(e.target.value)}
+              className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+              required
+            />
+          ) : null}
+
+          {/* Donation Amount Selection */}
           <div className="grid grid-cols-2 gap-4">
             {presetAmounts.map(({ amount, icon: Icon, label }) => (
               <button
                 key={amount}
                 type="button"
-                onClick={() => {
-                  setSelectedAmount(amount)
-                  setCustomAmount("")
-                }}
-                className={cn(
-                  "flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all duration-200",
-                  selectedAmount === amount
-                    ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
-                    : "border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-700"
-                )}
+                onClick={() => handleAmountClick(amount)}
+                className={`flex flex-col items-center justify-center p-4 rounded-xl border-4 transition-all duration-200 ${
+                  customAmount === amount.toString() ? "border-gray-900" : "border-gray-200"
+                }`}
               >
                 <Icon className="w-6 h-6 mb-2" />
-                <span className="font-bold">${amount}</span>
-                <span className="text-xs text-gray-600 dark:text-gray-400">{label}</span>
+                <span className="font-bold">{label}</span>
               </button>
             ))}
           </div>
 
-          <div className="relative">
-            <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-              <DollarSign className="h-5 w-5 text-gray-400" />
-            </div>
-            <input
-              type="number"
-              value={customAmount}
-              onChange={(e) => {
-                setCustomAmount(e.target.value)
-                setSelectedAmount("")
-              }}
-              placeholder="Enter custom amount"
-              className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
-              min="1"
-              step="0.01"
-            />
-          </div>
+          <input
+            type="number"
+            placeholder="Enter Custom Amount *"
+            value={customAmount}
+            onChange={(e) => setCustomAmount(e.target.value)}
+            className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+            required
+          />
 
           <button
             type="submit"
-            disabled={!selectedAmount && !customAmount}
-            className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-black text-white font-bold py-4 rounded-xl"
           >
-            Donate ${selectedAmount || customAmount || "0"}
+            Complete Your Gift
           </button>
         </form>
-
-        <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
-          Your donation helps support our cause. Thank you for your generosity!
-        </p>
       </div>
     </div>
   );
