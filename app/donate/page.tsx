@@ -67,138 +67,142 @@ export default function Donate() {
   };
 
   return (
-    <div className="min-h-screen flex bg-green-200 ">
-      <div className="w-1/2 relative hidden md:block">
-        <Image
-          src="/donation.jpeg"
-          alt="Donation Background"
-          fill
-          className="rounded-r-2xl object-cover"
-        />
-      </div>
-
-      <div className="w-full md:w-1/2  p-10 shadow-lg flex flex-col justify-center bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl md:rounded-l-2xl">
-        <h1 className="text-3xl font-bold text-gray-900 text-center mb-6">
-        Donate Today. Inspire Tomorrow’s Innovators.
-        </h1>
-        <p className="text-gray-600 text-center mb-6">
-          Your generosity helps us continue our mission. Make a difference today!
-        </p>
-
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="text"
-            placeholder="Full Name *"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-            className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
-            required
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="flex w-full max-w-5xl mt-6"> 
+        {/* Left Image Section with Fixed Height */}
+        <div className="w-1/2 hidden md:block h-[1000px] relative">
+          <Image
+            src="/DonatePage/donation.jpeg"
+            alt="Donation Background"
+            fill
+            className="rounded-r-2xl object-cover"
           />
-          <input
-            type="email"
-            placeholder="Email *"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
-            required
-          />
+        </div>
 
-          {/* Country Selection */}
-          <select
-            value={country}
-            onChange={(e) => {
-              setCountry(e.target.value);
-              setState("");
-              setCustomCountry("");
-              setCustomState(""); // Reset both state fields when changing country
-            }}
-            className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
-            required
-          >
-            <option value="" disabled>
-              Select Country *
-            </option>
-            {[...Object.keys(countries), "Other"].map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
+        {/* Right Form Section with Adjustable Height */}
+        <div className="w-full md:w-1/2 p-10 shadow-lg flex flex-col justify-center bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl md:rounded-l-2xl min-h-[1000px]">
+          <h1 className="text-3xl font-bold text-gray-900 text-center mb-6">
+            Donate Today. Inspire Tomorrow’s Innovators.
+          </h1>
+          <p className="text-gray-600 text-center mb-6">
+            Your generosity helps us continue our mission. Make a difference today!
+          </p>
 
-          {country === "Other" && (
+          <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"
-              placeholder="Enter Country *"
-              value={customCountry}
-              onChange={(e) => setCustomCountry(e.target.value)}
+              placeholder="Full Name *"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
               className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
               required
             />
-          )}
+            <input
+              type="email"
+              placeholder="Email *"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+              required
+            />
 
-          {/* State Selection */}
-          {country && country !== "Other" && (
+            {/* Country Selection */}
             <select
-              value={state}
-              onChange={(e) => setState(e.target.value)}
+              value={country}
+              onChange={(e) => {
+                setCountry(e.target.value);
+                setState("");
+                setCustomCountry("");
+                setCustomState("");
+              }}
               className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
               required
             >
               <option value="" disabled>
-                Select State *
+                Select Country *
               </option>
-              {[...(countries[country] || []), "Other"].map((s) => (
-                <option key={s} value={s}>
-                  {s}
+              {[...Object.keys(countries), "Other"].map((c) => (
+                <option key={c} value={c}>
+                  {c}
                 </option>
               ))}
             </select>
-          )}
 
-          {country === "Other" || state === "Other" ? (
+            {country === "Other" && (
+              <input
+                type="text"
+                placeholder="Enter Country *"
+                value={customCountry}
+                onChange={(e) => setCustomCountry(e.target.value)}
+                className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+                required
+              />
+            )}
+
+            {/* State Selection */}
+            {country && country !== "Other" && (
+              <select
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+                className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+                required
+              >
+                <option value="" disabled>
+                  Select State *
+                </option>
+                {[...(countries[country] || []), "Other"].map((s) => (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
+                ))}
+              </select>
+            )}
+
+            {country === "Other" || state === "Other" ? (
+              <input
+                type="text"
+                placeholder="Enter State *"
+                value={customState}
+                onChange={(e) => setCustomState(e.target.value)}
+                className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+                required
+              />
+            ) : null}
+
+            {/* Donation Amount Selection */}
+            <div className="grid grid-cols-2 gap-4">
+              {presetAmounts.map(({ amount, icon: Icon, label }) => (
+                <button
+                  key={amount}
+                  type="button"
+                  onClick={() => handleAmountClick(amount)}
+                  className={`flex flex-col items-center justify-center p-4 rounded-xl border-4 transition-all duration-200 ${
+                    customAmount === amount.toString() ? "border-gray-900" : "border-gray-200"
+                  }`}
+                >
+                  <Icon className="w-6 h-6 mb-2" />
+                  <span className="font-bold">{label}</span>
+                </button>
+              ))}
+            </div>
+
             <input
-              type="text"
-              placeholder="Enter State *"
-              value={customState}
-              onChange={(e) => setCustomState(e.target.value)}
+              type="number"
+              placeholder="Enter Custom Amount *"
+              value={customAmount}
+              onChange={(e) => setCustomAmount(e.target.value)}
               className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
               required
             />
-          ) : null}
 
-          {/* Donation Amount Selection */}
-          <div className="grid grid-cols-2 gap-4">
-            {presetAmounts.map(({ amount, icon: Icon, label }) => (
-              <button
-                key={amount}
-                type="button"
-                onClick={() => handleAmountClick(amount)}
-                className={`flex flex-col items-center justify-center p-4 rounded-xl border-4 transition-all duration-200 ${
-                  customAmount === amount.toString() ? "border-gray-900" : "border-gray-200"
-                }`}
-              >
-                <Icon className="w-6 h-6 mb-2" />
-                <span className="font-bold">{label}</span>
-              </button>
-            ))}
-          </div>
-
-          <input
-            type="number"
-            placeholder="Enter Custom Amount *"
-            value={customAmount}
-            onChange={(e) => setCustomAmount(e.target.value)}
-            className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
-            required
-          />
-
-          <button
-            type="submit"
-            className="w-full bg-black text-white font-bold py-4 rounded-xl"
-          >
-            Complete Your Gift
-          </button>
-        </form>
+            <button
+              type="submit"
+              className="w-full bg-black text-white font-bold py-4 rounded-xl"
+            >
+              Complete Your Gift
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

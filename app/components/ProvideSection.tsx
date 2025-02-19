@@ -12,12 +12,12 @@ const ProvideSection = () => {
     },
     {
       title: "Strong Concept with ThinkVil Questions",
-      image: "/question1.jpg",
+      image: "/question2.jpg",
     },
     {
       title: "Learning through YouTube Videos",
       link: "https://www.youtube.com/@Thinkvil",
-      image: "/youtube_logo.jpeg",
+      image: "/youtube_logo.png",
     },
   ];
 

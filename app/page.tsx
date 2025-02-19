@@ -1,6 +1,6 @@
 
 import HomeSection from "./components/HomeSection";
-import MissionSection from "@/app/components/MissionSection";
+import VisionSection from "@/app/components/VisionSection";
 import AboutSection from "@/app/components/AboutSection";
 import ExploreSection from "@/app/components/ExploreSection";
 import ThinkVisLearn from "./components/ThinkVisLearn";
@@ -13,7 +13,7 @@ export default function Home() {
       {/* <ThinkVisLearn /> */}
       <ExploreSection />
       <ProvideSection />
-      <MissionSection />
+      <VisionSection />
       <AboutSection />
     </div>
   );

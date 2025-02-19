@@ -22,7 +22,7 @@ export default function ExploreSection() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
         {/* Physics */}
         <Link href="/simulations/physics">
-          <div className="group block p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer">
+          <div className="group block p-6 bg-pink-200 rounded-3xl shadow-lg hover:shadow-2xl transition cursor-pointer">
             <h3 className="text-xl font-semibold text-sky-600 group-hover:underline">
               Physics
             </h3>
@@ -34,7 +34,7 @@ export default function ExploreSection() {
 
         {/* Maths */}
         <Link href="/simulations/mathematics">
-          <div className="group block p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer">
+          <div className="group block p-6 bg-teal-200 rounded-3xl shadow-lg hover:shadow-2xl transition cursor-pointer">
             <h3 className="text-xl font-semibold text-green-600 group-hover:underline">
               Mathematics
             </h3>
@@ -46,7 +46,7 @@ export default function ExploreSection() {
 
         {/* Chemistry */}
         <Link href="/simulations/chemistry">
-          <div className="group block p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer">
+          <div className="group block p-6 bg-purple-200 rounded-3xl shadow-lg hover:shadow-2xl transition cursor-pointer">
             <h3 className="text-xl font-semibold text-red-600 group-hover:underline">
               Chemistry
             </h3>

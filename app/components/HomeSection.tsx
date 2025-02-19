@@ -1,36 +1,59 @@
-import Link from "next/link";
+"use client";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import Image from "next/image";
+
+const images = [
+  "/ScreenRotate/screen_show_img1.png",
+  "/ScreenRotate/screen_show_img2.png",
+  "/ScreenRotate/screen_show_img3.png",
+  "/ScreenRotate/screen_show_img4.png",
+  "/ScreenRotate/screen_show_img5.png",
+  "/ScreenRotate/screen_show_img6.png",
+  "/ScreenRotate/screen_show_img7.png",
+];
 
 export default function HomeSection() {
   return (
-    <section 
-      className="relative text-center py-10 px-6 pt-10 w-full min-h-[40vh] sm:min-h-[50vh] md:min-h-[30vh] lg:min-h-[30vh] xl:min-h-[60vh] rounded-xl overflow-hidden"
-      style={{
-        backgroundImage: 'url("/think1.jpg")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}    
-    >
-      {/* Overlay for better readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 rounded-xl"></div>
+    <section className="relative text-center py-10 px-6 w-full min-h-[50vh] rounded-xl overflow-hidden">
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
+        loop
+        className="absolute inset-0 w-full h-full rounded-xl"
+      >
+        {images.map((src, index) => (
+          <SwiperSlide key={index} className="relative w-full h-full">
+            <Image
+              src={src}
+              alt={`Slide ${index + 1}`}
+              fill
+              className="object-cover"
+              priority={index === 0}
+              sizes="100vw"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/50 to-transparent rounded-xl" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
           Welcome to <span className="text-sky-300">ThinkVil</span>
         </h1>
-        <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 px-2">
-          Unlock the world of interactive learning with our <br className="hidden sm:block" />
-          simulations in <span className="text-yellow-300 font-semibold">Physics</span>,
-          <span className="text-green-300 font-semibold"> Maths</span>, and
-          <span className="text-red-300 font-semibold"> Chemistry</span>.
+        <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
+          Unlock the world of interactive learning with our simulations in{" "}
+          <span className="text-yellow-300">Physics</span>,{" "}
+          <span className="text-green-300">Maths</span>, and{" "}
+          <span className="text-red-300">Chemistry</span>.
         </p>
-        
-        {/* Call-to-Action Button */}
-        <Link href="/components/ExploreSection">
-          <span className="inline-block px-5 py-3 sm:px-6 sm:py-4 text-base sm:text-lg font-semibold bg-sky-500 text-white rounded-full hover:bg-sky-600 transition cursor-pointer">
-            Explore Simulations
-          </span>
-        </Link>
       </div>
     </section>
   );

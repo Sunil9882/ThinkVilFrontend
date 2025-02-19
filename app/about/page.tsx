@@ -1,6 +1,6 @@
 
 import AboutSection from "../components/AboutSection";
-import MissionSection from "../components/MissionSection";
+import MissionSection from "../components/VisionSection";
 
 
 export default function About() {
