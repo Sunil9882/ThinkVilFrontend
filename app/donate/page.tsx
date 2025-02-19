@@ -67,7 +67,7 @@ export default function Donate() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex items-center justify-center min-h-screen py-10 bg-gray-200">
       <div className="flex w-full max-w-5xl mt-6"> 
         {/* Left Image Section with Fixed Height */}
         <div className="w-1/2 hidden md:block h-[1000px] relative">

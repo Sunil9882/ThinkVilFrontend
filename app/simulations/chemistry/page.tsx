@@ -2,15 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 const chemistryTopics = [
-  { title: "Organic Chemistry", image: "/aim1.png", link: "/chemistry/organic-chemistry" },
-  { title: "Inorganic Chemistry", image: "/aim1.png", link: "/chemistry/inorganic-chemistry" },
-  { title: "Physical Chemistry", image: "/aim1.png", link: "/chemistry/physical-chemistry" },
-  { title: "Analytical Chemistry", image: "/aim1.png", link: "/chemistry/analytical-chemistry" },
-  { title: "Electrochemistry", image: "/aim1.png", link: "/chemistry/electrochemistry" },
-  { title: "Chemical Bonding", image: "/aim1.png", link: "/chemistry/chemical-bonding" },
-  { title: "Thermodynamics", image: "/aim1.png", link: "/chemistry/thermodynamics" },
-  { title: "Periodic Table", image: "/aim1.png", link: "/chemistry/periodic-table" },
-  { title: "Reaction Mechanisms", image: "/aim1.png", link: "/chemistry/reaction-mechanisms" },
+  { title: "Periodic Table", image: "/aim1.png", link: "/simulations/chemistry/Periodic_Table" },
+  { title: "Hydrogen Spectrum", image: "/aim1.png", link: "/simulations/chemistry/Hydrogen_Spectrum" },
+  // { title: "Physical Chemistry", image: "/aim1.png" , link: "/chemistry/physical-chemistry"  },
+  // { title: "Analytical Chemistry", image: "/aim1.png", link: "/chemistry/analytical-chemistry" },
+  // { title: "Electrochemistry", image: "/aim1.png", link: "/chemistry/electrochemistry" },
+  // { title: "Chemical Bonding", image: "/aim1.png", link: "/chemistry/chemical-bonding" },
+  // { title: "Thermodynamics", image: "/aim1.png", link: "/chemistry/thermodynamics" },
+  // { title: "Periodic Table", image: "/aim1.png", link: "/chemistry/periodic-table" },
+  // { title: "Reaction Mechanisms", image: "/aim1.png", link: "/chemistry/reaction-mechanisms" },
 ];
 
 export default function Chemistry() {
@@ -31,7 +31,7 @@ interface SubjectPageProps {
 function SubjectPage({ title, topics }: SubjectPageProps) {
   return (
     <div className="bg-gray-100 min-h-screen">
-      <header className="bg-sky-600 text-white text-center py-6 text-3xl font-semibold mt-12 rounded-t-2xl">
+      <header className="bg-teal-400 text-white text-center py-6 text-3xl font-semibold mt-12 rounded-t-2xl">
         {title}
       </header>
       <div className="container mx-auto px-4 py-6">

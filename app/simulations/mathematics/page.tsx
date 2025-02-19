@@ -2,19 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 
 const mathsTopics = [
-  { title: "Algebra", image: "/aim1.png", link: "/maths/algebra" },
-  { title: "Trigonometry", image: "/aim1.png", link: "/maths/trigonometry" },
-  { title: "Calculus", image: "/aim1.png", link: "/maths/calculus" },
-  { title: "Statistics", image: "/aim1.png", link: "/maths/statistics" },
-  { title: "Probability", image: "/aim1.png", link: "/maths/probability" },
-  { title: "Linear Algebra", image: "/aim1.png", link: "/maths/linear-algebra" },
-  { title: "Differential Equations", image: "/aim1.png", link: "/maths/differential-equations" },
-  { title: "Complex Numbers", image: "/aim1.png", link: "/maths/complex-numbers" },
-  { title: "Geometry", image: "/aim1.png", link: "/maths/geometry" },
+  { title: "Quadratic Equation", image: "/aim1.png", link: "/simulations/mathematics/Quadratic_Equation" },
+  // { title: "Trigonometry", image: "/aim1.png", link: "/maths/trigonometry" },
+  // { title: "Calculus", image: "/aim1.png", link: "/maths/calculus" },
+  // { title: "Statistics", image: "/aim1.png", link: "/maths/statistics" },
+  // { title: "Probability", image: "/aim1.png", link: "/maths/probability" },
+  // { title: "Linear Algebra", image: "/aim1.png", link: "/maths/linear-algebra" },
+  // { title: "Differential Equations", image: "/aim1.png", link: "/maths/differential-equations" },
+  // { title: "Complex Numbers", image: "/aim1.png", link: "/maths/complex-numbers" },
+  // { title: "Geometry", image: "/aim1.png", link: "/maths/geometry" },
 ];
 
 export default function Maths() {
-  return <SubjectPage title="Maths" topics={mathsTopics} />;
+  return <SubjectPage title="Mathematics" topics={mathsTopics} />;
 }
 
 interface Topic {
@@ -31,7 +31,7 @@ interface SubjectPageProps {
 function SubjectPage({ title, topics }: SubjectPageProps) {
   return (
     <div className="bg-gray-100 min-h-screen">
-      <header className="bg-sky-600 text-white text-center py-6 text-3xl font-semibold mt-12 rounded-t-2xl">
+      <header className="bg-teal-600 text-white text-center py-6 text-3xl font-semibold mt-12 rounded-t-2xl">
         {title}
       </header>
       <div className="container mx-auto px-4 py-6">

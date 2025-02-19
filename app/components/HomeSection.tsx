@@ -1,40 +1,33 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCube, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-cube";
 
-const images = [
-  "/ScreenRotate/screen_show_img1.png",
-  "/ScreenRotate/screen_show_img2.png",
-  "/ScreenRotate/screen_show_img3.png",
-  "/ScreenRotate/screen_show_img4.png",
-  "/ScreenRotate/screen_show_img5.png",
-  "/ScreenRotate/screen_show_img6.png",
-  "/ScreenRotate/screen_show_img7.png",
-];
+const imagePaths = Array.from({ length: 6 }, (_, i) => `/ScreenRotate/screen_show_img${i + 1}.png`);
 
 export default function HomeSection() {
   return (
-    <section className="relative text-center py-10 px-6 w-full min-h-[50vh] rounded-xl overflow-hidden">
+    <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden rounded-xl pointer-events-none">
+      {/* 3D Cube Swiper */}
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 3000 }}
+        modules={[EffectCube, Autoplay]}
+        effect="cube"
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop
-        className="absolute inset-0 w-full h-full rounded-xl"
+        className="w-full h-full"
+        touchStartPreventDefault={false}
+        passiveListeners={false}
       >
-        {images.map((src, index) => (
-          <SwiperSlide key={index} className="relative w-full h-full">
+        {imagePaths.map((src, index) => (
+          <SwiperSlide key={index} className="relative w-full h-full pointer-events-auto">
             <Image
               src={src}
               alt={`Slide ${index + 1}`}
               fill
-              className="object-cover"
+              className="object-cover w-full h-full rounded-xl"
               priority={index === 0}
               sizes="100vw"
             />
@@ -42,19 +35,18 @@ export default function HomeSection() {
         ))}
       </Swiper>
 
-      <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/50 to-transparent rounded-xl" />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
+      {/* Overlay Text Section */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white px-6 rounded-xl z-40">
+        <h1 className="text-4xl md:text-5xl font-extrabold">
           Welcome to <span className="text-sky-300">ThinkVil</span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl mt-4 max-w-2xl text-center">
           Unlock the world of interactive learning with our simulations in{" "}
           <span className="text-yellow-300">Physics</span>,{" "}
           <span className="text-green-300">Maths</span>, and{" "}
           <span className="text-red-300">Chemistry</span>.
         </p>
       </div>
-    </section>
+    </div>
   );
 }

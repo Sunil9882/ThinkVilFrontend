@@ -3,15 +3,14 @@ import Link from "next/link";
 
 // Define topics for Physics simulations
 const physicsTopics = [
+  { title: "One Dimension Motion", image: "/aim1.png", link: "/simulations/physics/One_Dimension_Motion" },
+  { title: "Projectile Motion", image: "/aim1.png", link: "/simulations/physics/Projectile_Motion" },
+  { title: "Relative Motion", image: "/aim1.png", link: "/simulations/physics/Relative_Motion" },
+  { title: "Rain Person Problem", image: "/aim1.png", link: "/simulations/physics/Rain_Person_Problem" },
+  { title: "Mass Block Motion", image: "/aim1.png", link: "/simulations/physics/Mass_Block_Motion" },
+  { title: "Incline Plane Motion", image: "/aim1.png", link: "/simulations/physics/Incline_Plane_Motion" },
+  { title: "Pulley System", image: "/aim1.png", link: "/simulations/physics/Pulley_System" },
   { title: "Vernier Calipers", image: "/aim1.png", link: "/simulations/physics/Vernier_Calipers" },
-  { title: "Unit and Dimensions", image: "/aim1.png", link: "/simulations/physics/unit-dimensions" },
-  { title: "One Dimension Motion", image: "/aim1.png", link: "/simulations/physics/one-dimension-motion" },
-  { title: "Relative Motion", image: "/aim1.png", link: "/simulations/physics/relative-motion" },
-  { title: "Projectile Motion", image: "/aim1.png", link: "/simulations/physics/projectile-motion" },
-  { title: "Rain Person Problem", image: "/aim1.png", link: "/simulations/physics/rain-person-problem" },
-  { title: "Force and Friction", image: "/aim1.png", link: "/simulations/physics/force-friction" },
-  { title: "Incline Plane Motion", image: "/aim1.png", link: "/simulations/physics/incline-plane-motion" },
-  { title: "Pulley System", image: "/aim1.png", link: "/simulations/physics/pulley-system" },
 ];
 
 // Main Physics Component

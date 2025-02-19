@@ -8,7 +8,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50 px-4 py-4 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-[100] px-4 py-4 flex justify-between items-center">
       {/* Logo */}
       <Link href="/" className="text-2xl font-bold flex items-center active:scale-105">
         <Image src="/logo1.jpg" alt="ThinkVil" width={30} height={30} priority />
@@ -39,7 +39,7 @@ export default function Header() {
 
       {/* Navigation Links */}
       <ul
-        className={`absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent md:flex md:space-x-4 p-4 md:p-0 shadow-md md:shadow-none transition-all ${
+        className={`absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent md:flex md:space-x-2 p-4 md:p-0 shadow-md md:shadow-none transition-all ${
           isMenuOpen ? "block" : "hidden"
         }`}
       >
@@ -54,7 +54,7 @@ export default function Header() {
           <li key={href}>
             <Link
               href={href}
-              className={`px-4 py-2 rounded block ${
+              className={`px-3 py-2 rounded block ${
                 special
                   ? "bg-yellow-300 font-semibold hover:bg-yellow-400"
                   : "hover:bg-sky-200"

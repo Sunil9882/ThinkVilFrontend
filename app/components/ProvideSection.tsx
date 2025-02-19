@@ -17,7 +17,7 @@ const ProvideSection = () => {
     {
       title: "Learning through YouTube Videos",
       link: "https://www.youtube.com/@Thinkvil",
-      image: "/youtube_logo.png",
+      image: "/YouTubeIcons/youtube_icon.png",
     },
   ];
 
