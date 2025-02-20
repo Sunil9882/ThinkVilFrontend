@@ -2,20 +2,11 @@ import Link from "next/link";
 
 export default function ExploreSection() {
   return (
-    <section id="explore" className="py-16 bg-gray-100 text-center"
-      style={{
-        backgroundImage: 'url("/explo.jpg")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        //  height: "400px", 
-        // width: "100%",
-      }}
-    >
+    <section className="py-16 bg-gradient-to-tr from-gray-100 to-gray-200 text-center rounded-xl">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
         Explore Our Simulations
       </h2>
-      <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+      <p className="text-lg text-blue-600 max-w-2xl mx-auto mb-8">
         Dive into interactive simulations that bring <br />
         complex concepts to life in an engaging and fun way.
       </p>
@@ -24,7 +15,7 @@ export default function ExploreSection() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
         {/* Physics */}
         <Link href="/simulations/physics">
-          <div className="group block p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer">
+          <div className="group block p-6 bg-pink-200 rounded-3xl shadow-lg hover:shadow-2xl transition cursor-pointer">
             <h3 className="text-xl font-semibold text-sky-600 group-hover:underline">
               Physics
             </h3>
@@ -35,10 +26,10 @@ export default function ExploreSection() {
         </Link>
 
         {/* Maths */}
-        <Link href="/simulations/maths">
-          <div className="group block p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer">
+        <Link href="/simulations/mathematics">
+          <div className="group block p-6 bg-teal-200 rounded-3xl shadow-lg hover:shadow-2xl transition cursor-pointer">
             <h3 className="text-xl font-semibold text-green-600 group-hover:underline">
-              Maths
+              Mathematics
             </h3>
             <p className="text-gray-600 mt-2">
               Master calculus, algebra, and geometry interactively.
@@ -48,7 +39,7 @@ export default function ExploreSection() {
 
         {/* Chemistry */}
         <Link href="/simulations/chemistry">
-          <div className="group block p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer">
+          <div className="group block p-6 bg-purple-200 rounded-3xl shadow-lg hover:shadow-2xl transition cursor-pointer">
             <h3 className="text-xl font-semibold text-red-600 group-hover:underline">
               Chemistry
             </h3>

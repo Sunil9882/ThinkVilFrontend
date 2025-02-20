@@ -4,9 +4,14 @@
 
 /* Root Variables */
 :root {
+  
   --foreground-color: #000000; /* Black */
   --background-start-color: #C8C8F0; /* Light Purple */
   --background-end-color: #FFC8FF; /* Pinkish */
+  
+  /* --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 200, 200, 240;
+  --background-end-rgb: 255, 200, 255; */
 
 }
 
@@ -79,10 +84,17 @@ img {
 /* Link Hover Effects */
 a {
   color: #007bff;
-  text-decoration: none;
+  text-decoration:none;
   transition: color 0.3s ease-in-out;
 }
 
 a:hover {
   color: #0056b3;
 }
+
+.header {
+  padding: 0%;
+  margin: 0%;
+  background: #af5e5e;
+}
+

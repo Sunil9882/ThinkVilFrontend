@@ -1,8 +1,23 @@
-
 {
-  "name": "my-v0-project",
+  "name": "thinkvil-v0",
   "version": "0.1.0",
   "private": true,
+  "description": "",
+  "homepage": "https://github.com/Sunil9882/ThinkVilFrontend#readme",
+  "bugs": {
+    "url": "https://github.com/Sunil9882/ThinkVilFrontend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sunil9882/ThinkVilFrontend.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -47,23 +62,26 @@
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
     "next": "14.2.16",
+    "next-auth": "^4.24.11",
     "next-themes": "^0.4.4",
     "react": "^18",
     "react-day-picker": "8.10.1",
     "react-dom": "^18",
     "react-hook-form": "^7.54.1",
+    "react-icons": "^5.4.0",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
     "sonner": "^1.7.1",
+    "swiper": "^11.2.4",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.6",
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@types/node": "22.13.1",
-    "@types/react": "19.0.8",
-    "@types/react-dom": "^18",
+    "@types/node": "22.13.4",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "postcss": "^8",
     "tailwindcss": "^3.4.17",
     "typescript": "5.7.3"
