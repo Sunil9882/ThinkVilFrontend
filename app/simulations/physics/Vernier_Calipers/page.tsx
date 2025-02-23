@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation"; // Use useRouter from next/navigation
 
-const RelativeMotion = () => {
+const VernierCaliper = () => {
   const [loading, setLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("");
   const router = useRouter();
@@ -15,19 +15,19 @@ const RelativeMotion = () => {
 
     setTimeout(() => {
       router.push(url); // Navigate using Next.js router
-    }, 3000); // Show loading for 3 seconds before redirection
+    }, 1000); // Show loading for 1 second before redirection
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-300 flex flex-col items-center rounded-2xl px-4">
       {/* Header */}
       <div className="w-full bg-blue-500 text-white text-center py-6 text-2xl font-semibold mt-12 rounded-xl">
-        Relative Motion Simulation
+        Vernier Caliper Simulation
       </div>
 
       {/* Title */}
       <h2 className="w-full text-center md:text-2xl font-bold mt-2 mb-6 text-xl rounded-xl">
-        Understand Relative Motion - Interactive Simulation
+        How to Use Vernier Caliper - Interactive Simulation
       </h2>
 
       {/* Video Section */}
@@ -35,7 +35,7 @@ const RelativeMotion = () => {
         <iframe
           className="w-full aspect-video rounded-xl shadow-lg"
           src="https://www.youtube.com/embed/OGoetWCRVyM"
-          title="Relative Motion Tutorial"
+          title="Vernier Caliper Tutorial"
           allowFullScreen
         ></iframe>
       </div>
@@ -45,8 +45,8 @@ const RelativeMotion = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Simulation is loading...",
-              "/Simulations/PhysicsSimulations/RelativeMotion/RelativeMotionSim.html"
+              "ThinkViL Simulation is loading...",
+              "/All_Simulations/PhysicsSimulations/Vernier_Calipers/Vernier_Calipers_Sim/index.html"
             )
           }
           className="bg-indigo-600 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-indigo-700 active:bg-indigo-900 transition duration-300 hover:scale-95"
@@ -56,13 +56,13 @@ const RelativeMotion = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Questions is loading...", 
-              "/Simulations/ThinkVilQuestions.html"
+              "ThinkViL Questions is loading...", 
+              "/All_Simulations/PhysicsSimulations/Vernier_Calipers/Vernier_Calipers_Qns/index.html"
             )
           }
           className="bg-indigo-600 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-indigo-700 active:bg-indigo-900 transition duration-300 hover:scale-95"
         >
-          ThinkVil Questions
+          ThinkViL Questions
         </button>
       </div>
 
@@ -71,7 +71,7 @@ const RelativeMotion = () => {
         <div className="fixed inset-0 bg-white flex flex-col items-center justify-center">
           {/* ThinkVil Logo */}
           <h1 className="text-4xl font-bold text-black">ThinkViL</h1>
-          <p className="text-lg text-gray-600">Think Visualize Learn</p>
+          <p className="text-lg text-gray-600">{loadingMessage}</p>
 
           {/* Progress Bar */}
           <div className="w-56 h-2 bg-gray-300 mt-4 rounded-full overflow-hidden">
@@ -96,4 +96,4 @@ const RelativeMotion = () => {
   );
 };
 
-export default RelativeMotion;
+export default VernierCaliper;

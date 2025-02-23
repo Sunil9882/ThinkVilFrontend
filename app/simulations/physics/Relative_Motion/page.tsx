@@ -14,8 +14,8 @@ const RelativeMotion = () => {
     setLoadingMessage(message);
 
     setTimeout(() => {
-      window.location.href = url; // Redirect after delay
-    }, 3000); // Show loading for 3 seconds before redirection
+      router.push(url); // Use Next.js router for navigation
+    }, 1000); // Show loading for 1 second before redirection
   };
 
   return (
@@ -27,7 +27,7 @@ const RelativeMotion = () => {
 
       {/* Title */}
       <h2 className="w-full text-center md:text-2xl font-bold mt-2 mb-6 text-xl rounded-xl">
-        Understanding Relative Motion - Interactive Simulation
+        How to Use Relative Motion - Interactive Simulation
       </h2>
 
       {/* Video Section */}
@@ -45,8 +45,8 @@ const RelativeMotion = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Simulation is loading...",
-              "/Simulations/PhysicsSimulations/RelativeMotion/RelativeMotion_Sim.html"
+              "ThinkViL Simulation is loading...",
+              "/All_Simulations/PhysicsSimulations/Relative_Motion/Relative_Motion_Sim/index.html"
             )
           }
           className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
@@ -56,13 +56,13 @@ const RelativeMotion = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Questions is loading...", 
-              "/Simulations/ThinkVilQuestions.html"
+              "ThinkViL Questions is loading...", 
+              "/All_Simulations/PhysicsSimulations/Relative_Motion/Relative_Motion_Qns/index.html"
             )
           }
           className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
         >
-          ThinkVil Questions
+          ThinkViL Questions
         </button>
       </div>
 

@@ -6,7 +6,7 @@ import { EffectCube, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cube";
 
-const imagePaths = Array.from({ length: 6 }, (_, i) => `/ScreenRotate/screen_show_img${i + 1}.png`);
+const imagePaths = Array.from({ length: 6 }, (_, i) => `/All_Images/HomeSection/screen_show_img${i + 1}.png`);
 
 export default function HomeSection() {
   return (
@@ -38,7 +38,7 @@ export default function HomeSection() {
       {/* Overlay Text Section */}
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white px-6 rounded-xl z-40">
         <h1 className="text-4xl md:text-5xl font-extrabold">
-          Welcome to <span className="text-sky-300">ThinkVil</span>
+          Welcome to <span className="text-sky-300">ThinkViL</span>
         </h1>
         <p className="text-lg md:text-xl mt-4 max-w-2xl text-center">
           Unlock the world of interactive learning with our simulations in{" "}

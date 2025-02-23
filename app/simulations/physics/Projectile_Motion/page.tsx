@@ -15,7 +15,7 @@ const ProjectileMotion = () => {
 
     setTimeout(() => {
       router.push(url); // Use Next.js router for navigation
-    }, 3000); // Show loading for 3 seconds before redirection
+    }, 1000); // Show loading for 1 second before redirection
   };
 
   return (
@@ -27,7 +27,7 @@ const ProjectileMotion = () => {
 
       {/* Title */}
       <h2 className="w-full text-center md:text-2xl font-bold mt-2 mb-6 text-xl rounded-xl">
-        How to Understand Projectile Motion - Interactive Simulation
+        How to Use Projectile Motion - Interactive Simulation
       </h2>
 
       {/* Video Section */}
@@ -45,8 +45,8 @@ const ProjectileMotion = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Simulation is loading...",
-              "/Simulations/PhysicsSimulations/ProjectileMotion/Projectile_Sim.html"
+              "ThinkViL Simulation is loading...",
+              "/All_Simulations/PhysicsSimulations/Projectile_Motion/Projectile_Motion_Sim/index.html"
             )
           }
           className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
@@ -56,13 +56,13 @@ const ProjectileMotion = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Questions is loading...", 
-              "/Simulations/ThinkVilQuestions.html"
+              "ThinkViL Questions is loading...", 
+              "/All_Simulations/PhysicsSimulations/Projectile_Motion/Projectile_Motion_Qns/index.html"
             )
           }
           className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
         >
-          ThinkVil Questions
+          ThinkViL Questions
         </button>
       </div>
 

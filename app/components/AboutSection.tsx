@@ -8,38 +8,73 @@ export default function AboutSection() {
         <h2 className="text-4xl font-bold text-blue-950 mb-8">About Us</h2>
 
         {/* Images Section */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 mb-8">
-          <div className="relative w-52 h-52 bg-white rounded-full shadow-lg overflow-hidden">
-            <Image
-              src="/AboutPage/ashok.jpg"
-              alt="Ashok"
-              fill
-              style={{ objectFit: "cover" }}
-              className="rounded-full"
-            />
+        <div className="flex flex-col md:flex-row items-center justify-center gap-20 mb-8">
+          <div className="flex flex-col items-center">
+            <div className="relative w-52 h-52 bg-white rounded-full shadow-lg overflow-hidden">
+              <Image
+                src="/All_Images/AboutPage/ashok.jpg"
+                alt="Ashok Kumar"
+                fill
+                style={{ objectFit: "cover" }}
+                className="rounded-full"
+              />
+            </div>
+            <p className="mt-4 text-lg font-semibold text-gray-800">Ashok Kumar</p>
+            <a 
+              href="https://www.linkedin.com/in/ashok-kumar-233613202" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="mt-2"
+            >
+              <Image
+                src="/All_Images/AboutPage/linkedin_icon.png"
+                alt="LinkedIn"
+                width={40}
+                height={40}
+                className="hover:opacity-80 transition-opacity"
+              />
+            </a>
           </div>
-          <div className="relative w-52 h-52 bg-white rounded-full shadow-lg overflow-hidden">
-            <Image
-              src="/AboutPage/tara.jpg"
-              alt="Tara Chand"
-              fill
-              style={{ objectFit: "cover" }}
-              className="rounded-full"
-            />
+
+          <div className="flex flex-col items-center">
+            <div className="relative w-52 h-52 bg-white rounded-full shadow-lg overflow-hidden">
+              <Image
+                src="/All_Images/AboutPage/tara.jpg"
+                alt="Tara Chand"
+                fill
+                style={{ objectFit: "cover" }}
+                className="rounded-full"
+              />
+            </div>
+            <p className="mt-4 text-lg font-semibold text-gray-800">Tara Chand Yadav</p>
+            <a 
+              href="https://www.linkedin.com/in/tara-chand-yadav-3969031b5/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="mt-2"
+            >
+              <Image
+                src="/All_Images/AboutPage/linkedin_icon.png"
+                alt="LinkedIn"
+                width={40}
+                height={40}
+                className="hover:opacity-80 transition-opacity"
+              />
+            </a>
           </div>
         </div>
 
         {/* Text Section */}
         <div className="max-w-3xl mx-auto text-gray-700 space-y-6 text-lg">
           <p>
-            Hi, we’re <span className="font-semibold text-blue-600">Ashok Kumar</span> and <span className="font-semibold text-blue-600">Tara Chand</span>, alumni of NIT Rourkela and the 
+            Hi, we’re <span className="font-semibold text-blue-600">Ashok Kumar</span> and <span className="font-semibold text-blue-600">Tara Chand Yadav</span>, alumni of NIT Rourkela and the 
             <span className="font-semibold text-blue-600"> founder</span> and <span className="font-semibold text-blue-600">co-founder</span> of <span className="font-semibold text-blue-600">ThinkVil</span>. 
             During our JEE preparation, we struggled with understanding physics concepts that required visualization and a deeper connection to real-life phenomena. 
-            This challenge inspired Ashok to create <span className="font-semibold text-blue-600">ThinkVil</span>, with Tara joining as a co-founder, to build a platform where students can explore and interact 
+            This challenge inspired Ashok to create <span className="font-semibold text-blue-600">ThinkViL</span>, with Tara joining as a co-founder, to build a platform where students can explore and interact 
             with physics, chemistry, and mathematics concepts through virtual simulations, making learning more intuitive and engaging.
           </p>
           <p>
-            <span className="font-semibold text-blue-600">Thinkvil</span> also helps teachers simplify complex topics, making learning fun and engaging for students. 
+            <span className="font-semibold text-blue-600">ThinkViL</span> also helps teachers simplify complex topics, making learning fun and engaging for students. 
             Our goal is to make science accessible to everyone.
           </p>
           <p>
@@ -47,12 +82,15 @@ export default function AboutSection() {
             Your support helps us create more resources for free or at very affordable prices.
           </p>
           <p>
-            <span className="font-semibold text-blue-600">If you are an Educator:</span> Financial challenges are our biggest hurdle in creating meaningful content, 
-            and we’re looking for continuous supporters on a monthly/yearly basis to help sustain this vision. 
-            If you’d like to support us, please consider a monthly donation.
-          </p>
-          <p>
-            You can give your valuable feedback at <span className="font-semibold text-blue-600">thinkvil@gmail.com</span>
+            You can give your valuable feedback at{" "}
+            <a 
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.thinkvil@gmail.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-semibold text-blue-600 hover:underline"
+            >
+              contact.thinkvil@gmail.com
+            </a>
           </p>
         </div>
 

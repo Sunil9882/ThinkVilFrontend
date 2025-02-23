@@ -14,8 +14,8 @@ const QuadraticEquation = () => {
     setLoadingMessage(message);
 
     setTimeout(() => {
-      router.push(url); // Correct Next.js routing
-    }, 3000);
+      router.push(url); // Use Next.js router for client-side navigation
+    }, 1000);  // Show loading for 1 second before redirection
   };
 
   return (
@@ -27,7 +27,7 @@ const QuadraticEquation = () => {
 
       {/* Title */}
       <h2 className="w-full text-center md:text-2xl font-bold mt-2 mb-6 text-xl rounded-xl">
-        How to use Quadratic Equation - Interactive Simulation
+        How to Use Quadratic Equation - Interactive Simulation
       </h2>
 
       {/* Video Section */}
@@ -45,8 +45,8 @@ const QuadraticEquation = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Simulation is loading...",
-              "/Simulations/MathematicsSimulations/Quadratic_Equation/Quadratic_Equation_Sim.html"
+              "ThinkViL Simulation is loading...",
+              "/All_Simulations/MathematicsSimulations/Quadratic_Equation/Quadratic_Equation_Sim/index.html"
             )
           }
           className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
@@ -56,13 +56,13 @@ const QuadraticEquation = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Questions is loading...",
-              "/Simulations/MathematicsSimulations/Quadratic_Equation_Qns/Quadratic_Equation_Qns.html"
+              "ThinkViL Questions is loading...",
+              "/All_Simulations/MathematicsSimulations/Quadratic_Equation/Quadratic_Equation_Qns/index.html"
             )
           }
           className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
         >
-          ThinkVil Questions
+          ThinkViL Questions
         </button>
       </div>
 
@@ -70,7 +70,7 @@ const QuadraticEquation = () => {
       {loading && (
         <div className="fixed inset-0 bg-white flex flex-col items-center justify-center">
           <h1 className="text-4xl font-bold text-black">ThinkViL</h1>
-          <p className="text-lg text-gray-600">Think Visualize Learn</p>
+          <p className="text-lg text-gray-600">{loadingMessage}</p>
 
           {/* Progress Bar */}
           <div className="w-56 h-2 bg-gray-300 mt-4 rounded-full overflow-hidden">

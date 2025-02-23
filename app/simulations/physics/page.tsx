@@ -3,14 +3,59 @@ import Link from "next/link";
 
 // Define topics for Physics simulations
 const physicsTopics = [
-  { title: "One Dimension Motion", image: "/aim1.png", link: "/simulations/physics/One_Dimension_Motion" },
-  { title: "Projectile Motion", image: "/aim1.png", link: "/simulations/physics/Projectile_Motion" },
-  { title: "Relative Motion", image: "/aim1.png", link: "/simulations/physics/Relative_Motion" },
-  { title: "Rain Person Problem", image: "/aim1.png", link: "/simulations/physics/Rain_Person_Problem" },
-  { title: "Mass Block Motion", image: "/aim1.png", link: "/simulations/physics/Mass_Block_Motion" },
-  { title: "Incline Plane Motion", image: "/aim1.png", link: "/simulations/physics/Incline_Plane_Motion" },
-  { title: "Pulley System", image: "/aim1.png", link: "/simulations/physics/Pulley_System" },
-  { title: "Vernier Calipers", image: "/aim1.png", link: "/simulations/physics/Vernier_Calipers" },
+  { 
+    title: "Unit & Dimension", 
+    image: "/All_Images/Simulation_Images/Physics/Unit_Dimension.png", 
+    link: "/simulations/physics/Unit_Dimension"
+  },
+
+  { 
+    title: "One Dimension Motion", 
+    image: "/All_Images/Simulation_Images/Physics/One_Dimension_Motion.png", 
+    link: "/simulations/physics/One_Dimension_Motion" 
+  },
+
+  { 
+    title: "Projectile Motion", 
+    image: "/All_Images/Simulation_Images/Physics/Projectile_Motion.png", 
+    link: "/simulations/physics/Projectile_Motion" 
+  },
+
+  { 
+    title: "Relative Motion", 
+    image: "/All_Images/Simulation_Images/Physics/Relative_Motion.png", 
+    link: "/simulations/physics/Relative_Motion" 
+  },
+
+  { 
+    title: "Rain Person Problem", 
+    image: "/All_Images/Simulation_Images/Physics/Rain_Person_Problem.png", 
+    link: "/simulations/physics/Rain_Person_Problem" 
+  },
+
+  { 
+    title: "Mass Block Motion", 
+    image: "/All_Images/Simulation_Images/Physics/Mass_Block_Motion.png",  
+    link: "/simulations/physics/Mass_Block_Motion" 
+  },
+
+  { 
+    title: "Incline Plane Motion", 
+    image: "/All_Images/Simulation_Images/Physics/Incline_Plane_Motion.png",  
+    link: "/simulations/physics/Incline_Plane_Motion" 
+  },
+
+  { 
+    title: "Pulley System", 
+    image: "/All_Images/Simulation_Images/Physics/Pulley_System.png", 
+    link: "/simulations/physics/Pulley_System" 
+  },
+
+  { 
+    title: "Vernier Calipers", 
+    image: "/All_Images/Simulation_Images/Physics/Vernier_Calipers.png", 
+    link: "/simulations/physics/Vernier_Calipers" 
+  },
 ];
 
 // Main Physics Component
@@ -32,9 +77,9 @@ interface SubjectPageProps {
 // Subject Page layout component for displaying the physics topics
 function SubjectPage({ title, topics }: SubjectPageProps) {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100 min-h-screen rounded-2xl">
       {/* Header Section */}
-      <header className="bg-sky-600 text-white text-center py-6 text-3xl font-semibold mt-12 rounded-t-2xl">
+      <header className="bg-teal-600 text-white text-center py-6 text-3xl font-semibold mt-12 rounded-2xl">
         {title}
       </header>
 
@@ -44,7 +89,7 @@ function SubjectPage({ title, topics }: SubjectPageProps) {
           {topics.map((topic, index) => (
             <div
               key={index}
-              className="bg-green-200 shadow-lg rounded-xl p-6 hover:bg-blue-100 hover:scale-105 transition-all duration-300 flex flex-col items-center"
+              className="bg-green-300 shadow-lg rounded-3xl p-6 hover:bg-green-400 hover:scale-105 transition-all duration-300 flex flex-col items-center"
             >
               {/* Image Section */}
               <div className="flex justify-center mb-4">
@@ -53,7 +98,7 @@ function SubjectPage({ title, topics }: SubjectPageProps) {
                   alt={topic.title}
                   width={300}
                   height={200}
-                  className="rounded-lg"
+                  className="rounded-3xl"
                 />
               </div>
 
