@@ -13,10 +13,12 @@ const presetAmounts = [
 ];
 
 const countries = {
-  India: ["Delhi", "Maharashtra", "Karnataka", "Tamil Nadu"],
-  USA: ["California", "Texas", "Florida", "New York"],
-  Canada: ["Ontario", "Quebec", "British Columbia", "Alberta"],
-  Australia: ["New South Wales", "Victoria", "Queensland", "Western Australia"],
+  India: ["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Ladakh", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"] ,
+  USA: ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"],
+  Canada: ["Alberta", "British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador", "Nova Scotia", "Ontario", "Prince Edward Island", "Quebec", "Saskatchewan"],
+  Australia: ["Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"],
+  Brazil: ["Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia", "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins"],
+
   UK: ["England", "Scotland", "Wales", "Northern Ireland"],
 };
 
@@ -72,7 +74,7 @@ export default function Donate() {
         {/* Left Image Section with Fixed Height */}
         <div className="w-1/2 hidden md:block h-[1000px] relative">
           <Image
-            src="/DonatePage/donation.jpeg"
+            src="/All_Images/DonatePage/donation2.png"
             alt="Donation Background"
             fill
             className="rounded-r-2xl object-cover"
@@ -80,11 +82,11 @@ export default function Donate() {
         </div>
 
         {/* Right Form Section with Adjustable Height */}
-        <div className="w-full md:w-1/2 p-10 shadow-lg flex flex-col justify-center bg-gradient-to-br from-blue-100 to-blue-300 rounded-xl md:rounded-l-2xl min-h-[1000px]">
-          <h1 className="text-3xl font-bold text-gray-900 text-center mb-6">
+        <div className="w-full md:w-1/2 p-10 shadow-lg bg-gray-200 flex flex-col justify-center rounded-xl md:rounded-l-2xl min-h-[1000px]">
+          <h1 className="text-3xl font-bold text-black text-center mb-6">
             Donate Today. Inspire Tomorrow’s Innovators.
           </h1>
-          <p className="text-gray-600 text-center mb-6">
+          <p className="text-blue-600 text-center mb-6">
             Your generosity helps us continue our mission. Make a difference today!
           </p>
 
@@ -94,7 +96,7 @@ export default function Donate() {
               placeholder="Full Name *"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+              className="w-full p-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black"
               required
             />
             <input
@@ -102,7 +104,7 @@ export default function Donate() {
               placeholder="Email *"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+              className="w-full p-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black"
               required
             />
 
@@ -115,7 +117,7 @@ export default function Donate() {
                 setCustomCountry("");
                 setCustomState("");
               }}
-              className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+              className="w-full p-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black"
               required
             >
               <option value="" disabled>
@@ -134,7 +136,7 @@ export default function Donate() {
                 placeholder="Enter Country *"
                 value={customCountry}
                 onChange={(e) => setCustomCountry(e.target.value)}
-                className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+                className="w-full p-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black"
                 required
               />
             )}
@@ -144,7 +146,7 @@ export default function Donate() {
               <select
                 value={state}
                 onChange={(e) => setState(e.target.value)}
-                className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+                className="w-full p-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black"
                 required
               >
                 <option value="" disabled>
@@ -164,7 +166,7 @@ export default function Donate() {
                 placeholder="Enter State *"
                 value={customState}
                 onChange={(e) => setCustomState(e.target.value)}
-                className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+                className="w-full p-3 border-2 border-gray-400 rounded-xl focus:ring-2 focus:ring-black"
                 required
               />
             ) : null}
@@ -177,7 +179,7 @@ export default function Donate() {
                   type="button"
                   onClick={() => handleAmountClick(amount)}
                   className={`flex flex-col items-center justify-center p-4 rounded-xl border-4 transition-all duration-200 ${
-                    customAmount === amount.toString() ? "border-gray-900" : "border-gray-200"
+                    customAmount === amount.toString() ? "border-gray-900" : "border-gray-400"
                   }`}
                 >
                   <Icon className="w-6 h-6 mb-2" />

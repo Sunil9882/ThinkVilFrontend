@@ -15,10 +15,10 @@ export default function VisionSection() {
           Empowering learners through interactive simulations.
         </p>
 
-        {/* Embedded YouTube Video */}
+        {/* Embedded YouTube Video with rounded corners */}
         <div className="w-full aspect-w-16 aspect-h-9">
           <iframe
-            className="w-full h-64 md:h-96 rounded-lg shadow-lg"
+            className="w-full h-64 md:h-96 rounded-2xl shadow-lg"
             src="https://www.youtube.com/embed/hSnwf9aPcJU"
             title="ThinkVil Introduction Video"
             frameBorder="0"

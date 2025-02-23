@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const chemistryTopics = [
-  { title: "Periodic Table", image: "/aim1.png", link: "/simulations/chemistry/Periodic_Table" },
-  { title: "Hydrogen Spectrum", image: "/aim1.png", link: "/simulations/chemistry/Hydrogen_Spectrum" },
+  { title: "Periodic Table", image: "/All_Images/Simulation_Images/Chemistry/Periodic_Table.png", link: "/simulations/chemistry/Periodic_Table" },
+  { title: "Hydrogen Spectrum", image: "/All_Images/Simulation_Images/Chemistry/Periodic_Table.png", link: "/simulations/chemistry/Hydrogen_Spectrum" },
   // { title: "Physical Chemistry", image: "/aim1.png" , link: "/chemistry/physical-chemistry"  },
   // { title: "Analytical Chemistry", image: "/aim1.png", link: "/chemistry/analytical-chemistry" },
   // { title: "Electrochemistry", image: "/aim1.png", link: "/chemistry/electrochemistry" },
@@ -30,16 +30,17 @@ interface SubjectPageProps {
 
 function SubjectPage({ title, topics }: SubjectPageProps) {
   return (
-    <div className="bg-gray-100 min-h-screen">
-      <header className="bg-teal-400 text-white text-center py-6 text-3xl font-semibold mt-12 rounded-t-2xl">
+    <div className="bg-gray-100 min-h-screen rounded-2xl">
+      <header className="bg-teal-600 text-white text-center py-6 text-3xl font-semibold mt-12 rounded-2xl">
         {title}
       </header>
+
       <div className="container mx-auto px-4 py-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {topics.map((topic, index) => (
             <div
               key={index}
-              className="bg-green-200 shadow-lg rounded-xl p-6 hover:bg-blue-100 hover:scale-105 transition-all duration-300 flex flex-col items-center"
+              className="bg-green-300 shadow-lg rounded-3xl p-6 hover:bg-green-400 hover:scale-105 transition-all duration-300 flex flex-col items-center"
             >
               <div className="flex justify-center mb-4">
                 <Image
@@ -47,7 +48,7 @@ function SubjectPage({ title, topics }: SubjectPageProps) {
                   alt={topic.title}
                   width={300}
                   height={200}
-                  className="rounded-lg"
+                  className="rounded-3xl"
                 />
               </div>
               <h2 className="text-xl font-semibold mt-4 text-center">{topic.title}</h2>

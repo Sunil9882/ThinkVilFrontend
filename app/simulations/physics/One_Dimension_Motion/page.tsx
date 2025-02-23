@@ -15,7 +15,7 @@ const OneDimensionMotion = () => {
 
     setTimeout(() => {
       router.push(url); // Use Next.js router for navigation
-    }, 3000); // Show loading for 3 seconds before redirection
+    }, 1000); // Show loading for 1 second before redirection
   };
 
   return (
@@ -27,7 +27,7 @@ const OneDimensionMotion = () => {
 
       {/* Title */}
       <h2 className="w-full text-center md:text-2xl font-bold mt-2 mb-6 text-xl rounded-xl">
-        How to Understand One Dimensional Motion - Interactive Simulation
+        How to Use One Dimensional Motion - Interactive Simulation
       </h2>
 
       {/* Video Section */}
@@ -35,7 +35,7 @@ const OneDimensionMotion = () => {
         <iframe
           className="w-full aspect-video rounded-xl shadow-lg"
           src="https://www.youtube.com/embed/OGoetWCRVyM"
-          title="One-Dimensional Motion Tutorial"
+          title="One Dimensional Motion Tutorial"
           allowFullScreen
         ></iframe>
       </div>
@@ -45,8 +45,8 @@ const OneDimensionMotion = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Simulation is loading...",
-              "/Simulations/PhysicsSimulations/OneDimensionMotion/OneDimMotion_Sim.html"
+              "ThinkViL Simulation is loading...",
+              "/All_Simulations/PhysicsSimulations/One_Dimension_Motion/One_Dimension_Motion_Sim/index.html"
             )
           }
           className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
@@ -56,13 +56,13 @@ const OneDimensionMotion = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Questions is loading...", 
-              "/Simulations/ThinkVilQuestions.html"
+              "ThinkViL Questions is loading...", 
+              "/All_Simulations/PhysicsSimulations/One_Dimension_Motion/One_Dimension_Motion_Qns/index.html"
             )
           }
           className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
         >
-          ThinkVil Questions
+          ThinkViL Questions
         </button>
       </div>
 

@@ -4,20 +4,20 @@ const ProvideSection = () => {
   const features = [
     {
       title: "Use free simulations and Engage with Science",
-      image: "/aim1.png",
+      image: "/All_Images/ProvideSection/aim1.png",
     },
     {
       title: "Connect Practical knowledge with Theoretical in a Virtual Way",
-      image: "/aim2.png",
+      image: "/All_Images/ProvideSection/aim2.png",
     },
     {
       title: "Strong Concept with ThinkVil Questions",
-      image: "/question2.jpg",
+      image: "/All_Images/ProvideSection/question2.jpg",
     },
     {
       title: "Learning through YouTube Videos",
       link: "https://www.youtube.com/@Thinkvil",
-      image: "/YouTubeIcons/youtube_icon.png",
+      image: "/All_Images/ProvideSection/youtube_icon.png",
     },
   ];
 

@@ -1,6 +1,6 @@
 "use client"; // Mark this as a client component
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation"; // Use useRouter from next/navigation
 
 const InclinePlaneMotion = () => {
@@ -14,8 +14,8 @@ const InclinePlaneMotion = () => {
     setLoadingMessage(message);
 
     setTimeout(() => {
-      window.location.href = url; // Redirect after delay
-    }, 3000); // Show loading for 3 seconds before redirection
+      router.push(url); // Use Next.js router for client-side navigation
+    }, 1000);  // Show loading for 1 second before redirection
   };
 
   return (
@@ -27,7 +27,7 @@ const InclinePlaneMotion = () => {
 
       {/* Title */}
       <h2 className="w-full text-center md:text-2xl font-bold mt-2 mb-6 text-xl rounded-xl">
-        How to use Incline Plane Motion - Interactive Simulation
+        How to Use Incline Plane Motion - Interactive Simulation
       </h2>
 
       {/* Video Section */}
@@ -45,8 +45,8 @@ const InclinePlaneMotion = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Simulation is loading...",
-              "/Simulations/PhysicsSimulations/InclinePlaneMotion/InclinePlaneMotion_Sim.html"
+              "ThinkViL Simulation is loading...",
+              "/All_Simulations/PhysicsSimulations/Incline_Plane_Motion/Incline_Plane_Motion_Sim/index.html"
             )
           }
           className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
@@ -56,13 +56,13 @@ const InclinePlaneMotion = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Questions is loading...", 
-              "/Simulations/ThinkVilQuestions.html"
+              "ThinkViL Questions is loading...", 
+              "/All_Simulations/PhysicsSimulations/Incline_Plane_Motion/Incline_Plane_Motion_Qns/index.html"
             )
           }
           className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
         >
-          ThinkVil Questions
+          ThinkViL Questions
         </button>
       </div>
 
@@ -71,7 +71,7 @@ const InclinePlaneMotion = () => {
         <div className="fixed inset-0 bg-white flex flex-col items-center justify-center">
           {/* ThinkVil Logo */}
           <h1 className="text-4xl font-bold text-black">ThinkViL</h1>
-          <p className="text-lg text-gray-600">Think Visualize Learn</p>
+          <p className="text-lg text-gray-600">{loadingMessage}</p>
 
           {/* Progress Bar */}
           <div className="w-56 h-2 bg-gray-300 mt-4 rounded-full overflow-hidden">

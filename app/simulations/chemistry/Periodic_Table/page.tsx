@@ -15,7 +15,7 @@ const PeriodicTable = () => {
 
     setTimeout(() => {
       router.push(url); // Use Next.js router for client-side navigation
-    }, 3000); // Show loading for 3 seconds before redirection
+    }, 1000); // Show loading for 1 second before redirection
   };
 
   return (
@@ -27,7 +27,7 @@ const PeriodicTable = () => {
 
       {/* Title */}
       <h2 className="w-full text-center md:text-2xl font-bold mt-2 mb-6 text-xl rounded-xl">
-        Learn the Periodic Table - Interactive Simulation
+        How to Use Periodic Table - Interactive Simulation
       </h2>
 
       {/* Video Section */}
@@ -45,8 +45,8 @@ const PeriodicTable = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Simulation is loading...",
-              "/Simulations/ChemistrySimulations/PeriodicTable/PeriodicTable_Sim.html"
+              "ThinkViL Simulation is loading...",
+              "/All_Simulations/ChemistrySimulations/Periodic_Table/Periodic_Table_Sim/index.html"
             )
           }
           className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
@@ -56,13 +56,13 @@ const PeriodicTable = () => {
         <button
           onClick={() =>
             startSimulation(
-              "ThinkVil Questions is loading...",
-              "/Simulations/ThinkVilQuestions.html"
+              "ThinkViL Questions is loading...",
+              "/All_Simulations/ChemistrySimulations/Periodic_Table/Periodic_Table_Qns/index.html"
             )
           }
           className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
         >
-          ThinkVil Questions
+          ThinkViL Questions
         </button>
       </div>
 
@@ -71,7 +71,7 @@ const PeriodicTable = () => {
         <div className="fixed inset-0 bg-white flex flex-col items-center justify-center">
           {/* ThinkVil Logo */}
           <h1 className="text-4xl font-bold text-black">ThinkViL</h1>
-          <p className="text-lg text-gray-600">Think Visualize Learn</p>
+          <p className="text-lg text-gray-600">{loadingMessage}</p>
 
           {/* Progress Bar */}
           <div className="w-56 h-2 bg-gray-300 mt-4 rounded-full overflow-hidden">

@@ -1,38 +1,47 @@
-'use client'
+"use client";
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { FcGoogle } from "react-icons/fc"
-import { FaLinkedin, FaGithub } from "react-icons/fa"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 export default function Signup() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const router = useRouter()
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (password.length < 6) {
-      alert("Password must be at least 6 characters long.")
-      return
-    }
-    console.log("Signup attempt with:", name, email, password)
-    router.push("/")
-  }
+    e.preventDefault();
 
-  const handleOAuthSignup = (provider: string) => {
-    console.log(`Signing up with ${provider}`)
-    // Integrate OAuth authentication logic here
-  }
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters long.");
+      return;
+    }
+
+    const response = await fetch("/api/auth/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, password }),
+    });
+
+    if (response.ok) {
+      alert("✅ Signup successful! Logging in...");
+      await signIn("credentials", { email, password, redirect: false });
+      router.push("/");
+    } else {
+      alert("❌ Signup failed. Try again.");
+    }
+  };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-green-100 to-blue-300 p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-100 to-green-300 p-4">
       <Card className="w-full max-w-md shadow-lg rounded-xl border border-gray-200 bg-white">
         <CardHeader className="text-center">
           <CardTitle className="text-3xl font-semibold text-gray-900">Sign Up</CardTitle>
@@ -70,7 +79,6 @@ export default function Signup() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                minLength={6}
                 className="border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200"
               />
             </div>
@@ -79,15 +87,12 @@ export default function Signup() {
             </Button>
           </form>
 
-          {/* Social Sign-Up Buttons */}
+          {/* Social Signup Buttons */}
           <div className="mt-4 flex flex-col space-y-3">
-            <Button onClick={() => handleOAuthSignup('Google')} className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 hover:bg-gray-100 text-gray-800 py-2 rounded-lg transition-all">
+            <Button onClick={() => signIn('google', { callbackUrl: "/" })} className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 hover:bg-gray-100 text-gray-800 py-2 rounded-lg transition-all">
               <FcGoogle size={20} /> Sign Up with Google
             </Button>
-            <Button onClick={() => handleOAuthSignup('LinkedIn')} className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition-all">
-              <FaLinkedin size={20} /> Sign Up with LinkedIn
-            </Button>
-            <Button onClick={() => handleOAuthSignup('GitHub')} className="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white py-2 rounded-lg transition-all">
+            <Button onClick={() => signIn('github', { callbackUrl: "/" })} className="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white py-2 rounded-lg transition-all">
               <FaGithub size={20} /> Sign Up with GitHub
             </Button>
           </div>
@@ -98,5 +103,5 @@ export default function Signup() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }

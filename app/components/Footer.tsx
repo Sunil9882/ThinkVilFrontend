@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         {/* Brand Section */}
         <div>
-          <h3 className="text-2xl font-bold mb-3">ThinkVil</h3>
+          <h3 className="text-2xl font-bold mb-3">ThinkViL</h3>
           <p className="text-gray-700">
             Exploring the wonders of science and mathematics through interactive simulations.
           </p>
@@ -32,8 +32,21 @@ export default function Footer() {
         {/* Contact Section */}
         <div>
           <h3 className="text-xl font-bold mb-3">Contact Us</h3>
-          <p>📧 <a href="mailto:contact@thinkvil.com" className="text-sky-600 hover:underline">contact@thinkvil.com</a></p>
-          <p>📞 <a href="tel:+916377472807" className="text-sky-600 hover:underline">+91 6377472807</a></p>
+          <p>
+            📧 <a 
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@thinkvil.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-sky-600 hover:underline"
+            >
+              contact@thinkvil.com
+            </a>
+          </p>
+          <p>
+            📞 <a href="tel:+916377472807" className="text-sky-600 hover:underline">
+              +91 6377472807
+            </a>
+          </p>
         </div>
       </div>
 
