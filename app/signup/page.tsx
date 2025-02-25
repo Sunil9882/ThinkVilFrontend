@@ -19,27 +19,35 @@ export default function Signup() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     if (password.length < 6) {
       alert("Password must be at least 6 characters long.");
       return;
     }
-
-    const response = await fetch("/api/auth/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, password }),
-    });
-
-    if (response.ok) {
-      alert("✅ Signup successful! Logging in...");
-      await signIn("credentials", { email, password, redirect: false });
-      router.push("/");
-    } else {
-      alert("❌ Signup failed. Try again.");
+  
+    try {
+      const response = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+      });
+  
+      const data = await response.json();
+      console.log("Signup API response:", data);
+  
+      if (response.ok) {
+        alert("✅ Signup successful! Logging in...");
+        await signIn("credentials", { email, password, redirect: false });
+        router.push("/");
+      } else {
+        alert(`❌ Signup failed: ${data.message || "Try again."}`);
+      }
+    } catch (error) {
+      console.error("Frontend signup error:", error);
+      alert("❌ An unexpected error occurred. Check the console for details.");
     }
   };
-
+  
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-100 to-green-300 p-4">
       <Card className="w-full max-w-md shadow-lg rounded-xl border border-gray-200 bg-white">

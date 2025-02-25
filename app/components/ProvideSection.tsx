@@ -17,20 +17,20 @@ const ProvideSection = () => {
     {
       title: "Learning through YouTube Videos",
       link: "https://www.youtube.com/@Thinkvil",
-      image: "/All_Images/ProvideSection/youtube_icon.png",
+      image: "/All_Images/ProvideSection/youtube_icon1.png",
     },
   ];
 
   return (
-    <section className="py-12 px-6 rounded-xl bg-gray-100">
-      <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
+    <section className="py-12 px-6 rounded-xl bg-gray-100 border-2">
+      <h2 className="text-4xl font-bold text-center text-black mb-10">
         What We Are Providing
       </h2>
       <div className="max-w-5xl mx-auto space-y-8">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="flex flex-col md:flex-row items-center shadow-md rounded-xl p-6 md:p-8 bg-gray-100"
+            className="flex flex-col md:flex-row items-center shadow-md rounded-xl p-6 md:p-8 bg-gray-50"
           >
             {/* Text Content with Minimum Height of the First Text Area */}
             <div className="md:w-3/5 text-center md:text-left min-h-[80px] h-auto flex items-center">

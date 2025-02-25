@@ -20,12 +20,12 @@ export default function Header() {
         if (
           menuRef.current && !menuRef.current.contains(event.target as Node) &&
           profileMenuRef.current && !profileMenuRef.current.contains(event.target as Node) &&
-          profileButtonRef.current && !profileButtonRef.current.contains(event.target as Node) // Ignore clicks on profile button
+          profileButtonRef.current && !profileButtonRef.current.contains(event.target as Node)
         ) {
           setIsMenuOpen(false);
           setIsProfileMenuOpen(false);
         }
-      }, 50); // Small delay to allow button click event
+      }, 50);
     }
 
     if (isMenuOpen || isProfileMenuOpen) {
@@ -41,8 +41,7 @@ export default function Header() {
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-[100] px-4 py-4 flex justify-between items-center rounded-xl">
       {/* Logo */}
       <Link href="/" className="text-2xl font-bold flex items-center active:scale-105" onClick={() => setIsMenuOpen(false)}>
-        {/* <Image src="/All_Images/Header/thinkvil_logo.png" alt="ThinkVil" width={40} height={40} priority /> */}
-        <span className="ml-2 font-extrabold">ThinkViL</span>
+        <span className="ml-2 font-extrabold font-[cursive] italic ">ThinkViL</span>
       </Link>
 
       {/* Mobile Menu Button */}
@@ -62,17 +61,38 @@ export default function Header() {
           { href: "/simulations/mathematics", label: "Mathematics" },
           { href: "/simulations/chemistry", label: "Chemistry" },
           { href: "/about", label: "About" },
-          { href: "/donate", label: "Donate", special: true },
-        ].map(({ href, label, special }) => (
+        ].map(({ href, label }) => (
           <li key={href} onClick={() => setIsMenuOpen(false)}>
-            <Link href={href} className={`px-3 py-2 rounded-xl font-semibold block ${special ? "login-donate-btn bg-red-400 hover:text-black font-semibold hover:bg-blue-600" : "hover:bg-sky-300 hover:text-black"}`}>{label}</Link>
+            <Link href={href} className="px-3 py-2 rounded-xl font-semibold block hover:bg-sky-300 hover:text-black">
+              {label}
+            </Link>
           </li>
         ))}
+
+        {/* Login Button - Now Inside Menu */}
+        {status !== "authenticated" && (
+          <li onClick={() => setIsMenuOpen(false)}>
+            <Link 
+              href="/login" 
+              className="login-donate-btn px-4 py-2 bg-blue-600 text-white rounded-xl hover:text-black transition block text-center"
+            >
+              Login
+            </Link>
+          </li>
+        )}
       </ul>
 
+      {/* Donate Button - Now on the Right */}
+      <Link 
+        href="/donate1" 
+        className="login-donate-btn px-4 py-2 bg-red-500 text-white rounded-xl hover:text-black transition font-semibold"
+      >
+        Donate
+      </Link>
+
       {/* Profile Section */}
-      {status === "authenticated" ? (
-        <div className="relative" ref={profileMenuRef}>
+      {status === "authenticated" && (
+        <div className="relative ml-4" ref={profileMenuRef}>
           <button
             ref={profileButtonRef}
             onClick={() => setIsProfileMenuOpen(prev => !prev)}
@@ -94,13 +114,6 @@ export default function Header() {
             </div>
           )}
         </div>
-      ) : (
-        <Link 
-          href="/login" 
-          className="login-donate-btn px-4 py-2 bg-blue-600 text-white rounded-xl hover:text-black transition"
-        >
-          Login
-        </Link>
       )}
     </nav>
   );

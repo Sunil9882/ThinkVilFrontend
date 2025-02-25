@@ -1,5 +1,7 @@
+
 //-------------------THINKVIL QUESTIONS-----------------------------------------------------
 let Question_Box,Question,Show_Answer_btn,Next_btn,Previous_btn,Hide_Qns;
+
 // -------------------INPUT variable------------------------------
 let Input,CANNON,Input_Cannon_checkbox,Higt_Cannon_Slider,Input_Higt_Cannon,Vel_Cannon_Slider,Input_Vel_Cannon,Ang_Cannon_Slider,Input_Ang_Cannon,Hide_INbtn;
 let Show_Cannon_Input=false;
@@ -32,60 +34,89 @@ function preload(){
   target=loadImage('images/target.png');
   clockfont=loadFont('font/digital-7.ttf');
 }
+
+let Dom_elements,full_landscape,Canvas;
 function setup() {
-  let Canvas=createCanvas(window.outerWidth, window.outerHeight);
+  Canvas=createCanvas(document.documentElement.clientWidth, document.documentElement.clientHeight);
   frameRate(60);
   angleMode(DEGREES);
   imageMode(CENTER);
   input(); 
-  if(window.outerWidth<=Small_size && window.outerHeight>window.outerWidth){
-
+  if(document.documentElement.clientWidth<=Small_size && document.documentElement.clientHeight>document.documentElement.clientWidth){
     //-----------------FULL SCREEN AND LANDSCAPE BUTTON FOR SMART PHONE SCREEN SIZE----------------------------------------
-    let Dom_elements = [Canvas,Question_Box,Question,Show_Answer_btn,Next_btn,Previous_btn,Hide_Qns, buttonstart, buttonpause, Show_path, Show_Comp, Zoom_IN, Zoom_OUT, fullbtn, Input, CANNON, Input_Cannon_checkbox, Higt_Cannon_Slider, Input_Higt_Cannon, Vel_Cannon_Slider, Input_Vel_Cannon, Ang_Cannon_Slider, Input_Ang_Cannon, Hide_INbtn, Output, INSTANT, Output_Instant_checkbox, Output_Instant_Vel, Output_Instant_Higt, END, Output_End_checkbox, Output_Range, Output_MaxH, Hide_Outbtn];
+    Dom_elements = [Canvas,Question_Box,Question,Show_Answer_btn,Next_btn,Previous_btn,Hide_Qns,buttonstart, buttonpause, Show_path, Show_Comp, Zoom_IN, Zoom_OUT, fullbtn, Input, CANNON, Input_Cannon_checkbox, Higt_Cannon_Slider, Input_Higt_Cannon, Vel_Cannon_Slider, Input_Vel_Cannon, Ang_Cannon_Slider, Input_Ang_Cannon, Hide_INbtn, Output, INSTANT, Output_Instant_checkbox, Output_Instant_Vel, Output_Instant_Higt, END, Output_End_checkbox, Output_Range, Output_MaxH, Hide_Outbtn];
     Dom_elements.forEach(el => el.hide());
-    let full_landscape=createButton('Click here for Fullscreen and Landscape mode');
-    full_landscape.position(0,0).size(window.outerWidth,window.outerHeight).style('font-size','12px');
+    full_landscape=createButton('Click here for Fullscreen and Landscape mode');
+    full_landscape.position(0,0).size(document.documentElement.clientWidth,document.documentElement.clientHeight).style('font-size','11px').style('border-radius','5px');
     full_landscape.mousePressed(fulllandscape);
-          function fulllandscape(){
-            fullscreen(true);
-            screen.orientation.lock("landscape").catch(console.error);
-            full_landscape.html('Exit Full Screen');
-            full_landscape.size(100,25).position(height/2+200,5*width/6+20).style('font-size','12px').style('background-color','RGB(225,225,225)').style('padding','2px').style('border-radius','2px');
-            full_landscape.mousePressed(exitlandscape);
-            //--------------Show all DOM elements------------------------------------- 
-            Dom_elements.forEach(el => el.show());
-          }
-          function exitlandscape(){
-            fullscreen(false);
-            full_landscape.html('Click here for Fullscreen and Landscape mode');
-            full_landscape.position(0,0).size(window.outerHeight,window.outerWidth).style('font-size','12px');
-            full_landscape.mousePressed(fulllandscape);
-            //----Hide all DOM elements--------------------------------------------------------------
-            Dom_elements.forEach(el => el.hide());
-          }
 
     ResponsiveSmallsize();
+    document.addEventListener("visibilitychange", handleVisibilityChange);                          //when smartphone screen off this will run
   }
-  else if(Small_size<window.outerWidth && window.outerWidth<=Medium_size){
+  else if(Small_size<document.documentElement.clientWidth && document.documentElement.clientWidth<=Medium_size){
     ResponsiveMediumsize();
   }
-  else if( window.outerWidth>Medium_size){
+  else if( document.documentElement.clientWidth>Medium_size){
     ResponsiveBigsize();
   }
+
 }
 
 
 function windowResized() {
-    resizeCanvas(window.outerWidth, window.outerHeight);
+    resizeCanvas(document.documentElement.clientWidth, document.documentElement.clientHeight);
 
-    if (window.outerHeight<=Small_size && window.outerWidth > window.outerHeight) { // height and width interchange because change of orientation
+    if (document.documentElement.clientHeight<=Small_size && document.documentElement.clientWidth > document.documentElement.clientHeight) { // height and width interchange because change of orientation
       ResponsiveSmallsize();
     } 
-    else if (Small_size<window.outerWidth && window.outerWidth <= Medium_size) {
+    else if (Small_size<document.documentElement.clientWidth && document.documentElement.clientWidth <= Medium_size) {
       ResponsiveMediumsize();
     } 
-    else if (window.outerWidth>Medium_size) {
+    else if (document.documentElement.clientWidth>Medium_size) {
       ResponsiveBigsize();
+    }
+}
+
+// --------------FULL SCREEN AND SCREEN OFF SMARTPHONE FUNCTION------------------
+function fulllandscape(){
+  fullscreen(true);
+  screen.orientation.lock("landscape").catch(console.error);
+  full_landscape.html('Exit Full Screen');
+  full_landscape.size(100,22).position(3*document.documentElement.clientHeight/4+20,5*document.documentElement.clientWidth/6+20).style('font-size','11px').style('background-color','RGB(225,225,225)').style('padding','2px').style('border-radius','5px');
+  Dom_elements.forEach(el => el.show());
+  Show_Answer_btn.hide();
+  full_landscape.mousePressed(exitlandscape);
+
+}
+function exitlandscape(){
+  fullscreen(false);
+  full_landscape.html('Click here for Fullscreen and Landscape mode');
+  full_landscape.position(0,0).size(document.documentElement.clientHeight,document.documentElement.clientWidth).style('font-size','12px');
+  Dom_elements.forEach(el => el.hide());
+  full_landscape.mousePressed(fulllandscape);
+
+}
+
+function handleVisibilityChange() {
+  full_landscape.html('Click here for Fullscreen and Landscape mode');
+  full_landscape.position(0,0).size(document.documentElement.clientHeight,document.documentElement.clientWidth).style('font-size','12px');
+  Dom_elements.forEach(el => el.hide());
+  full_landscape.mousePressed(fulllandscape);
+}
+
+//------------------------WINDOW RESIZE------------------------------------------------------
+function windowResized(){
+  resizeCanvas(document.documentElement.clientWidth, document.documentElement.clientHeight);
+
+    if (document.documentElement.clientHeight<=Small_size && document.documentElement.clientWidth > document.documentElement.clientHeight) { // height and width interchange because change of orientation
+      ResponsiveSmallsize();
+    } 
+    else if (Small_size<document.documentElement.clientWidth && document.documentElement.clientWidth <= Medium_size) {
+      ResponsiveMediumsize();
+    } 
+    else if (document.documentElement.clientWidth>Medium_size) {
+      ResponsiveBigsize();
+
     }
 }
 

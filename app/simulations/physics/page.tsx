@@ -79,7 +79,7 @@ function SubjectPage({ title, topics }: SubjectPageProps) {
   return (
     <div className="bg-gray-100 min-h-screen rounded-2xl">
       {/* Header Section */}
-      <header className="bg-teal-600 text-white text-center py-6 text-3xl font-semibold mt-12 rounded-2xl">
+      <header className="bg-teal-600 text-white text-center py-4 text-3xl font-semibold mt-12 rounded-2xl">
         {title}
       </header>
 
@@ -89,10 +89,10 @@ function SubjectPage({ title, topics }: SubjectPageProps) {
           {topics.map((topic, index) => (
             <div
               key={index}
-              className="bg-green-300 shadow-lg rounded-3xl p-6 hover:bg-green-400 hover:scale-105 transition-all duration-300 flex flex-col items-center"
+              className="bg-green-300 shadow-lg rounded-3xl p-6 hover:bg-green-400 hover:scale-98 transition-all duration-300 flex flex-col items-center"
             >
               {/* Image Section */}
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center mb-auto">
                 <Image
                   src={topic.image}
                   alt={topic.title}
@@ -103,11 +103,11 @@ function SubjectPage({ title, topics }: SubjectPageProps) {
               </div>
 
               {/* Title */}
-              <h2 className="text-xl font-semibold mt-4 text-center">{topic.title}</h2>
+              <h2 className="text-xl font-semibold mt-auto text-center">{topic.title}</h2>
 
               {/* Explore Button */}
               <Link href={topic.link}>
-                <button className="mt-4 bg-sky-500 text-white px-4 py-2 rounded-xl hover:bg-sky-700 transition duration-300 block mx-auto">
+                <button className="mt-auto bg-sky-700 text-white px-4 py-2 rounded-xl hover:bg-sky-500 transition duration-300 block mx-auto hover:text-black font-bold">
                   Explore
                 </button>
               </Link>

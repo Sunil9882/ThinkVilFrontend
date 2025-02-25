@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-12 px-6 bg-gray-100 rounded-xl">
+    <section id="about" className="py-6 px-6 bg-gray-100 rounded-xl border-2">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-blue-950 mb-8">About Us</h2>
+        <h2 className="text-4xl font-bold text-black mb-8">About Us</h2>
 
         {/* Images Section */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-20 mb-8">
@@ -97,8 +97,8 @@ export default function AboutSection() {
         {/* Donate Button */}
         <div className="flex justify-center mt-8">
           <Link href="/donate">
-            <span className="inline-block px-6 py-3 text-lg font-semibold bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition cursor-pointer">
-              Donate Now
+            <span className="inline-block px-6 py-3 text-lg font-semibold bg-red-600 text-white rounded-full shadow-md hover:bg-blue-700 hover:text-black transition cursor-pointer">
+              Donate Us
             </span>
           </Link>
         </div>

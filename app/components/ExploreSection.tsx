@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function ExploreSection() {
   return (
-    <section className="py-16 bg-gradient-to-tr from-gray-100 to-gray-200 text-center rounded-xl">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
+    <section className="py-16 bg-gradient-to-tr from-gray-100 to-gray-200 text-center rounded-xl border-2">
+      <h2 className="text-4xl font-bold text-black mb-8">
         Explore Our Simulations
       </h2>
       <p className="text-lg text-blue-600 max-w-2xl mx-auto mb-8">
