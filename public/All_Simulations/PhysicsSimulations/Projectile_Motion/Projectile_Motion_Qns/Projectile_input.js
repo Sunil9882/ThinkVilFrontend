@@ -196,58 +196,50 @@ function input(){
           Show_Answer_btn.show();
           Next_btn.style('background-color','RGBA(200,200,200,0.1)')
           Q_No+=1;
-          if(Q_No==1){
-            Question.html('Q-1: If Cannon is on the ground and have, firing velocity=20 m/s and angle=60°, then, what will be the Range of the Cannonball?');
+          if (Q_No == 1) {
+            Question.html('Q-1: A cannon is positioned on the ground with a firing velocity of 20 m/s at an angle of 60°. What will be the range of the cannonball?');
             Show_Answer_btn.html('Show Answer');
-            Answer='Range=35.3 m';
-          }else if(Q_No==2){
-            Question.html('Q-2: If Cannon is on the ground and have, firing velocity=20 m/s  angle=60°, then, what will be the time and height when cannonball feel zero velocity in vertical upward direction ?');
-            Show_Answer_btn.html('Show Answer');
-            Answer='Time=1.76 sec, Height=15.3 m';
-          }else if(Q_No==3){
-            Question.html('Q-3: If Cannon is on the ground and have, firing velocity=20 m/s and angle=60°, then, what will be the Maximum height of the Cannonball  ?');
-            Show_Answer_btn.html('Show Answer');
-            Answer='Maximum height=15.3 m';
-          }else if(Q_No==4){
-            Question.html('Q-4: If Cannon is on the ground and have, firing velocity=20 m/s and angle=60°, then, what will be the Time period of the Cannonball motion ?');
-            Show_Answer_btn.html('Show Answer');
-            Answer='Time period=3.53 sec';
-          }else if(Q_No==5){
-            Question.html('Q-5: If Cannon is on the ground and have, firing velocity=20 m/s and angle=60°, then, what will be the instant height and velocity components at time=3 sec ?');
-            Show_Answer_btn.html('Show Answer');
-            Answer='Height=7.9 m, V=15.7 m/s, Vx=10 m/s (x direction), Vy=12.1 m/s (-y direction)';
-          }else if(Q_No==6){
-            Question.html('Q-6: If Cannon is on the ground and have, firing velocity=20 m/s and angle=60°, then, what will be the velocity components when cannonball hits the target?');
-            Show_Answer_btn.html('Show Answer');
-            Answer='V=20 m/s, Vx=10 m/s (x direction), Vy= 17.3 m/s (-y direction)';
-        }else if(Q_No==7){
-            Question.html('Q-8: If Cannon have, height=10 m, firing velocity=20 m/s and angle=60°, then, what will be the Range and Maximum height of the Cannonball  ?');
-            Show_Answer_btn.html('Show Answer');
-            Answer='Range=39.9 m, Maximum height=25.3 m';
-          }else if(Q_No==8){
-            Question.html('Q-9: If Cannon have, height=10 m, firing velocity=20 m/s and angle=60°, then, what will be the Time period of the Cannonball motion ?');
-            Show_Answer_btn.html('Show Answer');
-            Answer='Time period=4.04 sec';
-          }else if(Q_No==9){
-            Question.html('Q-10: If Cannon have, height=10 m, firing velocity=20 m/s , angle=60°, then, what will be the instant height and velocity components at time=3 sec  ?');
-            Show_Answer_btn.html('Show Answer');
-            Answer='Height=17.9 m, V=15.7 m/s, Vx=10 m/s (x direction), Vy=12.1 m/s (-y direction)';
-          }else if(Q_No==10){
-            Question.html('Q-11: If Cannon is on the ground and have, firing velocity=20 m/s, then, what should be the cannon angle for maximum range ? and also calculate the maximum range ?');
-            Show_Answer_btn.html('Show Answer');
-            Answer='Angle=45°, Maximum Range= 40.8 m';
-          }else if(Q_No==11){
-              Question.html('Q-12: If Cannon have, height=20 m and fire in horizontal direction with firing velocity=20 m/s, then, what will be the Range and Time period of the Cannonball motion ?');
-            Show_Answer_btn.html('Show Answer');
-            Answer='Range=40.4 m, Time period=2.02 sec';
-          }else if(Q_No==12){
-            Question.html('Q-13: If Cannon have, height=20 m and fire in horizontal direction with firing velocity=20 m/s, then, what will be the velocity components when cannonball hit the target ?');
-            Show_Answer_btn.html('Show Answer');
-            Answer='V=28.1 m/s, Vx=20 m/s (x direction), Vy=19.8 m/s (-y direction)';
-          }else if(Q_No==13){
-              Question.html('Q-14: If Cannon is on the ground and have, firing velocity=23 m/s and range=50 m, then, what will be the firing Cannon angle ?');
+            Answer = 'Range = 35.3 m';
+          } else if (Q_No == 2) {
+              Question.html('Q-2: In the previous question, at what time and height does the cannonball reach zero velocity in the vertical upward direction?');
               Show_Answer_btn.html('Show Answer');
-              Answer='Angle=34°';
+              Answer = 'Time = 1.76 sec, Height = 15.3 m';
+          } else if (Q_No == 3) {
+              Question.html('Q-3: In Question 1, what is the maximum height reached by the cannonball, and what is its total time of flight?');
+              Show_Answer_btn.html('Show Answer');
+              Answer = 'Maximum height = 15.3 m, Time period = 3.53 sec';
+          } else if (Q_No == 4) {
+              Question.html('Q-4: In Question 1, what are the instantaneous height and velocity components at t = 3 sec?');
+              Show_Answer_btn.html('Show Answer');
+              Answer = 'Height = 7.9 m, V = 15.7 m/s, Vx = 10 m/s (x-direction), Vy = 12.1 m/s (-y direction)';
+          } else if (Q_No == 5) {
+              Question.html('Q-5: In Question 1, what are the velocity components of the cannonball when it hits the target?');
+              Show_Answer_btn.html('Show Answer');
+              Answer = 'V = 20 m/s, Vx = 10 m/s (x-direction), Vy = 17.3 m/s (-y direction)';
+          } else if (Q_No == 6) {
+              Question.html('Q-6: If, in Question 1, the cannon is elevated to a height of 10 m, what will be the range, maximum height, and total time of flight of the cannonball?');
+              Show_Answer_btn.html('Show Answer');
+              Answer = 'Range = 39.9 m, Maximum height = 25.3 m, Time period = 4.04 sec';
+          } else if (Q_No == 7) {
+              Question.html('Q-7: In Question 6, what are the instantaneous height and velocity components at t = 3 sec?');
+              Show_Answer_btn.html('Show Answer');
+              Answer = 'Height = 17.9 m, V = 15.7 m/s, Vx = 10 m/s (x-direction), Vy = 12.1 m/s (-y direction)';
+          } else if (Q_No == 8) {
+              Question.html('Q-8: If a cannon is positioned on the ground with a firing velocity of 20 m/s, what should be the firing angle for maximum range? Also, calculate the maximum range.');
+              Show_Answer_btn.html('Show Answer');
+              Answer = 'Angle = 45°, Maximum Range = 40.8 m';
+          } else if (Q_No == 9) {
+              Question.html('Q-9: A cannon is positioned at a height of 20 m and fires horizontally with a velocity of 20 m/s. What will be the range and total time of flight of the cannonball?');
+              Show_Answer_btn.html('Show Answer');
+              Answer = 'Range = 40.4 m, Time period = 2.02 sec';
+          } else if (Q_No == 10) {
+              Question.html('Q-10: In the previous question, what are the velocity components of the cannonball when it hits the target?');
+              Show_Answer_btn.html('Show Answer');
+              Answer = 'V = 28.1 m/s, Vx = 20 m/s (x-direction), Vy = 19.8 m/s (-y direction)';
+          } else if (Q_No == 11) {
+              Question.html('Q-11: A cannon is positioned on the ground with a firing velocity of 23 m/s and a range of 50 m. What is the required firing angle?');
+              Show_Answer_btn.html('Show Answer');
+              Answer = 'Angle = 34°';
           }else{
           Q_No-=1;
           }
@@ -262,58 +254,50 @@ function input(){
             function previous_fn(){
               Previous_btn.style('background-color','RGBA(100,200,200,0.1)')
               Q_No-=1;
-              if(Q_No==1){
-                Question.html('Q-1: If Cannon is on the ground and have, firing velocity=20 m/s and angle=60°, then, what will be the Range of the Cannonball?');
+              if (Q_No == 1) {
+                Question.html('Q-1: A cannon is positioned on the ground with a firing velocity of 20 m/s at an angle of 60°. What will be the range of the cannonball?');
                 Show_Answer_btn.html('Show Answer');
-                Answer='Range=35.3 m';
-              }else if(Q_No==2){
-                Question.html('Q-2: If Cannon is on the ground and have, firing velocity=20 m/s  angle=60°, then, what will be the time and height when cannonball feel zero velocity in vertical upward direction ?');
-                Show_Answer_btn.html('Show Answer');
-                Answer='Time=1.76 sec, Height=15.3 m';
-              }else if(Q_No==3){
-                Question.html('Q-3: If Cannon is on the ground and have, firing velocity=20 m/s and angle=60°, then, what will be the Maximum height of the Cannonball  ?');
-                Show_Answer_btn.html('Show Answer');
-                Answer='Maximum height=15.3 m';
-              }else if(Q_No==4){
-                Question.html('Q-4: If Cannon is on the ground and have, firing velocity=20 m/s and angle=60°, then, what will be the Time period of the Cannonball motion ?');
-                Show_Answer_btn.html('Show Answer');
-                Answer='Time period=3.53 sec';
-              }else if(Q_No==5){
-                Question.html('Q-5: If Cannon is on the ground and have, firing velocity=20 m/s and angle=60°, then, what will be the instant height and velocity components at time=3 sec ?');
-                Show_Answer_btn.html('Show Answer');
-                Answer='Height=7.9 m, V=15.7 m/s, Vx=10 m/s (x direction), Vy=12.1 m/s (-y direction)';
-              }else if(Q_No==6){
-                Question.html('Q-6: If Cannon is on the ground and have, firing velocity=20 m/s and angle=60°, then, what will be the velocity components when cannonball hits the target?');
-                Show_Answer_btn.html('Show Answer');
-                Answer='V=20 m/s, Vx=10 m/s (x direction), Vy= 17.3 m/s (-y direction)';
-            }else if(Q_No==7){
-                Question.html('Q-8: If Cannon have, height=10 m, firing velocity=20 m/s and angle=60°, then, what will be the Range and Maximum height of the Cannonball  ?');
-                Show_Answer_btn.html('Show Answer');
-                Answer='Range=39.9 m, Maximum height=25.3 m';
-              }else if(Q_No==8){
-                Question.html('Q-9: If Cannon have, height=10 m, firing velocity=20 m/s and angle=60°, then, what will be the Time period of the Cannonball motion ?');
-                Show_Answer_btn.html('Show Answer');
-                Answer='Time period=4.04 sec';
-              }else if(Q_No==9){
-                Question.html('Q-10: If Cannon have, height=10 m, firing velocity=20 m/s , angle=60°, then, what will be the instant height and velocity components at time=3 sec  ?');
-                Show_Answer_btn.html('Show Answer');
-                Answer='Height=17.9 m, V=15.7 m/s, Vx=10 m/s (x direction), Vy=12.1 m/s (-y direction)';
-              }else if(Q_No==10){
-                Question.html('Q-11: If Cannon is on the ground and have, firing velocity=20 m/s, then, what should be the cannon angle for maximum range ? and also calculate the maximum range ?');
-                Show_Answer_btn.html('Show Answer');
-                Answer='Angle=45°, Maximum Range= 40.8 m';
-              }else if(Q_No==11){
-                  Question.html('Q-12: If Cannon have, height=20 m and fire in horizontal direction with firing velocity=20 m/s, then, what will be the Range and Time period of the Cannonball motion ?');
-                Show_Answer_btn.html('Show Answer');
-                Answer='Range=40.4 m, Time period=2.02 sec';
-              }else if(Q_No==12){
-                Question.html('Q-13: If Cannon have, height=20 m and fire in horizontal direction with firing velocity=20 m/s, then, what will be the velocity components when cannonball hit the target ?');
-                Show_Answer_btn.html('Show Answer');
-                Answer='V=28.1 m/s, Vx=20 m/s (x direction), Vy=19.8 m/s (-y direction)';
-              }else if(Q_No==13){
-                  Question.html('Q-14: If Cannon is on the ground and have, firing velocity=23 m/s and range=50 m, then, what will be the firing Cannon angle ?');
+                Answer = 'Range = 35.3 m';
+              } else if (Q_No == 2) {
+                  Question.html('Q-2: In the previous question, at what time and height does the cannonball reach zero velocity in the vertical upward direction?');
                   Show_Answer_btn.html('Show Answer');
-                  Answer='Angle=34°';
+                  Answer = 'Time = 1.76 sec, Height = 15.3 m';
+              } else if (Q_No == 3) {
+                  Question.html('Q-3: In Question 1, what is the maximum height reached by the cannonball, and what is its total time of flight?');
+                  Show_Answer_btn.html('Show Answer');
+                  Answer = 'Maximum height = 15.3 m, Time period = 3.53 sec';
+              } else if (Q_No == 4) {
+                  Question.html('Q-4: In Question 1, what are the instantaneous height and velocity components at t = 3 sec?');
+                  Show_Answer_btn.html('Show Answer');
+                  Answer = 'Height = 7.9 m, V = 15.7 m/s, Vx = 10 m/s (x-direction), Vy = 12.1 m/s (-y direction)';
+              } else if (Q_No == 5) {
+                  Question.html('Q-5: In Question 1, what are the velocity components of the cannonball when it hits the target?');
+                  Show_Answer_btn.html('Show Answer');
+                  Answer = 'V = 20 m/s, Vx = 10 m/s (x-direction), Vy = 17.3 m/s (-y direction)';
+              } else if (Q_No == 6) {
+                  Question.html('Q-6: If, in Question 1, the cannon is elevated to a height of 10 m, what will be the range, maximum height, and total time of flight of the cannonball?');
+                  Show_Answer_btn.html('Show Answer');
+                  Answer = 'Range = 39.9 m, Maximum height = 25.3 m, Time period = 4.04 sec';
+              } else if (Q_No == 7) {
+                  Question.html('Q-7: In Question 6, what are the instantaneous height and velocity components at t = 3 sec?');
+                  Show_Answer_btn.html('Show Answer');
+                  Answer = 'Height = 17.9 m, V = 15.7 m/s, Vx = 10 m/s (x-direction), Vy = 12.1 m/s (-y direction)';
+              } else if (Q_No == 8) {
+                  Question.html('Q-8: If a cannon is positioned on the ground with a firing velocity of 20 m/s, what should be the firing angle for maximum range? Also, calculate the maximum range.');
+                  Show_Answer_btn.html('Show Answer');
+                  Answer = 'Angle = 45°, Maximum Range = 40.8 m';
+              } else if (Q_No == 9) {
+                  Question.html('Q-9: A cannon is positioned at a height of 20 m and fires horizontally with a velocity of 20 m/s. What will be the range and total time of flight of the cannonball?');
+                  Show_Answer_btn.html('Show Answer');
+                  Answer = 'Range = 40.4 m, Time period = 2.02 sec';
+              } else if (Q_No == 10) {
+                  Question.html('Q-10: In the previous question, what are the velocity components of the cannonball when it hits the target?');
+                  Show_Answer_btn.html('Show Answer');
+                  Answer = 'V = 28.1 m/s, Vx = 20 m/s (x-direction), Vy = 19.8 m/s (-y direction)';
+              } else if (Q_No == 11) {
+                  Question.html('Q-11: A cannon is positioned on the ground with a firing velocity of 23 m/s and a range of 50 m. What is the required firing angle?');
+                  Show_Answer_btn.html('Show Answer');
+                  Answer = 'Angle = 34°';
               }else{
                 Q_No+=1;
               }
@@ -400,12 +384,12 @@ function input(){
      Hide_Outbtn.position(X_O+10,Y_O+5).style('font-size','15px').style('background-color','lightcoral').style('border-radius','5px').style('border','2px solid black');
  
     //----------------------THINKVIL QUESTIONS-------------------------------------------------------------------------------
-     Question_Box.position(0,0).size(width-360,200).style('background-color','RGBA(225,225,225)').style('border','1px solid black').style('border-radius','10px');
+     Question_Box.position(0,0).size(width-330,260).style('background-color','RGBA(225,225,225)').style('border','1px solid black').style('border-radius','10px');
      Question.position(50,20).style('font-size','20px').size(width-420,100);
-     Show_Answer_btn.position(100,130).style('font-size','20px').style('border','1px solid black').style('border-radius','5px');
+     Show_Answer_btn.position(100,150).style('font-size','20px').style('border','1px solid black').style('border-radius','5px');
      Hide_Qns.position(10,5).style('background-color','lightcoral').style('border-radius','5px');
-     Next_btn.position(width-430,150).size(60,30).style('background-color','RGBA(200,200,200,0.8)').style('font-size','12px').style('border-radius','40px').style('border','3px solid rgb(0)');
-     Previous_btn.position(width-500,150).size(60,30).style('background-color','RGBA(200,200,200,0.8)').style('font-size','12px').style('border-radius','40px').style('border','3px solid rgb(0)');
+     Next_btn.position(width-430,200).size(60,30).style('background-color','RGBA(200,200,200,0.8)').style('font-size','12px').style('border-radius','40px').style('border','3px solid rgb(0)');
+     Previous_btn.position(width-500,200).size(60,30).style('background-color','RGBA(200,200,200,0.8)').style('font-size','12px').style('border-radius','40px').style('border','3px solid rgb(0)');
   
 
    }
@@ -464,12 +448,12 @@ function input(){
      Hide_Outbtn.position(X_O+10,Y_O+5).style('background-color','lightcoral').style('border-radius','5px').style('border','2px solid black');
 
     //----------------------THINKVIL QUESTIONS-------------------------------------------------------------------------------
-     Question_Box.position(0,0).size(width,220).style('background-color','RGBA(225,225,225)').style('border','1px solid black').style('border-radius','10px');
+     Question_Box.position(0,0).size(width,260).style('background-color','RGBA(225,225,225)').style('border','1px solid black').style('border-radius','10px');
      Question.position(50,20).style('font-size','18px').size(width-100,100);
-     Show_Answer_btn.position(100,130).style('font-size','18px').style('border','1px solid black').style('border-radius','5px');
+     Show_Answer_btn.position(100,150).style('font-size','18px').style('border','1px solid black').style('border-radius','5px');
      Hide_Qns.position(10,5).style('background-color','lightcoral').style('border-radius','5px').style('border','1px solid black');
-     Next_btn.position(width-100,160).size(60,30).style('background-color','RGBA(200,200,200,1)').style('font-size','10px').style('border-radius','40px').style('border','2px solid rgb(0)');
-     Previous_btn.position(width-180,160).size(60,30).style('background-color','RGBA(200,200,200,1)').style('font-size','10px').style('border-radius','40px').style('border','2px solid rgb(0)');
+     Next_btn.position(width-100,200).size(60,30).style('background-color','RGBA(200,200,200,1)').style('font-size','10px').style('border-radius','40px').style('border','2px solid rgb(0)');
+     Previous_btn.position(width-180,200).size(60,30).style('background-color','RGBA(200,200,200,1)').style('font-size','10px').style('border-radius','40px').style('border','2px solid rgb(0)');
 
 
    }

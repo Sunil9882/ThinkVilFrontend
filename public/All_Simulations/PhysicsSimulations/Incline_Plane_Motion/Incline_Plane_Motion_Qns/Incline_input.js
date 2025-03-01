@@ -157,8 +157,9 @@ function input(){
 
   //---------------------THINKVIL QUESTIONS--------------------------------------------------
     Question_Box=createDiv('');
-    Question=createDiv('Instructions: <br>&nbsp;&nbsp;&nbsp;Press "Previous" and "Next" button for access thinkvil questions <br> &nbsp;&nbsp;&nbsp;Press "show Answer" button for finding correct answer.<br>&nbsp;&nbsp; Solve the questions in your Notebook and take the help of our simuation for better visualization and finding the correct answer');
+    Question = createDiv('Instructions:<br>&nbsp;&nbsp;&nbsp; Press the "Hide (-)" button in the upper left corner to hide the questions.<br>&nbsp;&nbsp;&nbsp; Press the "Previous" and "Next" buttons to access Thinkvil questions.<br>&nbsp;&nbsp;&nbsp; Press the "Show Answer" button to view the correct answer.<br>&nbsp;&nbsp;&nbsp; Solve the questions in your notebook and use our simulation for better visualization and to find the correct answer.');
     Show_Answer_btn=createButton('Show Answer');
+    Show_Answer_btn.hide();
     Show_Answer_btn.mousePressed(showanswer_fn);
         function showanswer_fn(){
           Show_Answer_btn.html(Answer)
@@ -168,6 +169,7 @@ function input(){
     let Q_No=0;
     Next_btn.mousePressed(next_fn);
         function next_fn(){
+          Show_Answer_btn.show();
           Next_btn.style('background-color','RGBA(200,200,200,0.1)')
           Q_No+=1;
           if(Q_No==1){
@@ -254,8 +256,7 @@ function input(){
             Next_btn.show();
             Previous_btn.show();
             Hide_Qns.mousePressed(Hideqns_fn);
-          }
-    
+          }      
 
   ResponsiveBigsize=function ResponsiveBigsize(){
       let X_I=width-320;
@@ -263,16 +264,18 @@ function input(){
       let X_O=width-320;
       let Y_O=360;
     
-      // ------------------------------START AND STOP BUTTON---------------------------------------------
-      buttonstart.position(width/2-100,5*height/6).style('background-color','green').style('border','3px solid rgb(0)').style('padding','20px').style('border-radius','30px');
-      buttonpause.position(width/2,5*height/6).style('border','3px solid rgb(0)').style('background-color','orange').style('padding','20px').style('border-radius','40px');
       
-      // ---------FULL SCREEN BUTTON-----------------------
-      fullbtn.position(width/2+400,5*height/6+20).style('background-color','RGB(225,225,225)').style('padding','5px').style('border-radius','5px');
+      // ------------------------------START AND STOP BUTTON---------------------------------------------
+      buttonstart.position(1*width/4-45,5*height/6).style('font-size','15px').style('background-color','green').style('border','3px solid rgb(0)').style('padding','18px').style('border-radius','30px');
+      buttonpause.position(1*width/4+45,5*height/6).style('font-size','15px').style('border','3px solid rgb(0)').style('background-color','orange').style('padding','18px').style('border-radius','40px');
       
       //--------------Zoom IN and OUT--------------------------------
-      Zoom_IN.position(width/2+200,5*height/6+20).style('font-size','13px').style('background-color','lightblue').style('padding','5px').style('border-radius','5px');
-      Zoom_OUT.position(width/2+270,5*height/6+20).style('font-size','13px').style('background-color','lightgreen').style('padding','5px').style('border-radius','5px');
+      Zoom_IN.position(2*width/4-45,5*height/6+10).style('font-size','13px').style('background-color','lightblue').style('padding','4px').style('border-radius','5px');
+      Zoom_OUT.position(2*width/4+45,5*height/6+10).style('font-size','13px').style('background-color','lightgreen').style('padding','4px').style('border-radius','5px');
+      
+      // ---------FULL SCREEN BUTTON-----------------------
+      fullbtn.show(); 
+      fullbtn.position(3*width/4,5*height/6+10).style('font-size','13px').style('background-color','RGB(225,225,225)').style('padding','4px').style('border-radius','5px');
       
       //-------------------INPUTS------------------------
       Input.position(X_I,Y_I).style('font-size','20px').style('border-radius','10px').style('border','2px solid black').style('background-color','RGB(225,225,225)').style('padding','5px 120px 250px 120px');
@@ -303,13 +306,14 @@ function input(){
       //------------------------OUTPUT HIDE AND SHOW BUTTON-----------------------------------
       Hide_Outbtn.position(X_O+10,Y_O+5).style('background-color','lightcoral').style('border-radius','5px');
       
-      //----------------------THINKVIL QUESTIONS-------------------------------------------------------------------------------
-      Question_Box.position(0,0).size(width-360,200).style('background-color','RGBA(225,225,225)').style('border','1px solid black').style('border-radius','10px');
+      
+     //----------------------THINKVIL QUESTIONS-------------------------------------------------------------------------------
+      Question_Box.position(0,0).size(width-340,260).style('background-color','RGBA(225,225,225)').style('border','2px solid black').style('border-radius','10px');
       Question.position(50,20).style('font-size','20px').size(width-420,100);
-      Show_Answer_btn.position(100,130).style('font-size','20px').style('border','1px solid black');
+      Show_Answer_btn.position(100,150).style('font-size','20px').style('border','1px solid black').style('border-radius','5px');
       Hide_Qns.position(10,5).style('background-color','lightcoral').style('border-radius','5px');
-      Next_btn.position(width-430,150).size(60,30).style('background-color','RGBA(200,200,200,0.8)').style('font-size','12px').style('border-radius','40px').style('border','3px solid rgb(0)');
-      Previous_btn.position(width-500,150).size(60,30).style('background-color','RGBA(200,200,200,0.8)').style('font-size','12px').style('border-radius','40px').style('border','3px solid rgb(0)');
+      Next_btn.position(width-430,200).size(60,30).style('background-color','RGBA(200,200,200,0.8)').style('font-size','12px').style('border-radius','40px').style('border','3px solid rgb(0)');
+      Previous_btn.position(width-500,200).size(60,30).style('background-color','RGBA(200,200,200,0.8)').style('font-size','12px').style('border-radius','40px').style('border','3px solid rgb(0)');
     
   }
 
@@ -318,19 +322,20 @@ function input(){
     //position
     let X_I=width-270;
     let Y_I=10;
-    let X_O=40;
+    let X_O=10;
     let Y_O=10;
   
     // ------------------------------START AND STOP BUTTON---------------------------------------------
-    buttonstart.position(1*width/4-45,5*height/6).style('font-size','17px').style('background-color','green').style('border','3px solid rgb(0)').style('padding','18px').style('border-radius','30px');
-    buttonpause.position(1*width/4+45,5*height/6).style('font-size','17px').style('border','3px solid rgb(0)').style('background-color','orange').style('padding','18px').style('border-radius','40px');
+    buttonstart.position(1*width/4-45,5*height/6).style('font-size','15px').style('background-color','green').style('border','3px solid rgb(0)').style('padding','18px').style('border-radius','30px');
+    buttonpause.position(1*width/4+45,5*height/6).style('font-size','15px').style('border','3px solid rgb(0)').style('background-color','orange').style('padding','18px').style('border-radius','40px');
     
     //--------------Zoom IN and OUT--------------------------------
-    Zoom_IN.position(2*width/4-45,5*height/6+10).style('font-size','17px').style('background-color','lightblue').style('padding','4px').style('border-radius','3px');
-    Zoom_OUT.position(2*width/4+45,5*height/6+10).style('font-size','17px').style('background-color','lightgreen').style('padding','4px').style('border-radius','3px');
+    Zoom_IN.position(2*width/4-45,5*height/6+10).style('font-size','13px').style('background-color','lightblue').style('padding','4px').style('border-radius','5px');
+    Zoom_OUT.position(2*width/4+45,5*height/6+10).style('font-size','13px').style('background-color','lightgreen').style('padding','4px').style('border-radius','5px');
     
     // ---------FULL SCREEN BUTTON-----------------------
-    fullbtn.position(3*width/4,5*height/6+10).style('font-size','17px').style('background-color','RGB(225,225,225)').style('padding','4px').style('border-radius','3px');
+    fullbtn.show(); 
+    fullbtn.position(3*width/4,5*height/6+10).style('font-size','13px').style('background-color','RGB(225,225,225)').style('padding','4px').style('border-radius','5px');
     
     //-------------------INPUTS------------------------
     Input.position(X_I,Y_I).style('font-size','18px').style('border-radius','10px').style('border','2px solid black').style('background-color','RGB(225,225,225,0.8)').style('padding','5px 100px 200px 100px');
@@ -360,72 +365,73 @@ function input(){
     
     //------------------------OUTPUT HIDE AND SHOW BUTTON-----------------------------------
     Hide_Outbtn.position(X_O+10,Y_O+5).style('background-color','lightcoral').style('border-radius','5px');
- 
-    //----------------------THINKVIL QUESTIONS-------------------------------------------------------------------------------
-     Question_Box.position(0,0).size(width,220).style('background-color','RGBA(225,225,225)').style('border','2px solid black').style('border-radius','10px');
-     Question.position(50,20).style('font-size','18px').size(width-100,100);
-     Show_Answer_btn.position(100,130).style('font-size','18px').style('border','1px solid black');
-     Hide_Qns.position(10,5).style('background-color','lightcoral').style('border-radius','5px').style('border','2px solid black');
-     Next_btn.position(width-100,160).size(60,30).style('background-color','RGBA(200,200,200,1)').style('font-size','10px').style('border-radius','40px').style('border','2px solid rgb(0)');
-     Previous_btn.position(width-180,160).size(60,30).style('background-color','RGBA(200,200,200,1)').style('font-size','10px').style('border-radius','40px').style('border','2px solid rgb(0)');
+  
+    //  /----------------------THINKVIL QUESTIONS-------------------------------------------------------------------------------
+    Question_Box.position(0,0).size(width,260).style('background-color','RGBA(225,225,225)').style('border','2px solid black').style('border-radius','10px');
+    Question.position(50,20).style('font-size','18px').size(width-100,100);
+    Show_Answer_btn.position(100,150).style('font-size','18px').style('border','1px solid black').style('border-radius','5px');
+    Hide_Qns.position(10,5).style('background-color','lightcoral').style('border-radius','5px').style('border','2px solid black');
+    Next_btn.position(width-100,200).size(60,30).style('background-color','RGBA(200,200,200,1)').style('font-size','10px').style('border-radius','40px').style('border','2px solid rgb(0)');
+    Previous_btn.position(width-180,200).size(60,30).style('background-color','RGBA(200,200,200,1)').style('font-size','10px').style('border-radius','40px').style('border','2px solid rgb(0)');
+
 
   }
   
   ResponsiveSmallsize=function ResponsiveSmallsize(){
     Zoom=0.5;   
     //position
-    let X_I=width-270;
-    let Y_I=10;
-    let X_O=10;
-    let Y_O=10;
+    let X_I=width-240;
+    let Y_I=20;
+    let X_O=20;
+    let Y_O=20;
   
     // ------------------------------START AND STOP BUTTON---------------------------------------------
-    buttonstart.position(1*width/4-40,5*height/6).style('font-size','13px').style('background-color','green').style('border','3px solid rgb(0)').style('padding','13px').style('border-radius','30px');
-    buttonpause.position(1*width/4+40,5*height/6).style('font-size','13px').style('border','3px solid rgb(0)').style('background-color','orange').style('padding','13px').style('border-radius','40px');
+    buttonstart.position(1*width/4-40,5*height/6).style('font-size','11px').style('background-color','green').style('border','3px solid rgb(0)').style('padding','10px').style('border-radius','30px');
+    buttonpause.position(1*width/4+40,5*height/6).style('font-size','11px').style('border','3px solid rgb(0)').style('background-color','orange').style('padding','10px').style('border-radius','40px');
     
     //--------------Zoom IN and OUT--------------------------------
-    Zoom_IN.position(2*width/4-35,5*height/6+10).style('font-size','13px').style('background-color','lightblue').style('padding','3px').style('border-radius','3px');
-    Zoom_OUT.position(2*width/4+35,5*height/6+10).style('font-size','13px').style('background-color','lightgreen').style('padding','3px').style('border-radius','3px');
+    Zoom_IN.position(2*width/4-35,5*height/6+10).style('font-size','11px').style('background-color','lightblue').style('padding','3px').style('border-radius','5px');
+    Zoom_OUT.position(2*width/4+35,5*height/6+10).style('font-size','11px').style('background-color','lightgreen').style('padding','3px').style('border-radius','5px');
     
     // ---------FULL SCREEN BUTTON-----------------------
     fullbtn.hide();
 
     //-------------------INPUTS------------------------
-    Input.position(X_I,Y_I).style('font-size','15px').style('border-radius','10px').style('border','1px solid black').style('background-color','RGB(225,225,225,0.8)').style('padding','5px 100px 200px 110px');
-    Input_checkbox.position(X_I+195,Y_I+25).style('transform','scale(1.5)');
-    MASS_Box.position(X_I+70,Y_I+25).style('font-size','15px').style('background-color','RGB(160,160,160)').style('padding','2px');
-    Mass_system.position(X_I+30,Y_I+55).style('font-size','15px');
-    System_Type_select.position(X_I+140,Y_I+55).style('font-size','13px');
-    Gravity.position(X_I+30,Y_I+80).style('font-size','15px');
-    Mass_A_Slider.position(X_I+140,Y_I+110).size(100,7);
-    Mass_A_Div.position(X_I+30,Y_I+105).style('font-size','15px');
-    Angle_A_Slider.position(X_I+140,Y_I+135).size(100,7);
-    Angle_A_Div.position(X_I+30,Y_I+130).style('font-size','15px');
-    Mass_B_Slider.position(X_I+140,Y_I+160).size(100,7);
-    Mass_B_Div.position(X_I+30,Y_I+155).style('font-size','15px');
-    Angle_B_Slider.position(X_I+140,Y_I+185).size(100,7);
-    Angle_B_Div.position(X_I+30,Y_I+180).style('font-size','15px');
+    Input.position(X_I,Y_I).style('font-size','11px').style('padding','5px 90px 160px 90px').style('border-radius','10px').style('border','1px solid black').style('background-color','RGB(225,225,225,0.8)');
+    Input_checkbox.position(X_I+160,Y_I).style('transform','scale(0.9)');
+    MASS_Box.position(X_I+70,Y_I+20).style('font-size','11px').style('background-color','RGB(160,160,160)').style('padding','2px');
+    Mass_system.position(X_I+25,Y_I+40).style('font-size','11px');
+    System_Type_select.position(X_I+100,Y_I+40).style('font-size','11px');
+    Gravity.position(X_I+25,Y_I+60).style('font-size','11px');
+    Mass_A_Slider.position(X_I+105,Y_I+80).size(100,5);
+    Mass_A_Div.position(X_I+25,Y_I+80).style('font-size','11px');
+    Angle_A_Slider.position(X_I+105,Y_I+100).size(100,5);
+    Angle_A_Div.position(X_I+25,Y_I+100).style('font-size','11px');
+    Mass_B_Slider.position(X_I+105,Y_I+120).size(100,5);
+    Mass_B_Div.position(X_I+25,Y_I+120).style('font-size','11px');
+    Angle_B_Slider.position(X_I+105,Y_I+140).size(100,5);
+    Angle_B_Div.position(X_I+25,Y_I+140).style('font-size','11px');
     
     //------------------------INPUT HIDE AND SHOW BUTTON-----------------------------------
-    Hide_INbtn.position(X_I+10,Y_I+5).style('background-color','lightcoral').style('border-radius','5px').style('border','1px solid black');
+    Hide_INbtn.position(X_I+10,Y_I+5).style('font-size','11px').style('background-color','lightcoral').style('border-radius','5px').style('border','1px solid black');
     
     // -------------------OUTPUT----------------------------------
-    Output.position(X_O,Y_O).style('font-size','15px').style('border-radius','10px').style('border','1px solid black').style('background-color','RGB(225,225,225,0.8)').style('padding','5px 80px 110px 80px');
-    Output_checkbox.position(X_O+180,Y_O+30).style('transform','scale(1.5)');
-    ACC_Div.position(X_O+55,Y_O+30).style('font-size','15px').style('background-color','RGB(160,160,160)').style('padding','2px');
-    Acc_AB_Div.position(X_O+40,Y_O+65).style('font-size','15px');
-    Ten_AB_Div.position(X_O+50,Y_O+90).style('font-size','15px');
+    Output.position(X_O,Y_O).style('font-size','11px').style('padding','5px 70px 80px 70px').style('border-radius','10px').style('border','1px solid black').style('background-color','RGB(225,225,225,0.8)');
+    Output_checkbox.position(X_O+140,Y_O).style('transform','scale(0.9)');
+    ACC_Div.position(X_O+55,Y_O+20).style('font-size','11px').style('background-color','RGB(160,160,160)').style('padding','2px');
+    Acc_AB_Div.position(X_O+40,Y_O+40).style('font-size','11px');
+    Ten_AB_Div.position(X_O+50,Y_O+60).style('font-size','11px');
     
     //------------------------OUTPUT HIDE AND SHOW BUTTON-----------------------------------
-    Hide_Outbtn.position(X_O+10,Y_O+5).style('background-color','lightcoral').style('border-radius','5px').style('border','1px solid black');
+    Hide_Outbtn.position(X_O+10,Y_O+5).style('font-size','11px').style('background-color','lightcoral').style('border-radius','5px').style('border','1px solid black');
     
     //----------------------THINKVIL QUESTIONS-------------------------------------------------------------------------------
-     Question_Box.position(0,0).size(width,180).style('background-color','RGBA(225,225,225)').style('border','1px solid black').style('border-radius','10px');
-     Question.position(50,20).style('font-size','15px').size(width-100,100);
-     Show_Answer_btn.position(100,115).style('font-size','15px').style('border','1px solid black');
-     Hide_Qns.position(10,5).style('background-color','lightcoral').style('border-radius','5px').style('border','1px solid black');
-     Next_btn.position(width-100,140).size(60,30).style('background-color','RGBA(200,200,200,1)').style('font-size','10px').style('border-radius','40px').style('border','2px solid rgb(0)');
-     Previous_btn.position(width-180,140).size(60,30).style('background-color','RGBA(200,200,200,1)').style('font-size','10px').style('border-radius','40px').style('border','2px solid rgb(0)');
+    Question_Box.position(0,0).size(width,190).style('background-color','RGBA(225,225,225)').style('border','1px solid black').style('border-radius','10px');
+    Question.position(50,20).style('font-size','14px').size(width-100,100);
+    Show_Answer_btn.position(100,120).style('font-size','14px').style('border','1px solid black').style('border-radius','5px');
+    Hide_Qns.position(10,5).style('background-color','lightcoral').style('border-radius','5px').style('border','1px solid black').style('border-radius','5px');
+    Next_btn.position(width-100,150).size(60,30).style('background-color','RGBA(200,200,200,1)').style('font-size','10px').style('border-radius','40px').style('border','2px solid rgb(0)');
+    Previous_btn.position(width-180,150).size(60,30).style('background-color','RGBA(200,200,200,1)').style('font-size','10px').style('border-radius','40px').style('border','2px solid rgb(0)');
 
   }
 

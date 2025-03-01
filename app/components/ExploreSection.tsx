@@ -1,53 +1,118 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function ExploreSection() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { clientX, clientY } = e;
+    setMousePos({ x: clientX, y: clientY });
+  };
+
+  const categories = [
+    {
+      title: "Physics",
+      description: "Explore the laws of motion, electricity, and more.",
+      href: "/simulations/physics",
+      bgColor: "from-pink-100 to-pink-300",
+      textColor: "text-sky-700",
+      hoverBg: "hover:from-pink-200 hover:to-pink-400",
+    },
+    {
+      title: "Mathematics",
+      description: "Master calculus, algebra, and geometry interactively.",
+      href: "/simulations/mathematics",
+      bgColor: "from-teal-100 to-teal-300",
+      textColor: "text-green-700",
+      hoverBg: "hover:from-teal-200 hover:to-teal-400",
+    },
+    {
+      title: "Chemistry",
+      description: "Experiment with chemical reactions and molecules.",
+      href: "/simulations/chemistry",
+      bgColor: "from-purple-100 to-purple-300",
+      textColor: "text-red-700",
+      hoverBg: "hover:from-purple-200 hover:to-purple-400",
+    },
+  ];
+
   return (
-    <section className="py-16 bg-gradient-to-tr from-gray-100 to-gray-200 text-center rounded-xl border-2">
-      <h2 className="text-4xl font-bold text-black mb-8">
-        Explore Our Simulations
-      </h2>
-      <p className="text-lg text-blue-600 max-w-2xl mx-auto mb-8">
-        Dive into interactive simulations that bring <br />
-        complex concepts to life in an engaging and fun way.
-      </p>
+    <section
+      className="py-20 bg-white text-center relative overflow-hidden"
+      onMouseMove={handleMouseMove}
+    >
+      {/* Cursor Effect */}
+      <motion.div
+        className="absolute w-32 h-32 bg-blue-500 bg-opacity-10 blur-3xl rounded-full pointer-events-none"
+        animate={{
+          x: mousePos.x - 64,
+          y: mousePos.y - 64,
+        }}
+        transition={{ type: "spring", stiffness: 50, damping: 15 }}
+      />
+
+      {/* Animated Heading */}
+      <motion.h2
+        className="text-5xl font-bold tracking-tight mb-6 text-gray-900 cursor-pointer"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ delay: 0.3, duration: 1 }}
+        whileHover={{ scale: 1.05, transition: { duration: 0.3 } ,color: "#374151" }}
+      >
+        Explore Our{" "}
+        <span
+          className="text-blue-600"
+          // whileHover={{ scale: 1.1, color: "#1e40af" }}
+        >
+          Simulations
+        </span>
+      </motion.h2>
+
+      {/* Animated Subheading */}
+      <motion.p
+        className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto mb-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ delay: 0.3, duration: 1 }}
+        whileHover={{ scale: 1.02, transition: { duration: 0.3 } ,color: "#374151" }}
+      >
+        Dive into interactive simulations that bring complex concepts to life <br />
+        in a fun, engaging, and intuitive way.
+      </motion.p>
 
       {/* Categories Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        {/* Physics */}
-        <Link href="/simulations/physics">
-          <div className="group block p-6 bg-pink-200 rounded-3xl shadow-lg hover:shadow-2xl transition cursor-pointer">
-            <h3 className="text-xl font-semibold text-sky-600 group-hover:underline">
-              Physics
-            </h3>
-            <p className="text-gray-600 mt-2">
-              Explore the laws of motion, electricity, and more.
-            </p>
-          </div>
-        </Link>
-
-        {/* Maths */}
-        <Link href="/simulations/mathematics">
-          <div className="group block p-6 bg-teal-200 rounded-3xl shadow-lg hover:shadow-2xl transition cursor-pointer">
-            <h3 className="text-xl font-semibold text-green-600 group-hover:underline">
-              Mathematics
-            </h3>
-            <p className="text-gray-600 mt-2">
-              Master calculus, algebra, and geometry interactively.
-            </p>
-          </div>
-        </Link>
-
-        {/* Chemistry */}
-        <Link href="/simulations/chemistry">
-          <div className="group block p-6 bg-purple-200 rounded-3xl shadow-lg hover:shadow-2xl transition cursor-pointer">
-            <h3 className="text-xl font-semibold text-red-600 group-hover:underline">
-              Chemistry
-            </h3>
-            <p className="text-gray-600 mt-2">
-              Experiment with chemical reactions and molecules.
-            </p>
-          </div>
-        </Link>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {categories.map((category, index) => (
+          <Link key={index} href={category.href} aria-label={`Explore ${category.title} simulations`}>
+            <motion.div
+              whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.15)" }}
+              whileTap={{ scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ delay: index * 0.2, duration: 0.8, ease: "easeOut" }}
+              className={`group block p-8 bg-gradient-to-tr ${category.bgColor} ${category.hoverBg} rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300`}
+            >
+              <motion.h3
+                className={`text-2xl font-semibold ${category.textColor} group-hover:underline cursor-pointer`}
+                whileHover={{ scale: 1.05, color: "#1e40af" }}
+              >
+                {category.title}
+              </motion.h3>
+              <motion.p
+                className="text-gray-700 mt-3 cursor-pointer"
+                whileHover={{ scale: 1.02, color: "#374151" }}
+              >
+                {category.description}
+              </motion.p>
+            </motion.div>
+          </Link>
+        ))}
       </div>
     </section>
   );

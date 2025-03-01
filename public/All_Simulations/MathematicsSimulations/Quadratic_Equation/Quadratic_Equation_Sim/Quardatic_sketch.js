@@ -1,24 +1,23 @@
+//---------------------CONTROLLER VARIABLES--------------------
+let fullbtn,Zoom_IN,Zoom_OUT;
 
-//INPUT VARIABLES
-let A_,B,C;                   //quadratic equation coefficiets
+//---------------------QUADRATIC EQUATIONS----------------------
+let Input,QUAD,y_Span,A,X_A,x_square,B,X_B,C,Hide_INbtn;
 
-//Solution variable
-let Output_ROOT;
-let Output_Axis_OS
-let Output_Yintersect;
-let Output_Vertex;
-let Show_Sol1;       
-//At point X box variables
-let X_cord;                    //X coordinate value
-let Y_at_X;
-let Tangent
-let Show_Sol2;
-//domain and range variables
-let Domain_Range;
-let Domain_type;
-let Domain_X1_Value;
-let Domain_X2_Value;
-let Show_Sol3;
+//------------------------SOLUTIONS------------------------------
+let Solution_Box,Show_soln_checkbox,SOLUTION,Output_ROOT,Output_Vertex,Output_Yintersect,Output_Axis_OS;
+
+//-------------------------VALUE AT POINT---------------------------
+let Value_XBox,At_pointX_checkbox,At_point,X,X_cord,Y_at_X,Tangent;
+
+//---------------------------DOMAIN AND RANGE-------------------------
+let DOMAIN_Box,Domain_checkbox,Domain_Div,DOMAIN,Domain_type,Domain_X1_Value,Domain_X2_Value,Domain_Range;
+let Hide_Out_sln,Hide_Out_X,Hide_Out_Domain;
+
+
+let Show_Sol1=false;       
+let Show_Sol2=false;
+let Show_Sol3=false;
 // let take scale 1m=25px
 let Scale=25;
 let Zoom=1;
@@ -28,41 +27,75 @@ let Medium_size=1400;
 let Small_size=500;
 let ResponsiveBigsize,ResponsiveMediumsize,ResponsiveSmallsize;
 
-let Canvas; 
+let Canvas,Dom_elements,full_landscape; 
 function setup() {
-   Canvas=createCanvas(window.outerWidth, window.outerHeight);
-  angleMode(DEGREES);
-  input();
-  if(window.outerWidth<=Small_size && window.outerHeight>window.outerWidth){
+    Canvas=createCanvas(document.documentElement.clientWidth, document.documentElement.clientHeight);
+    angleMode(DEGREES);
+    input();
+
+     if(document.documentElement.clientWidth<=Small_size && document.documentElement.clientHeight>document.documentElement.clientWidth){
+    //-----------------FULL SCREEN AND LANDSCAPE BUTTON FOR SMART PHONE SCREEN SIZE----------------------------------------
+     Dom_elements = [Canvas,fullbtn,Zoom_IN,Zoom_OUT,Input,QUAD,y_Span,A,X_A,x_square,B,X_B,C,Hide_INbtn, Solution_Box,Show_soln_checkbox,SOLUTION,Output_ROOT,Output_Vertex,Output_Yintersect,Output_Axis_OS,Value_XBox,At_pointX_checkbox,At_point,X,X_cord,Y_at_X,Tangent,DOMAIN_Box,Domain_checkbox,Domain_Div,DOMAIN,Domain_type,Domain_X1_Value,Domain_X2_Value,Domain_Range,Hide_Out_sln,Hide_Out_X,Hide_Out_Domain];
+    Dom_elements.forEach(el => el.hide());
+    full_landscape=createButton('Click here for Fullscreen and Landscape mode');
+    full_landscape.position(0,0).size(document.documentElement.clientWidth,document.documentElement.clientHeight).style('font-size','12px');
+    full_landscape.mousePressed(fulllandscape);
+
     ResponsiveSmallsize();
+    document.addEventListener("visibilitychange", handleVisibilityChange);                          //when smartphone screen off this will run
   }
-  else if(Small_size<window.outerWidth && window.outerWidth<=Medium_size){
+  else if(Small_size<document.documentElement.clientWidth && document.documentElement.clientWidth<=Medium_size){
     ResponsiveMediumsize();
-  }
-  else if( window.outerWidth>Medium_size){
-    ResponsiveBigsize();
     ResponsiveSmallsize();
+
+  }
+  else if( document.documentElement.clientWidth>Medium_size){
+    ResponsiveBigsize();
 
   }
 }
 
-function windowResized() {
-  resizeCanvas(window.outerWidth, window.outerHeight);
 
-    if (window.outerHeight<=Small_size && window.outerWidth > window.outerHeight) { // height and width interchange because change of orientation
+// --------------FULL SCREEN AND SCREEN OFF SMARTPHONE FUNCTION------------------
+function fulllandscape(){
+  fullscreen(true);
+  screen.orientation.lock("landscape").catch(console.error);
+  full_landscape.html('Exit Full Screen');
+  full_landscape.size(100,22).position(3*document.documentElement.clientHeight/4+30,9*document.documentElement.clientWidth/10).style('font-size','11px').style('background-color','RGB(225,225,225)').style('padding','2px').style('border-radius','5px');
+  Dom_elements.forEach(el => el.show());
+  full_landscape.mousePressed(exitlandscape);
+
+}
+function exitlandscape(){
+  fullscreen(false);
+  full_landscape.html('Click here for Fullscreen and Landscape mode');
+  full_landscape.position(0,0).size(document.documentElement.clientHeight,document.documentElement.clientWidth).style('font-size','12px');
+  Dom_elements.forEach(el => el.hide());
+  full_landscape.mousePressed(fulllandscape);
+}
+
+function handleVisibilityChange() {
+  full_landscape.html('Click here for Fullscreen and Landscape mode');
+  full_landscape.position(0,0).size(document.documentElement.clientHeight,document.documentElement.clientWidth).style('font-size','12px');
+  Dom_elements.forEach(el => el.hide());
+  full_landscape.mousePressed(fulllandscape);
+}
+
+//------------------------WINDOW RESIZE------------------------------------------------------
+function windowResized(){
+   resizeCanvas(document.documentElement.clientWidth, document.documentElement.clientHeight);
+
+    if (document.documentElement.clientHeight<=Small_size && document.documentElement.clientWidth > document.documentElement.clientHeight) { // height and width interchange because change of orientation
       ResponsiveSmallsize();
     } 
-    else if (Small_size<window.outerWidth && window.outerWidth <= Medium_size) {
+    else if (Small_size<document.documentElement.clientWidth && document.documentElement.clientWidth <= Medium_size) {
       ResponsiveMediumsize();
+
     } 
-    else if (window.outerWidth>Medium_size) {
+    else if (document.documentElement.clientWidth>Medium_size) {
       ResponsiveBigsize();
     }
 }
-
-
-
-
 let Scrol_X=0,Scrol_Y=0;        //for dragging the graph by mouse
 function mouseDragged(){
   if (mouseX<=width){

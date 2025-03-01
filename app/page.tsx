@@ -7,7 +7,7 @@ import ProvideSection from "./components/ProvideSection";
 
 export default function Home() {
   return (    
-    <div className="space-y-4 p-4 md:p-8 lg:p-14">
+    <div className="space-y-2 pt-20">
       <HomeSection /> 
       <ExploreSection />
       <ProvideSection />
