@@ -17,8 +17,10 @@ export default function Footer() {
         {/* Company Section */}
         <div>
           <h3 className="text-2xl font-bold mb-3">ThinkViL</h3>
-          <p className="text-gray-600 font-semibold">
-            Exploring the wonders of science and mathematics through interactive simulations.
+          <p className="text-gray-600 font-medium">
+            {/* Exploring the wonders of science and mathematics through interactive simulations. */}
+            The platform promotes the process of 'Think, Visualize, Learn' through interactive simulations, focusing on active, visual engagement with Science and Mathematics.
+            {/* The platform offers students a deeper understanding of these subjects using dynamic learning tools and simulations. */}
           </p>
         </div>
 
