@@ -37,7 +37,7 @@ export default function AboutSection() {
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2 
           className="text-5xl font-bold tracking-tight mb-12 cursor-pointer relative"
-          whileHover={{ scale: 1.08, color: "#2563eb" }}
+          whileHover={{ scale: 1.08, color: "#4F46E5" }}
         >
           {title.split(" ").map((word, wordIndex) => (
             <span key={wordIndex} className="relative inline-block mx-2">
@@ -52,7 +52,7 @@ export default function AboutSection() {
                 </motion.span>
               ))}
               {word === "Creators" && (
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 text-red-800"></div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-indigo-600"></div>
               )}
             </span>
           ))}
@@ -91,7 +91,7 @@ export default function AboutSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`LinkedIn profile of ${person.name}`}
-                  className="inline-flex items-center gap-2 text-blue-600 hover:underline transition"
+                  className="inline-flex items-center gap-2 text-indigo-600 hover:underline transition"
                 >
                   <Image
                     src="/All_Images/AboutPage/linkedin_icon.png"
@@ -115,34 +115,32 @@ export default function AboutSection() {
           transition={{ duration: 1 }}
         >
           <p>
-            Hey, We’re <span className="font-semibold text-blue-600">Ashok Kumar</span> and
-            <span className="font-semibold text-blue-600"> Tara Chand Yadav</span>, alumni of
-            <span className="font-semibold text-blue-600"> NIT Rourkela</span> and the
-            <span className="font-semibold text-blue-600"> founders</span> of
-            <span className="font-semibold text-blue-600"> ThinkVil</span>.
+            Hey, We’re <span className="font-semibold text-indigo-600">Ashok Kumar</span> and{" "}
+            <span className="font-semibold text-indigo-600"> Tara Chand Yadav</span>, alumni of{" "}
+            <span className="font-semibold text-indigo-600"> NIT Rourkela</span> and the{" "}
+            <span className="font-semibold text-indigo-600"> founders</span> of{" "}
+            <span className="font-semibold text-indigo-600"> ThinkViL</span>.
           </p>
           <p>
             During our JEE preparation, we struggled with physics concepts requiring deep visualization.
-            This challenge led Ashok to create <span className="font-semibold text-blue-600">ThinkVil</span>,
-            with Tara joining as a co-founder, to build a platform where students can explore
-            science and mathematics through <span className="font-semibold text-blue-600">interactive simulations</span>,
-            making learning more engaging and intuitive.
+            This challenge led Ashok to create{" "}
+            <span className="font-semibold text-indigo-600">ThinkViL</span>, with Tara Chand joining as a co-founder,
+            to build a platform where students can explore science and mathematics through{" "}
+            <span className="font-semibold text-indigo-600">interactive simulations</span>, making learning more engaging and intuitive.
           </p>
           <p>
-            ThinkVil also helps teachers simplify complex topics, making learning fun for students.
-            Our mission is to make science accessible to everyone.
+            ThinkViL helps educators to simplify complex topics, making learning fun for students.
           </p>
           <p>
-            If you find our simulations helpful, consider supporting us with a donation.
-            Your contribution allows us to continue providing free, high-quality learning resources.
+            If you find our simulations helpful, consider supporting us with a donation. Your contribution helps us to create more high-quality content-free or at most affordable.
           </p>
           <p>
-            Share your feedback at
+            Share your feedback at{" "}
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.thinkvil@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-blue-600 hover:underline"
+              className="font-semibold text-indigo-600 hover:underline"
             >
               contact.thinkvil@gmail.com
             </a>
@@ -156,7 +154,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <Link href="/donate">
-            <span className="inline-block px-8 py-3 text-xl font-bold bg-red-600 text-white rounded-full shadow-md hover:bg-blue-700 transition cursor-pointer focus:ring-4 focus:ring-blue-300 hover:text-black">
+            <span className="inline-block px-8 py-3 text-xl font-bold bg-indigo-600 text-white rounded-full shadow-md hover:bg-indigo-700 transition cursor-pointer focus:ring-4 focus:ring-indigo-300">
               Support
             </span>
           </Link>

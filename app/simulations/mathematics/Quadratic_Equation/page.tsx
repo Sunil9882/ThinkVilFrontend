@@ -34,7 +34,7 @@ const QuadraticEquation = () => {
       <div className="w-full max-w-3xl flex justify-center mb-6">
         <iframe
           className="w-full aspect-video rounded-xl shadow-lg"
-          src="https://www.youtube.com/embed/OGoetWCRVyM"
+          src="https://www.youtube.com/embed/68k1a0ISGBI"
           title="Quadratic Equation Tutorial"
           allowFullScreen
         ></iframe>

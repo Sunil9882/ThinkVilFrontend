@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function VisionSection() {
   return (
     <motion.section
-      className="py-12 px-4 sm:px-6 md:px-8 bg-gray-50 text-gray-900"
+      className="py-12 px-4 sm:px-6 md:px-8 text-gray-900"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -23,7 +23,7 @@ export default function VisionSection() {
             visible: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 1, ease: "easeOut" }}
-          whileHover={{ scale: 1.05, color: "#2563eb" }} // Scale and color change on hover
+          whileHover={{ scale: 1.05, color: "#2563eb" }} 
         >
           Our{" "}
           <motion.span
@@ -33,7 +33,7 @@ export default function VisionSection() {
               visible: { opacity: 1, x: 0 },
             }}
             transition={{ duration: 1, ease: "easeOut" }}
-            whileHover={{ scale: 1.1, color: "#1e40af" }} // Slightly larger & darker on hover
+            whileHover={{ scale: 1.1, color: "#1e40af" }} 
           >
             Vision
           </motion.span>
@@ -47,9 +47,13 @@ export default function VisionSection() {
             visible: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 1 }}
-          whileHover={{ scale: 1.02, color: "#374151" }} // Subtle pop effect
+          whileHover={{ scale: 1.02, color: "#374151" }}
         >
-          At <motion.span className="font-bold text-blue-700" whileHover={{ scale: 1.1 }}>ThinkVil</motion.span>, we strive to make{" "}
+          At{" "}
+          <motion.span className="font-bold text-blue-700" whileHover={{ scale: 1.1 }}>
+            ThinkViL
+          </motion.span>
+          , we are committed to making{" "}
           <motion.span
             className="text-blue-700 font-semibold cursor-pointer"
             variants={{
@@ -59,22 +63,22 @@ export default function VisionSection() {
             transition={{ duration: 1, delay: 0.2 }}
             whileHover={{ scale: 1.05, color: "#1e40af" }}
           >
-            science and mathematics
+            STEM education
           </motion.span>{" "}
-          more <motion.span className="font-semibold" whileHover={{ scale: 1.05, color: "#000" }}>accessible, engaging, and fun</motion.span>. Through{" "}
+          more{" "}
+          <motion.span className="font-semibold" whileHover={{ scale: 1.05, color: "#000" }}>
+            accessible, engaging, and enjoyable
+          </motion.span>
+          . Our interactive simulations bridge the gap between abstract concepts and real-world applications, fostering a deeper understanding for learners of all ages.
+          <br />
+          Our vision is to continuously explore innovative ways to simplify scientific concepts, making them easier to grasp and more engaging. In the future, we aim to expand our focus to{" "}
           <motion.span
-            className="font-semibold text-blue-700 cursor-pointer"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 1, delay: 0.4 }}
+            className="text-blue-700 font-semibold cursor-pointer"
             whileHover={{ scale: 1.05, color: "#1e40af" }}
           >
-            interactive simulations
-          </motion.span>
-          , we bridge the gap between abstract concepts and real-world applications,
-          fostering a deeper understanding for learners of all ages.
+            educational games, 3D simulations, and cutting-edge AR/VR technologies
+          </motion.span>{" "}
+          to revolutionize classroom learning.
         </motion.p>
 
         {/* Empowerment Message */}
@@ -87,7 +91,7 @@ export default function VisionSection() {
           transition={{ duration: 1, delay: 0.6 }}
           whileHover={{ scale: 1.1, color: "#000" }}
         >
-          Empowering learners through interactive technology.
+          Join us in our mission to make science education more accessible and impactful for everyone!
         </motion.p>
 
         {/* Video Section */}
