@@ -14,19 +14,19 @@ const InclinePlaneMotion = () => {
     setLoadingMessage(message);
 
     setTimeout(() => {
-      router.push(url); // Use Next.js router for client-side navigation
-    }, 1000);  // Show loading for 1 second before redirection
+      router.replace(url); // Prevents users from going back to the loading screen
+    }, 1000); // Simulated delay for smooth transition
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-300 flex flex-col items-center rounded-2xl px-4">
+    <div className="min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-100 to-green-300 animate-bg px-4 py-6 rounded-2xl">
       {/* Header */}
-      <div className="w-full bg-blue-400 text-black text-center py-6 text-2xl font-semibold mt-12 rounded-xl">
-      Incline Plane Motion Simulation
-      </div>
+      <header className="bg-blue-400 w-full text-black text-center py-6 text-2xl font-semibold mt-12 rounded-xl shadow-lg">
+        Incline Plane Motion Simulation
+      </header>
 
       {/* Title */}
-      <h2 className="w-full text-center md:text-2xl font-bold mt-2 mb-6 text-xl rounded-xl">
+      <h2 className="text-center text-xl md:text-2xl font-bold mt-2 mb-6 rounded-xl">
         How to Use Incline Plane Motion - Interactive Simulation
       </h2>
 
@@ -41,7 +41,7 @@ const InclinePlaneMotion = () => {
       </div>
 
       {/* Button Section */}
-      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 mt-2 py-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2 py-2">
         <button
           onClick={() =>
             startSimulation(
@@ -49,7 +49,8 @@ const InclinePlaneMotion = () => {
               "/All_Simulations/PhysicsSimulations/Incline_Plane_Motion/Incline_Plane_Motion_Sim/index.html"
             )
           }
-          className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
+          className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition-all duration-300 hover:scale-95 font-bold"
+          aria-label="Start Incline Plane Motion Simulation"
         >
           Start Simulation
         </button>
@@ -60,35 +61,57 @@ const InclinePlaneMotion = () => {
               "/All_Simulations/PhysicsSimulations/Incline_Plane_Motion/Incline_Plane_Motion_Qns/index.html"
             )
           }
-          className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition duration-300 hover:scale-95"
+          className="bg-sky-500 text-white text-lg px-10 py-4 rounded-xl shadow-md hover:bg-green-500 active:bg-green-800 transition-all duration-300 hover:scale-95 font-bold"
+          aria-label="ThinkViL Questions"
         >
           ThinkViL Questions
         </button>
       </div>
 
-      {/* ThinkViL Loading Page */}
+      {/* ThinkViL Loading Overlay */}
       {loading && (
-        <div className="fixed inset-0 bg-white flex flex-col items-center justify-center">
-          {/* ThinkVil Logo */}
+        <div className="fixed inset-0 bg-white/90 backdrop-blur-lg flex flex-col items-center justify-center">
+          {/* ThinkViL Logo */}
           <h1 className="text-4xl font-bold text-black">ThinkViL</h1>
           <p className="text-lg text-gray-600">{loadingMessage}</p>
 
-          {/* Progress Bar */}
-          <div className="w-56 h-2 bg-gray-300 mt-4 rounded-full overflow-hidden">
-            <div className="h-full bg-black animate-progress"></div>
+          {/* Loading Spinner */}
+          <div className="mt-4">
+            <svg
+              className="animate-spin h-10 w-10 text-blue-600"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8v8H4z"
+              ></path>
+            </svg>
           </div>
         </div>
       )}
 
-      {/* Tailwind CSS Animation for Progress Bar */}
+      {/* Tailwind CSS Animations */}
       <style>
         {`
-          @keyframes progressAnimation {
-            0% { width: 0%; }
-            100% { width: 100%; }
+          @keyframes bgAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
           }
-          .animate-progress {
-            animation: progressAnimation 2.5s linear forwards;
+          .animate-bg {
+            background-size: 300% 300%;
+            animation: bgAnimation 10s infinite alternate ease-in-out;
           }
         `}
       </style>

@@ -2,15 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 const chemistryTopics = [
-  { title: "Periodic Table", image: "/All_Images/Simulation_Images/Chemistry/Periodic_Table.png", link: "/simulations/chemistry/Periodic_Table" },
-  { title: "Hydrogen Spectrum", image: "/All_Images/Simulation_Images/Chemistry/Periodic_Table.png", link: "/simulations/chemistry/Hydrogen_Spectrum" },
-  // { title: "Physical Chemistry", image: "/aim1.png" , link: "/chemistry/physical-chemistry"  },
-  // { title: "Analytical Chemistry", image: "/aim1.png", link: "/chemistry/analytical-chemistry" },
-  // { title: "Electrochemistry", image: "/aim1.png", link: "/chemistry/electrochemistry" },
-  // { title: "Chemical Bonding", image: "/aim1.png", link: "/chemistry/chemical-bonding" },
-  // { title: "Thermodynamics", image: "/aim1.png", link: "/chemistry/thermodynamics" },
-  // { title: "Periodic Table", image: "/aim1.png", link: "/chemistry/periodic-table" },
-  // { title: "Reaction Mechanisms", image: "/aim1.png", link: "/chemistry/reaction-mechanisms" },
+  { 
+    title: "Periodic Table", 
+    image: "/All_Images/Simulation_Images/Chemistry/Periodic_Table.png", 
+    link: "/simulations/chemistry/Periodic_Table" 
+  },
+  // { 
+  //   title: "Hydrogen Spectrum", 
+  //   image: "/All_Images/Simulation_Images/Chemistry/Periodic_Table.png", 
+  //   link: "/simulations/chemistry/Hydrogen_Spectrum" 
+  // },
 ];
 
 export default function Chemistry() {
@@ -30,30 +31,37 @@ interface SubjectPageProps {
 
 function SubjectPage({ title, topics }: SubjectPageProps) {
   return (
-    <div className="bg-gray-100 min-h-screen rounded-2xl">
-      <header className="bg-teal-600 text-white text-center py-6 text-3xl font-semibold mt-12 rounded-2xl">
+    <div className="min-h-screen bg-gray-100 py-4">
+      {/* Header Section */}
+      <header className="bg-teal-600 text-white text-center py-4 text-3xl font-semibold mt-12 rounded-2xl">
         {title}
       </header>
 
-      <div className="container mx-auto px-4 py-6">
+      {/* Topics Section */}
+      <div className="container mx-auto px-12 py-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {topics.map((topic, index) => (
             <div
               key={index}
-              className="bg-green-300 shadow-lg rounded-3xl p-6 hover:bg-green-400 hover:scale-105 transition-all duration-300 flex flex-col items-center"
+              className="bg-green-300 shadow-lg rounded-3xl py-4 px-0 transition-all duration-300 flex flex-col items-center"
             >
-              <div className="flex justify-center mb-4">
+              {/* Image Section with In-Out Hover Effect */}
+              <div className="relative overflow-hidden rounded-xl">
                 <Image
                   src={topic.image}
                   alt={topic.title}
                   width={300}
                   height={200}
-                  className="rounded-3xl"
+                  className="rounded-xl transform transition-transform duration-500 ease-in-out scale-95 hover:scale-110"
                 />
               </div>
+
+              {/* Title */}
               <h2 className="text-xl font-semibold mt-4 text-center">{topic.title}</h2>
+
+              {/* Explore Button */}
               <Link href={topic.link}>
-                <button className="mt-4 bg-sky-500 text-white px-4 py-2 rounded-xl hover:bg-sky-700 transition duration-300 block mx-auto">
+                <button className="mt-4 bg-sky-700 text-white px-4 py-2 rounded-xl hover:bg-sky-500 transition duration-300 block mx-auto hover:text-black font-bold">
                   Explore
                 </button>
               </Link>

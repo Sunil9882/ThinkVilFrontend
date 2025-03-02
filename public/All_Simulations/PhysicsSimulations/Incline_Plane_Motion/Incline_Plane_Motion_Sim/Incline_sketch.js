@@ -20,67 +20,69 @@ let Medium_size=1400;
 let Small_size=500;
 let ResponsiveBigsize,ResponsiveMediumsize,ResponsiveSmallsize;
 
+let Dom_elements,full_landscape,Canvas;
 function setup() {
-  let Canvas=createCanvas(window.outerWidth, window.outerHeight);
+  Canvas=createCanvas(document.documentElement.clientWidth, document.documentElement.clientHeight);
   angleMode(DEGREES);
   textSize(18);
   input();
-  if(window.outerWidth<=Small_size && window.outerHeight>window.outerWidth){
+  if(document.documentElement.clientWidth<=Small_size && document.documentElement.clientHeight>document.documentElement.clientWidth){
 
     // -----------------FULL SCREEN AND LANDSCAPE BUTTON FOR SMART PHONE SCREEN SIZE----------------------------------------
-    let Dom_elements = [Canvas,buttonstart,buttonpause,Zoom_IN,Zoom_OUT,fullbtn, Input,MASS_Box,Mass_system,Gravity,Input_checkbox,Hide_INbtn,Mass_A_Slider,Angle_A_Slider,Mass_B_Slider,Angle_B_Slider,System_Type_select,Mass_A_Div,Angle_A_Div,Mass_B_Div,Angle_B_Div,Output,ACC_Div,Output_checkbox,Hide_Outbtn,Acc_AB_Div,Ten_AB_Div];
+    Dom_elements = [Canvas,buttonstart,buttonpause,Zoom_IN,Zoom_OUT,fullbtn, Input,MASS_Box,Mass_system,Gravity,Input_checkbox,Hide_INbtn,Mass_A_Slider,Angle_A_Slider,Mass_B_Slider,Angle_B_Slider,System_Type_select,Mass_A_Div,Angle_A_Div,Mass_B_Div,Angle_B_Div,Output,ACC_Div,Output_checkbox,Hide_Outbtn,Acc_AB_Div,Ten_AB_Div];
     Dom_elements.forEach(el => el.hide());
-
-    let full_landscape=createButton('Click here for Fullscreen and Landscape mode');
-    full_landscape.position(0,0).size(window.outerWidth,window.outerHeight).style('font-size','12px');
+    full_landscape=createButton('Click here for Fullscreen and Landscape mode');
+    full_landscape.position(0,0).size(document.documentElement.clientWidth,document.documentElement.clientHeight).style('font-size','11px').style('border-radius','5px');
     full_landscape.mousePressed(fulllandscape);
-          function fulllandscape(){
-            fullscreen(true);
-            if (screen.orientation && screen.orientation.lock) {
-              screen.orientation.lock("landscape").catch(function(error) {
-                console.error("Orientation lock failed: ", error);
-                alert("Orientation lock failed: " + error.message);
-              });
-            } else {
-               console.warn("Screen orientation API not supported.");
-                alert("Screen orientation API not supported. Please rotate the screen in Landscape mode");
-             }
-            full_landscape.html('Exit Full Screen');
-            full_landscape.size(100,25).position(3*height/4+50,5*width/6+10).style('font-size','12px').style('background-color','RGB(225,225,225)').style('padding','2px').style('border-radius','2px');
-            full_landscape.mousePressed(exitlandscape);
-            //--------------Show all DOM elements------------------------------------- 
-            Dom_elements.forEach(el => el.show());
-          }
-          function exitlandscape(){
-            fullscreen(false);
-            full_landscape.html('Click here for Fullscreen and Landscape mode');
-            full_landscape.position(0,0).size(window.outerHeight,window.outerWidth).style('font-size','12px');
-            full_landscape.mousePressed(fulllandscape);
-            //----Hide all DOM elements--------------------------------------------------------------
-            Dom_elements.forEach(el => el.hide());
-          }
 
     ResponsiveSmallsize();
+    document.addEventListener("visibilitychange", handleVisibilityChange);                          //when smartphone screen off this will run
   }
-  else if(Small_size<window.outerWidth && window.outerWidth<=Medium_size){
+  else if(Small_size<document.documentElement.clientWidth && document.documentElement.clientWidth<=Medium_size){
     ResponsiveMediumsize();
   }
-  else if( window.outerWidth>Medium_size){
+  else if( document.documentElement.clientWidth>Medium_size){
     ResponsiveBigsize();
   }
 }
 
-//RESIZE CANVAS
-function windowResized() {
-  resizeCanvas(window.outerWidth, window.outerHeight);
+// --------------FULL SCREEN AND SCREEN OFF SMARTPHONE FUNCTION------------------
+function fulllandscape(){
+  fullscreen(true);
+  screen.orientation.lock("landscape").catch(console.error);
+  full_landscape.html('Exit Full Screen');
+  full_landscape.size(100,22).position(3*document.documentElement.clientHeight/4,5*document.documentElement.clientWidth/6+10).style('font-size','11px').style('background-color','RGB(225,225,225)').style('padding','2px').style('border-radius','5px');
+  Dom_elements.forEach(el => el.show());
+  full_landscape.mousePressed(exitlandscape);
 
-    if (window.outerHeight<=Small_size && window.outerWidth > window.outerHeight) { // height and width interchange because change of orientation
+}
+function exitlandscape(){
+  fullscreen(false);
+  full_landscape.html('Click here for Fullscreen and Landscape mode');
+  full_landscape.position(0,0).size(document.documentElement.clientHeight,document.documentElement.clientWidth).style('font-size','12px');
+  Dom_elements.forEach(el => el.hide());
+  full_landscape.mousePressed(fulllandscape);
+
+}
+
+function handleVisibilityChange() {
+  full_landscape.html('Click here for Fullscreen and Landscape mode');
+  full_landscape.position(0,0).size(document.documentElement.clientHeight,document.documentElement.clientWidth).style('font-size','12px');
+  Dom_elements.forEach(el => el.hide());
+  full_landscape.mousePressed(fulllandscape);
+}
+
+//------------------------WINDOW RESIZE------------------------------------------------------
+function windowResized(){
+  resizeCanvas(document.documentElement.clientWidth, document.documentElement.clientHeight);
+
+    if (document.documentElement.clientHeight<=Small_size && document.documentElement.clientWidth > document.documentElement.clientHeight) { // height and width interchange because change of orientation
       ResponsiveSmallsize();
     } 
-    else if (Small_size<window.outerWidth && window.outerWidth <= Medium_size) {
+    else if (Small_size<document.documentElement.clientWidth && document.documentElement.clientWidth <= Medium_size) {
       ResponsiveMediumsize();
     } 
-    else if (window.outerWidth>Medium_size) {
+    else if (document.documentElement.clientWidth>Medium_size) {
       ResponsiveBigsize();
     }
 }

@@ -3,9 +3,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
-import FooterWrapper from "./components/FooterWrapper"; 
+
 import type React from "react";
 import { SessionProvider } from "next-auth/react";
+
+import Footer from "./components/Footer";
 import HomeSection from "./components/HomeSection";
 import ExploreSection from "./components/ExploreSection";
 import ProvideSection from "./components/ProvideSection";
@@ -24,13 +26,15 @@ export default function RootLayout({
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <SessionProvider>
           <Header />
-          <main className="flex-grow container mx-auto px-4 py-8">{children}</main>
-          {/* <HomeSection /> */}
-          {/* <ExploreSection /> */}
-          {/* <ProvideSection /> */}
-          {/* <VisionSection /> */}
-          {/* <AboutSection /> */}
-          <FooterWrapper />
+          <main className="flex-grow container mx-auto px-10 py-0">{children}
+            {/* <HomeSection /> 
+            <ExploreSection />
+            <ProvideSection />
+            <VisionSection />
+            <AboutSection /> */}
+          </main>
+          
+          <Footer />
         </SessionProvider>
       </body>
     </html>

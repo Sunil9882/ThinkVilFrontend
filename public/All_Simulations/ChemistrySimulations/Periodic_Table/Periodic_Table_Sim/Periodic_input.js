@@ -76,7 +76,7 @@ function input(){
           Gas.hide();
           let S_Block_color=[H,Li,Na,K,Rb,Cs,Fr,Be,Mg,Ca,Sr,Ba,Ra];
           for(var i=0;i<S_Block_color.length;i++){
-            S_Block_color[i].style('background-color','black');
+            S_Block_color[i].style('background-color','rgb(95, 86, 4)');
           }
           let D_Block_color=[Sc,Y,Ti,Zr,Hf,Rf,V,Nb,Ta,Db,Cr,Mo,W,Sg,Mn,Tc,Re,Bh,Fe,Ru,Os,Hs,Co,Rh,Ir,Mt,Ni,Pd,Pt,Ds,Cu,Ag,Au,Rg,Zn,Cd,Hg,Cn];
           for(var i=0;i<D_Block_color.length;i++){
@@ -110,39 +110,39 @@ function input(){
           Gas.hide();
           let Alkali_color=[Li,Na,K,Rb,Cs,Fr];
           for(var i=0;i<Alkali_color.length;i++){
-            Alkali_color[i].style('background-color','#36454F');
+            Alkali_color[i].style('background-color','#531c62');
           }
           let Alkaline_color=[Be,Mg,Ca,Sr,Ba,Ra];
           for(var i=0;i<Alkaline_color.length;i++){
-            Alkaline_color[i].style('background-color','#023020');
+            Alkaline_color[i].style('background-color','#083059');
           }
           let Lanthanoids_color=[Lanthenite,La,Ce,Pr,Nd,Pm,Sm,Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu];
           for(var i=0;i<Lanthanoids_color.length;i++){
-            Lanthanoids_color[i].style('background-color','#1d2951');
+            Lanthanoids_color[i].style('background-color','#186d73');
           }
           let Aktinoids_color=[Actinide,Ac,Th,Pa,U,Np,Pu,Am,Cm,Bk,Cf,Es,Fm,Md,No,Lr];
           for(var i=0;i<Aktinoids_color.length;i++){
-            Aktinoids_color[i].style('background-color','#e30022');
+            Aktinoids_color[i].style('background-color','#136743');
           }
           let Transition_color=[Sc,Y,Ti,Zr,Hf,Rf,V,Nb,Ta,Db,Cr,Mo,W,Sg,Mn,Tc,Re,Bh,Fe,Ru,Os,Hs,Co,Rh,Ir,Mt,Ni,Pd,Pt,Ds,Cu,Ag,Au,Rg,Zn,Cd,Hg,Cn];
           for(var i=0;i<Transition_color.length;i++){
-            Transition_color[i].style('background-color','#e30022');
+            Transition_color[i].style('background-color','#2E4053');
           }
           let Post_Transition_color=[Al,Ga,In,Tl,Nh,Sn,Pb,Fl,Bi,Mc,Lv];
           for(var i=0;i<Post_Transition_color.length;i++){
-            Post_Transition_color[i].style('background-color','#191970');
+            Post_Transition_color[i].style('background-color','#556B2F');
           }
           let Metalloids_color=[B,Si,Ge,As,Sb,Te,Po];
           for(var i=0;i<Metalloids_color.length;i++){
-            Metalloids_color[i].style('background-color','#e2725b');
+            Metalloids_color[i].style('background-color','#710d42');
           }
           let O_Nonmetals_color=[H,C,N,O,F,P,S,Cl,Se,Br,I,At,Ts];
           for(var i=0;i<O_Nonmetals_color.length;i++){
-            O_Nonmetals_color[i].style('background-color','#8B4513');
+            O_Nonmetals_color[i].style('background-color','#6E2C00');
           }
           let Nobal_color=[He,Ne,Ar,Kr,Xe,Rn,Og];
           for(var i=0;i<Nobal_color.length;i++){
-            Nobal_color[i].style('background-color','#4e1609');
+            Nobal_color[i].style('background-color','#424949');
           }
         }else{
           S_block.hide();
@@ -163,15 +163,15 @@ function input(){
           Gas.show();
           let Solid_color=[Li,Na,K,Rb,Cs,Fr,Be,Mg,Ca,Sr,Ba,Ra,Sc,Y,Ti,Zr,Hf,Rf,V,Nb,Ta,Db,Cr,Mo,W,Sg,Mn,Tc,Re,Bh,Fe,Ru,Os,Hs,Co,Rh,Ir,Mt,Ni,Pd,Pt,Ds,Cu,Ag,Au,Rg,Zn,Cd,Cn,B,Al,Ga,In,Tl,Nh,C,Si,Ge,Sn,Pb,Fl,P,As,Sb,Bi,Mc,S,Se,Te,Po,Lv,I,At,Ts,Lanthenite,La,Ce,Pr,Nd,Pm,Sm,Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu,Actinide,Ac,Th,Pa,U,Np,Pu,Am,Cm,Bk,Cf,Es,Fm,Md,No,Lr];
           for(var i=0;i<Solid_color.length;i++){
-            Solid_color[i].style('background-color','#8B4513');
+            Solid_color[i].style('background-color','#8d552d');
           }
           let Liquid_color=[Hg,Br];
           for(var i=0;i<Liquid_color.length;i++){
-            Liquid_color[i].style('background-color','#eC4513');
+            Liquid_color[i].style('background-color',' #1F618D ');
           }
           let Gas_color=[N,H,He,Ne,O,F,Cl,Ne,Ar,Kr,Xe,Rn,Og];
           for(var i=0;i<Gas_color.length;i++){
-            Gas_color[i].style('background-color','#9A0993');
+            Gas_color[i].style('background-color','#2E4053');
           }
         }
       }
@@ -488,12 +488,14 @@ function input(){
   ResponsiveBigsize=function ResponsiveBigsize(){
       //RADIO
         let X_Radio=600;
-        let Y_Radio=150;
+        let Y_Radio=document.documentElement.clientHeight/5;
         // heading Name 
         let X_C=300;
-        let Y_C=50;
+        let Y_C=document.documentElement.clientHeight/20;
 
-        let  x=window.outerWidth/24;
+        let  x=document.documentElement.clientWidth/24;
+        let  y=document.documentElement.clientHeight/13;
+
         let font='30px';
 
 
@@ -501,158 +503,159 @@ function input(){
       fullbtn.position(20,20).style('background-color','RGB(225,225,225)').style('padding','3px').style('border-radius','3px');
       
       //-------------------------------------------Element Information Box------------------------------------------------------------------
-      head.position(window.outerWidth/2-100,0).style('font-size','30px').style('padding','10px').style('margin','10px').style('border','2px solid black');
-      comp_sym.position(X_C,Y_C+60).size(60,80).style('font-size','30px').style('padding','50px 120px').style('background-color','lightyellow').style('border','3px solid black');
+      head.position(document.documentElement.clientWidth/2-100,0).style('font-size','30px').style('padding','10px').style('margin','10px').style('border','3px solid black');
+      comp_sym.position(X_C,Y_C+60).size(60,80).style('font-size','30px').style('padding','50px 120px').style('background-color','lightyellow').style('border','3px solid black').style('border-radius','5px');
       com_Name.position(X_C+120,Y_C+150).style('font-size','20px');
       com_No.position(X_C+160,Y_C+80).style('font-size','20px');
-      com_mass.position(X_C+20,Y_C+70).style('font-size','15px')
-      electro_neg.position(X_C+20,Y_C+110).style('font-size','15px')
-      Melt_point.position(X_C+20,Y_C+160).style('font-size','15px')
-      Boil_point.position(X_C+20,Y_C+200).style('font-size','15px')
-      Oxi_State.position(X_C+180,Y_C+190).style('font-size','15px')
+      com_mass.position(X_C+20,Y_C+70).style('font-size','15px');
+      electro_neg.position(X_C+20,Y_C+110).style('font-size','15px');
+      Melt_point.position(X_C+20,Y_C+160).style('font-size','15px');
+      Boil_point.position(X_C+20,Y_C+200).style('font-size','15px');
+      Oxi_State.position(X_C+180,Y_C+190).style('font-size','15px');
 
       //----------------RADIO INPUT(BLOCK,GROUP,STATE)-----------------------------------------------------------------------------------
       radio.position(X_Radio+50,100).style('transform','scale(1.3)');
     // BLOCK 
-      S_block.position(X_Radio+30, Y_Radio).size(100,20).style('font-size','13px').style("background-color", 'black').style("color", 'white');
+      S_block.position(X_Radio+30, Y_Radio).size(100,20).style('font-size','13px').style("background-color", 'rgb(95, 86, 4)').style("color", 'white');
       P_block.position(X_Radio+30, Y_Radio+25).size(100,20).style('font-size','13px').style("background-color", 'rgb(22,92,92)').style("color", 'white');
       D_block.position(X_Radio+30, Y_Radio+50).size(100,20).style('font-size','13px').style("background-color", 'brown').style("color", 'white');
       F_block.position(X_Radio+30, Y_Radio+75).size(100,20).style('font-size','13px').style("background-color", 'rgb(20,170,100)').style("color", 'white');
       //GROUP
-      A_metals.position(X_Radio+30, Y_Radio).size(150,20).style('font-size','13px').style('background-color', '#36454F').style('color', 'white');
-      A_Emetals.position(X_Radio+30, Y_Radio+25).size(150,20).style('font-size','13px').style('background-color', '#023020').style('color', 'white');
-      Tran_metals.position(X_Radio+30, Y_Radio+50).size(150,20).style('font-size','13px').style('background-color', '#e30022').style('color', 'white');
-      PTran_metals.position(X_Radio+30, Y_Radio+75).size(150,20).style('font-size','13px').style('background-color', '#191970').style('color', 'white');
-      Nobal_gas.position(X_Radio+30, Y_Radio+100).size(150,20).style('font-size','13px').style('background-color', '#4e1609').style('color', 'white');
-      Lanthe.position(X_Radio+190, Y_Radio).size(150,20).style('font-size','13px').style('background-color', '#1d2951').style('color', 'white');
-      Acti.position(X_Radio+190, Y_Radio+25).size(150,20).style('font-size','13px').style('background-color', '#343434').style('color', 'white');
-      Meta.position(X_Radio+190,Y_Radio+50).size(150,20).style('font-size','13px').style('background-color', '#e2725b').style('color', 'white');
-      O_Nmetals.position(X_Radio+190, Y_Radio+75).size(150,20).style('font-size','13px').style('background-color', '#8B4513').style('color', 'white');
+      A_metals.position(X_Radio+30, Y_Radio).size(150,20).style('font-size','13px').style('background-color', '#531c62').style('color', 'white');
+      A_Emetals.position(X_Radio+30, Y_Radio+25).size(150,20).style('font-size','13px').style('background-color', '#083059').style('color', 'white');
+      Tran_metals.position(X_Radio+30, Y_Radio+50).size(150,20).style('font-size','13px').style('background-color', '#2E4053').style('color', 'white');
+      PTran_metals.position(X_Radio+30, Y_Radio+75).size(150,20).style('font-size','13px').style('background-color', '#556B2F').style('color', 'white');
+      Nobal_gas.position(X_Radio+30, Y_Radio+100).size(150,20).style('font-size','13px').style('background-color', '#424949').style('color', 'white');
+      Lanthe.position(X_Radio+190, Y_Radio).size(150,20).style('font-size','13px').style('background-color', '#186d73').style('color', 'white');
+      Acti.position(X_Radio+190, Y_Radio+25).size(150,20).style('font-size','13px').style('background-color', '#136743').style('color', 'white');
+      Meta.position(X_Radio+190,Y_Radio+50).size(150,20).style('font-size','13px').style('background-color', '#710d42').style('color', 'white');
+      O_Nmetals.position(X_Radio+190, Y_Radio+75).size(150,20).style('font-size','13px').style('background-color', '#6E2C00').style('color', 'white');
+                
       //STATE
-      Solid.position(X_Radio+30, Y_Radio).size(80,20).style('font-size','13px').style('background-color','#8B4513').style('color','white');
-      Liquid.position(X_Radio+30, Y_Radio+25).size(80,20).style('font-size','13px').style('background-color','#eC4513').style('color','white');
-      Gas.position(X_Radio+30, Y_Radio+50).size(80,20).style('font-size','13px').style('background-color','#9A0993').style('color','white');
+      Solid.position(X_Radio+30, Y_Radio).size(80,20).style('font-size','13px').style('background-color','#8d552d').style('color','white');
+      Liquid.position(X_Radio+30, Y_Radio+25).size(80,20).style('font-size','13px').style('background-color','#1F618D').style('color','white');
+      Gas.position(X_Radio+30, Y_Radio+50).size(80,20).style('font-size','13px').style('background-color','#2E4053').style('color','white');
       
       // Positioning
       function MapX(num){
-        return map(num,0,20,0,window.outerWidth);
+        return map(num,0,20,0,document.documentElement.clientWidth);
       }
       
       function MapY(num){
-        return map(num,0,12,0,window.outerHeight);
+        return map(num,0,12,0,document.documentElement.clientHeight);
       }
     
     // -----------------S BLOCK -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
       var El_1=[ H,Li,Na,K,Rb,Cs,Fr]; 
       for(var i=0;i<7;i++){
-          El_1[i].position(MapX(1),MapY(i+2)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','black');
+          El_1[i].position(MapX(1),MapY(i+2)).size(x,y).style('border-radius','5px').style('border-radius','3px solid black').style('font-size',font).style('color','white').style('background-color','rgb(95, 86, 4)');
       }
 
       var El_2=[Be,Mg,Ca,Sr,Ba,Ra];
       for(var i=0;i<6;i++){
-          El_2[i].position(MapX(2),MapY(i+3)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','black');
+          El_2[i].position(MapX(2),MapY(i+3)).size(x,y).style('border-radius','5px').style('border-radius','3px solid black').style('font-size',font).style('color','white').style('background-color','rgb(95, 86, 4)');
         }
 
       // --------D BLOCK-------------------------------------------------------------------Column 3-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
       var El_3=[Sc,Y];
       for(var i=0;i<2;i++){
-          El_3[i].position(MapX(3),MapY(i+5)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','brown');  
+          El_3[i].position(MapX(3),MapY(i+5)).size(x,y).style('border-radius','5px').style('border-radius','3px solid black').style('font-size',font).style('color','white').style('background-color','brown');  
         }
 
       var El_4=[Ti,Zr,Hf,Rf];
       for(var i=0;i<4;i++){
-      El_4[i].position(MapX(4),MapY(i+5)).size(x,x).style('background-color','brown').style('color','white').style('font-size',font).style('border-radius','3px');
+      El_4[i].position(MapX(4),MapY(i+5)).size(x,y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color','brown').style('color','white').style('font-size',font);
       }
     
       var El_5=[V,Nb,Ta,Db];
       for(var i=0;i<4;i++){
-      El_5[i].position(MapX(5),MapY(i+5)).size(x,x).style('background-color','brown').style('color','white').style('font-size',font).style('border-radius','3px');
+      El_5[i].position(MapX(5),MapY(i+5)).size(x,y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color','brown').style('color','white').style('font-size',font);
       }
       
       var El_6=[Cr,Mo,W,Sg];
       for(var i=0;i<4;i++){
-        El_6[i].position(MapX(6),MapY(i+5)).size(x,x).style('background-color','brown').style('color','white').style('font-size',font).style('border-radius','3px');
+        El_6[i].position(MapX(6),MapY(i+5)).size(x,y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color','brown').style('color','white').style('font-size',font);;
       }
   
       var El_7=[Mn,Tc,Re,Bh];
       for(var i=0;i<4;i++){
-      El_7[i].position(MapX(7), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+      El_7[i].position(MapX(7), MapY(i + 5)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'brown').style('color', 'white').style('font-size', font);
       }
     
       var El_8=[Fe,Ru,Os,Hs];
       for(var i=0;i<4;i++){
-        El_8[i].position(MapX(8), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+        El_8[i].position(MapX(8), MapY(i + 5)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'brown').style('color', 'white').style('font-size', font);
       }
       
       var El_9=[Co,Rh,Ir,Mt];
       for(var i=0;i<4;i++){
-        El_9[i].position(MapX(9), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+        El_9[i].position(MapX(9), MapY(i + 5)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'brown').style('color', 'white').style('font-size', font);
       }
   
       var El_10=[Ni,Pd,Pt,Ds];
       for(var i=0;i<4;i++){
-        El_10[i].position(MapX(10), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+        El_10[i].position(MapX(10), MapY(i + 5)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'brown').style('color', 'white').style('font-size', font);
       }
   
       var El_11=[Cu,Ag,Au,Rg];
       for(var i=0;i<4;i++){
-        El_11[i].position(MapX(11), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+        El_11[i].position(MapX(11), MapY(i + 5)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'brown').style('color', 'white').style('font-size', font);
       }
     
       var El_12=[Zn,Cd,Hg,Cn];
       for(var i=0;i<4;i++){
-        El_12[i].position(MapX(12), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+        El_12[i].position(MapX(12), MapY(i + 5)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'brown').style('color', 'white').style('font-size', font);
       }
     
       // ---------------------------------------------------------P BLOCK---------------------------------------------------------------
       var El_13=[B,Al,Ga,In,Tl,Nh];
       for(var i=0;i<6;i++){
-        El_13[i].position(MapX(13), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+        El_13[i].position(MapX(13), MapY(i + 3)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font);
       }
   
       var El_14=[C,Si,Ge,Sn,Pb,Fl];
       for(var i=0;i<6;i++){
-        El_14[i].position(MapX(14), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+        El_14[i].position(MapX(14), MapY(i + 3)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font);
       }
       
       var El_15=[N,P,As,Sb,Bi,Mc];
       for(var i=0;i<6;i++){
-        El_15[i].position(MapX(15), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+        El_15[i].position(MapX(15), MapY(i + 3)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font);
       }
       
       var El_16=[O,S,Se,Te,Po,Lv];
       for(var i=0;i<6;i++){
-      El_16[i].position(MapX(16), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+      El_16[i].position(MapX(16), MapY(i + 3)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font);
       }
   
       var El_17=[F,Cl,Br,I,At,Ts];
       for(var i=0;i<6;i++){
-        El_17[i].position(MapX(17), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+        El_17[i].position(MapX(17), MapY(i + 3)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font);
       }
       
       var El_18=[Ne,Ar,Kr,Xe,Rn,Og];
       for(var i=0;i<6;i++){
-        El_18[i].position(MapX(18), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+        El_18[i].position(MapX(18), MapY(i + 3)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font);
       }
   
     // make helium element Seperate 
-    He.position(MapX(18), MapY(2)).size(x, x).style('background-color', 'black').style('color', 'white').style('font-size', '30px').style('border-radius', '3px');
+    He.position(MapX(18), MapY(2)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'black').style('color', 'white').style('font-size', '30px');
 
     //--------------------------------F BLOCK -----------------------------------------------------------------------------------------------------------------------------------------------
     // lanthanide series
-    Lanthenite.position(MapX(3),MapY(7)).size(x,x).style('background-color','rgb(20,170,100)').style('color','white').style('font-size','10px').style('border-radius','3px');
+    Lanthenite.position(MapX(3),MapY(7)).size(x,y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color','rgb(20,170,100)').style('color','white').style('font-size','10px');
 
     var La_1=[La,Ce,Pr,Nd,Pm,Sm,Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu];
     for (var i=0;i<15;i++){
-      La_1[i].position(MapX(i+4), MapY(9.2)).size(x, x).style('background-color', 'rgb(20,170,100)').style('color', 'white').style('font-size', font).style('border-radius', '3px').hide();
+      La_1[i].position(MapX(i+4), MapY(9.2)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'rgb(20,170,100)').style('color', 'white').style('font-size', font).hide();
     }
 
     // actinide series
-    Actinide.position(MapX(3), MapY(8)).size(x, x).style('background-color', 'rgb(20,170,100)').style('color', 'white').style('font-size', '10px').style('border-radius', '3px');
+    Actinide.position(MapX(3), MapY(8)).size(x, y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color', 'rgb(20,170,100)').style('color', 'white').style('font-size', '10px');
 
     var Ac_1=[Ac,Th,Pa,U,Np,Pu,Am,Cm,Bk,Cf,Es,Fm,Md,No,Lr];
     for (var i=0;i<15;i++){
-      Ac_1[i].position(MapX(i+4),MapY(10.2)).size(x,x).style('background-color','rgb(20,170,100)').style('color','white').style('font-size',font).style('border-radius','3px');
+      Ac_1[i].position(MapX(i+4),MapY(10.2)).size(x,y).style('border-radius','5px').style('border-radius','3px solid black').style('background-color','rgb(20,170,100)').style('color','white').style('font-size',font);
       Ac_1[i].hide();
     }
 
@@ -661,21 +664,21 @@ function input(){
   ResponsiveMediumsize=function ResponsiveMediumsize(){
     // Positioning
       function MapX(num){
-      return map(num,0,20,0,window.outerWidth);
+      return map(num,0,20,0,document.documentElement.clientWidth);
       }
       
       function MapY(num){
-        if(window.outerWidth<1000){
-          return map(num,0,12,window.outerHeight/3,window.outerWidth/3+window.outerHeight/2);             //TABLET LANDSCAPE MODE
+        if(document.documentElement.clientWidth<1000){
+          return map(num,0,12,document.documentElement.clientHeight/3,document.documentElement.clientWidth/3+document.documentElement.clientHeight/2);             //TABLET LANDSCAPE MODE
         }else{
-          return map(num,0,12,0,window.outerWidth/2);
+          return map(num,0,12,0,document.documentElement.clientWidth/2);
         }
       }
 
 
       let X_Radio,Y_Radio;
       let X_C,Y_C;
-      if(window.outerWidth<1000){
+      if(document.documentElement.clientWidth<1000){
           //RADIO
           X_Radio=MapX(9);
           Y_Radio=MapY(-5);
@@ -692,9 +695,9 @@ function input(){
       }
     
 
-      let  x=window.outerWidth/24;
+      let  x=document.documentElement.clientWidth/24;
       let font;
-      if(window.outerWidth<1000){                     //TABLET LANDSCAPE MODE
+      if(document.documentElement.clientWidth<1000){                     //TABLET LANDSCAPE MODE
         font='13px';
       }else{
         font='23px';
@@ -704,8 +707,8 @@ function input(){
     fullbtn.position(20,20).style('background-color','RGB(225,225,225)').style('padding','3px').style('border-radius','3px');
     
     //-------------------------------------------Element Information Box------------------------------------------------------------------
-    head.position(window.outerWidth/2-100,0).style('font-size','25px').style('padding','8px').style('margin','10px').style('border','2px solid black');
-    comp_sym.position(X_C,Y_C).size(80,50).style('font-size','25px').style('padding','50px 80px').style('background-color','lightyellow').style('border','2px solid black');
+    head.position(document.documentElement.clientWidth/2-100,0).style('font-size','25px').style('padding','8px').style('margin','10px').style('border','3px solid black');
+    comp_sym.position(X_C,Y_C).size(80,50).style('font-size','25px').style('padding','50px 80px').style('background-color','lightyellow').style('border','2px solid black').style('border-radius','5px');
     com_Name.position(X_C+110,Y_C+90).style('font-size','13px');
     com_No.position(X_C+140,Y_C+20).style('font-size','13px');
     com_mass.position(X_C+10,Y_C+10).style('font-size','13px')
@@ -717,34 +720,34 @@ function input(){
    //----------------RADIO INPUT(BLOCK,GROUP,STATE)-----------------------------------------------------------------------------------
     radio.position(X_Radio+30,Y_Radio).style('transform','scale(1)');
    // BLOCK 
-    S_block.position(X_Radio+40, Y_Radio+30).size(80,18).style('font-size','10px').style("background-color", 'black').style("color", 'white');
+    S_block.position(X_Radio+40, Y_Radio+30).size(80,18).style('font-size','10px').style("background-color", 'rgb(95, 86, 4)').style("color", 'white');
     P_block.position(X_Radio+40, Y_Radio+50).size(80,18).style('font-size','10px').style("background-color", 'rgb(22,92,92)').style("color", 'white');
     D_block.position(X_Radio+40, Y_Radio+70).size(80,18).style('font-size','10px').style("background-color", 'brown').style("color", 'white');
     F_block.position(X_Radio+40, Y_Radio+90).size(80,18).style('font-size','10px').style("background-color", 'rgb(20,170,100)').style("color", 'white');
    //GROUP
-    A_metals.position(X_Radio+50, Y_Radio+30).size(120,18).style('font-size','10px').style('background-color', '#36454F').style('color', 'white');
-    A_Emetals.position(X_Radio+50, Y_Radio+50).size(120,18).style('font-size','10px').style('background-color', '#025020').style('color', 'white');
-    Tran_metals.position(X_Radio+50, Y_Radio+70).size(120,18).style('font-size','10px').style('background-color', '#e50022').style('color', 'white');
-    PTran_metals.position(X_Radio+50, Y_Radio+90).size(120,18).style('font-size','10px').style('background-color', '#191970').style('color', 'white');
-    Nobal_gas.position(X_Radio+50, Y_Radio+110).size(120,18).style('font-size','10px').style('background-color', '#4e1609').style('color', 'white');
-    Lanthe.position(X_Radio+180, Y_Radio+30).size(120,18).style('font-size','10px').style('background-color', '#1d2951').style('color', 'white');
-    Acti.position(X_Radio+180, Y_Radio+50).size(120,18).style('font-size','10px').style('background-color', '#343434').style('color', 'white');
-    Meta.position(X_Radio+180,Y_Radio+70).size(120,18).style('font-size','10px').style('background-color', '#e2725b').style('color', 'white');
-    O_Nmetals.position(X_Radio+180, Y_Radio+90).size(120,18).style('font-size','10px').style('background-color', '#8B4513').style('color', 'white');
-   //STATE
-    Solid.position(X_Radio+170, Y_Radio+30).size(80,18).style('font-size','10px').style('background-color','#8B4513').style('color','white');
-    Liquid.position(X_Radio+170, Y_Radio+50).size(80,18).style('font-size','10px').style('background-color','#eC4513').style('color','white');
-    Gas.position(X_Radio+170, Y_Radio+70).size(80,18).style('font-size','10px').style('background-color','#9A0993').style('color','white');
-    
+    A_metals.position(X_Radio+50, Y_Radio+30).size(120,18).style('font-size','10px').style('background-color', '#2C3E50').style('color', 'white');
+    A_Emetals.position(X_Radio+50, Y_Radio+50).size(120,18).style('font-size','10px').style('background-color', '#884EA0').style('color', 'white');
+    Tran_metals.position(X_Radio+50, Y_Radio+70).size(120,18).style('font-size','10px').style('background-color', '#7F8C8D').style('color', 'white');
+    PTran_metals.position(X_Radio+50, Y_Radio+90).size(120,18).style('font-size','10px').style('background-color', '#556B2F').style('color', 'white');
+    Nobal_gas.position(X_Radio+50, Y_Radio+110).size(120,18).style('font-size','10px').style('background-color', '#424949').style('color', 'white');
+    Lanthe.position(X_Radio+180, Y_Radio+30).size(120,18).style('font-size','10px').style('background-color', '#1F618D').style('color', 'white');
+    Acti.position(X_Radio+180, Y_Radio+50).size(120,18).style('font-size','10px').style('background-color', '#136743').style('color', 'white');
+    Meta.position(X_Radio+180,Y_Radio+70).size(120,18).style('font-size','10px').style('background-color', '#2E4053').style('color', 'white');
+    O_Nmetals.position(X_Radio+180, Y_Radio+90).size(120,18).style('font-size','10px').style('background-color', '#6E2C00').style('color', 'white');
+    //STATE
+    Solid.position(X_Radio+170, Y_Radio+30).size(80,18).style('font-size','10px').style('background-color','#8d552d').style('color','white');
+    Liquid.position(X_Radio+170, Y_Radio+50).size(80,18).style('font-size','10px').style('background-color','#1F618D').style('color','white');
+    Gas.position(X_Radio+170, Y_Radio+70).size(80,18).style('font-size','10px').style('background-color','#2E4053').style('color','white');
+
    // -----------------S BLOCK -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     var El_1=[ H,Li,Na,K,Rb,Cs,Fr]; 
     for(var i=0;i<7;i++){
-        El_1[i].position(MapX(1),MapY(i+2)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','black');
+        El_1[i].position(MapX(1),MapY(i+2)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','rgb(95, 86, 4)');
       }
 
     var El_2=[Be,Mg,Ca,Sr,Ba,Ra];
     for(var i=0;i<6;i++){
-        El_2[i].position(MapX(2),MapY(i+3)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','black');
+        El_2[i].position(MapX(2),MapY(i+3)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','rgb(95, 86, 4)');
       }
 
    // --------D BLOCK-------------------------------------------------------------------Column 3-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -834,7 +837,7 @@ function input(){
 
     //--------------------------------F BLOCK -----------------------------------------------------------------------------------------------------------------------------------------------
     // lanthanide series
-    if(window.outerWidth<1000){
+    if(document.documentElement.clientWidth<1000){
       Lanthenite.position(MapX(3),MapY(7)).size(x,x).style('font-size','4px').style('background-color','rgb(20,170,100)').style('color','white').style('border-radius','3px');
     }else{
       Lanthenite.position(MapX(3),MapY(7)).size(x,x).style('font-size','8px').style('background-color','rgb(20,170,100)').style('color','white').style('border-radius','3px');
@@ -846,7 +849,7 @@ function input(){
     }
 
     // actinide series
-    if(window.outerWidth<1000){
+    if(document.documentElement.clientWidth<1000){
       Actinide.position(MapX(3), MapY(8)).size(x, x).style('font-size','4px').style('background-color', 'rgb(20,170,100)').style('color', 'white').style('border-radius', '3px');
     }else{
       Actinide.position(MapX(3), MapY(8)).size(x, x).style('font-size','8px').style('background-color', 'rgb(20,170,100)').style('color', 'white').style('border-radius', '3px');
@@ -863,11 +866,11 @@ function input(){
   ResponsiveSmallsize=function ResponsiveSmallsize(){
     // Positioning
       function MapX(num){
-      return map(num,0,20,0,window.outerWidth);
+      return map(num,0,20,0,document.documentElement.clientWidth);
       }
       
       function MapY(num){
-        return map(num,0,12,0,window.outerWidth/2);
+        return map(num,0,12,0,document.documentElement.clientWidth/2);
       }
     //RADIO
       let X_Radio=MapX(6.5);
@@ -876,15 +879,15 @@ function input(){
       let X_C=MapX(3);
       let Y_C=MapY(0);
 
-      let  x=window.outerWidth/24;
+      let  x=document.documentElement.clientWidth/24;
       let font='13px';
 
       // ---------FULL SCREEN BUTTON-----------------------
       fullbtn.hide();
       
    //-------------------------------------------Element Information Box------------------------------------------------------------------
-    head.position(window.outerWidth/2-100,0).style('font-size','13px').style('padding','5px').style('margin','10px').style('border','2px solid black');
-    comp_sym.position(X_C,Y_C+60).size(45,18).style('font-size','13px').style('padding','33px 50px').style('background-color','lightyellow').style('border','2px solid black');
+    head.position(document.documentElement.clientWidth/2-100,0).style('font-size','13px').style('padding','5px').style('margin','10px').style('border','2px solid black');
+    comp_sym.position(X_C,Y_C+60).size(45,18).style('font-size','13px').style('padding','33px 50px').style('background-color','lightyellow').style('border','1px solid black').style('border-radius','5px');
     com_Name.position(X_C+70,Y_C+110).style('font-size','7px');
     com_No.position(X_C+90,Y_C+80).style('font-size','7px');
     com_mass.position(X_C+10,Y_C+70).style('font-size','7px')
@@ -896,136 +899,136 @@ function input(){
    //----------------RADIO INPUT(BLOCK,GROUP,STATE)-----------------------------------------------------------------------------------
     radio.position(X_Radio+30,Y_Radio).style('transform','scale(0.8)');
    // BLOCK 
-    S_block.position(X_Radio+50, Y_Radio+25).size(60,13).style('font-size','8px').style("background-color", 'black').style("color", 'white');
-    P_block.position(X_Radio+50, Y_Radio+40).size(60,13).style('font-size','8px').style("background-color", 'rgb(22,92,92)').style("color", 'white');
-    D_block.position(X_Radio+50, Y_Radio+55).size(60,13).style('font-size','8px').style("background-color", 'brown').style("color", 'white');
-    F_block.position(X_Radio+50, Y_Radio+70).size(60,13).style('font-size','8px').style("background-color", 'rgb(20,170,100)').style("color", 'white');
+    S_block.position(X_Radio+50, Y_Radio+25).size(60,13).style('font-size','8px').style("background-color", 'rgb(95, 86, 4)').style("color", 'white').style('border','1px solid black');
+    P_block.position(X_Radio+50, Y_Radio+40).size(60,13).style('font-size','8px').style("background-color", 'rgb(22,92,92)').style("color", 'white').style('border','1px solid black');
+    D_block.position(X_Radio+50, Y_Radio+55).size(60,13).style('font-size','8px').style("background-color", 'brown').style("color", 'white').style('border','1px solid black');
+    F_block.position(X_Radio+50, Y_Radio+70).size(60,13).style('font-size','8px').style("background-color", 'rgb(20,170,100)').style("color", 'white').style('border','1px solid black');
    //GROUP
-    A_metals.position(X_Radio+50, Y_Radio+25).size(80,12).style('font-size','6px').style('background-color', '#36454F').style('color', 'white');
-    A_Emetals.position(X_Radio+50, Y_Radio+40).size(80,12).style('font-size','6px').style('background-color', '#025020').style('color', 'white');
-    Tran_metals.position(X_Radio+50, Y_Radio+55).size(80,12).style('font-size','6px').style('background-color', '#e50022').style('color', 'white');
-    PTran_metals.position(X_Radio+50, Y_Radio+70).size(80,12).style('font-size','6px').style('background-color', '#191970').style('color', 'white');
-    Nobal_gas.position(X_Radio+50, Y_Radio+85).size(80,12).style('font-size','6px').style('background-color', '#4e1609').style('color', 'white');
-    Lanthe.position(X_Radio+140, Y_Radio+25).size(80,12).style('font-size','6px').style('background-color', '#1d2951').style('color', 'white');
-    Acti.position(X_Radio+140, Y_Radio+40).size(80,12).style('font-size','6px').style('background-color', '#343434').style('color', 'white');
-    Meta.position(X_Radio+140,Y_Radio+55).size(80,12).style('font-size','6px').style('background-color', '#e2725b').style('color', 'white');
-    O_Nmetals.position(X_Radio+140, Y_Radio+70).size(80,12).style('font-size','6px').style('background-color', '#8B4513').style('color', 'white');
-   //STATE
-    Solid.position(X_Radio+50, Y_Radio+25).size(60,15).style('font-size','8px').style('background-color','#8B4513').style('color','white');
-    Liquid.position(X_Radio+50, Y_Radio+45).size(60,15).style('font-size','8px').style('background-color','#eC4513').style('color','white');
-    Gas.position(X_Radio+50, Y_Radio+65).size(60,15).style('font-size','8px').style('background-color','#9A0993').style('color','white');
-    
+    A_metals.position(X_Radio+50, Y_Radio+25).size(80,12).style('font-size','6px').style('background-color', '#2C3E50').style('color', 'white').style('border','1px solid black');
+    A_Emetals.position(X_Radio+50, Y_Radio+40).size(80,12).style('font-size','6px').style('background-color', '#884EA0').style('color', 'white').style('border','1px solid black');
+    Tran_metals.position(X_Radio+50, Y_Radio+55).size(80,12).style('font-size','6px').style('background-color', '#7F8C8D').style('color', 'white').style('border','1px solid black');
+    PTran_metals.position(X_Radio+50, Y_Radio+70).size(80,12).style('font-size','6px').style('background-color', '#556B2F').style('color', 'white').style('border','1px solid black');
+    Nobal_gas.position(X_Radio+50, Y_Radio+85).size(80,12).style('font-size','6px').style('background-color', '#424949').style('color', 'white').style('border','1px solid black');
+    Lanthe.position(X_Radio+140, Y_Radio+25).size(80,12).style('font-size','6px').style('background-color', '#1F618D').style('color', 'white').style('border','1px solid black');
+    Acti.position(X_Radio+140, Y_Radio+40).size(80,12).style('font-size','6px').style('background-color', '#136743').style('color', 'white').style('border','1px solid black');
+    Meta.position(X_Radio+140,Y_Radio+55).size(80,12).style('font-size','6px').style('background-color', '#2E4053').style('color', 'white').style('border','1px solid black');
+    O_Nmetals.position(X_Radio+140, Y_Radio+70).size(80,12).style('font-size','6px').style('background-color', '#6E2C00').style('color', 'white').style('border','1px solid black');
+    //STATE
+    Solid.position(X_Radio+50, Y_Radio+25).size(60,15).style('font-size','8px').style('background-color','#8d552d').style('color','white').style('border','1px solid black');
+    Liquid.position(X_Radio+50, Y_Radio+45).size(60,15).style('font-size','8px').style('background-color','#1F618D').style('color','white').style('border','1px solid black');
+    Gas.position(X_Radio+50, Y_Radio+65).size(60,15).style('font-size','8px').style('background-color','#2E4053').style('color','white').style('border','1px solid black');
+ 
    // -----------------S BLOCK -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     var El_1=[ H,Li,Na,K,Rb,Cs,Fr]; 
     for(var i=0;i<7;i++){
-        El_1[i].position(MapX(1),MapY(i+2)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','black');
+        El_1[i].position(MapX(1),MapY(i+2)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','rgb(95, 86, 4)').style('border','1px solid black');
       }
 
     var El_2=[Be,Mg,Ca,Sr,Ba,Ra];
     for(var i=0;i<6;i++){
-        El_2[i].position(MapX(2),MapY(i+3)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','black');
+        El_2[i].position(MapX(2),MapY(i+3)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','rgb(95, 86, 4)').style('border','1px solid black');
       }
 
    // --------D BLOCK-------------------------------------------------------------------Column 3-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     var El_3=[Sc,Y];
     for(var i=0;i<2;i++){
-        El_3[i].position(MapX(3),MapY(i+5)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','brown');  
+        El_3[i].position(MapX(3),MapY(i+5)).size(x,x).style('border-radius','3px').style('font-size',font).style('color','white').style('background-color','brown').style('border','1px solid black');  
     }
 
    var El_4=[Ti,Zr,Hf,Rf];
    for(var i=0;i<4;i++){
-   El_4[i].position(MapX(4),MapY(i+5)).size(x,x).style('background-color','brown').style('color','white').style('font-size',font).style('border-radius','3px');
+   El_4[i].position(MapX(4),MapY(i+5)).size(x,x).style('background-color','brown').style('color','white').style('font-size',font).style('border-radius','3px').style('border','1px solid black');
    }
    
    var El_5=[V,Nb,Ta,Db];
    for(var i=0;i<4;i++){
-   El_5[i].position(MapX(5),MapY(i+5)).size(x,x).style('background-color','brown').style('color','white').style('font-size',font).style('border-radius','3px');
+   El_5[i].position(MapX(5),MapY(i+5)).size(x,x).style('background-color','brown').style('color','white').style('font-size',font).style('border-radius','3px').style('border','1px solid black');
    }
    
    var El_6=[Cr,Mo,W,Sg];
    for(var i=0;i<4;i++){
-     El_6[i].position(MapX(6),MapY(i+5)).size(x,x).style('background-color','brown').style('color','white').style('font-size',font).style('border-radius','3px');
+     El_6[i].position(MapX(6),MapY(i+5)).size(x,x).style('background-color','brown').style('color','white').style('font-size',font).style('border-radius','3px').style('border','1px solid black');
    }
 
    var El_7=[Mn,Tc,Re,Bh];
    for(var i=0;i<4;i++){
-   El_7[i].position(MapX(7), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+   El_7[i].position(MapX(7), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
    }
  
    var El_8=[Fe,Ru,Os,Hs];
    for(var i=0;i<4;i++){
-     El_8[i].position(MapX(8), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+     El_8[i].position(MapX(8), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
    }
    
    var El_9=[Co,Rh,Ir,Mt];
    for(var i=0;i<4;i++){
-     El_9[i].position(MapX(9), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+     El_9[i].position(MapX(9), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
    }
 
    var El_10=[Ni,Pd,Pt,Ds];
    for(var i=0;i<4;i++){
-     El_10[i].position(MapX(10), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+     El_10[i].position(MapX(10), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
    }
  
    var El_11=[Cu,Ag,Au,Rg];
    for(var i=0;i<4;i++){
-     El_11[i].position(MapX(11), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+     El_11[i].position(MapX(11), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
    }
  
    var El_12=[Zn,Cd,Hg,Cn];
    for(var i=0;i<4;i++){
-     El_12[i].position(MapX(12), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+     El_12[i].position(MapX(12), MapY(i + 5)).size(x, x).style('background-color', 'brown').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
    }
  
     // ---------------------------------------------------------P BLOCK---------------------------------------------------------------
     var El_13=[B,Al,Ga,In,Tl,Nh];
     for(var i=0;i<6;i++){
-      El_13[i].position(MapX(13), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+      El_13[i].position(MapX(13), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
     }
  
     var El_14=[C,Si,Ge,Sn,Pb,Fl];
     for(var i=0;i<6;i++){
-      El_14[i].position(MapX(14), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+      El_14[i].position(MapX(14), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
     }
     
     var El_15=[N,P,As,Sb,Bi,Mc];
     for(var i=0;i<6;i++){
-      El_15[i].position(MapX(15), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+      El_15[i].position(MapX(15), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
     }
     
     var El_16=[O,S,Se,Te,Po,Lv];
     for(var i=0;i<6;i++){
-    El_16[i].position(MapX(16), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+    El_16[i].position(MapX(16), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
     }
       
     var El_17=[F,Cl,Br,I,At,Ts];
     for(var i=0;i<6;i++){
-      El_17[i].position(MapX(17), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+      El_17[i].position(MapX(17), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
     }
     
     var El_18=[Ne,Ar,Kr,Xe,Rn,Og];
     for(var i=0;i<6;i++){
-      El_18[i].position(MapX(18), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+      El_18[i].position(MapX(18), MapY(i + 3)).size(x, x).style('background-color', 'rgb(22,92,92)').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
     }
  
     // make helium element Seperate 
-      He.position(MapX(18), MapY(2)).size(x, x).style('background-color', 'black').style('color', 'white').style('font-size', font).style('border-radius', '3px');
+      He.position(MapX(18), MapY(2)).size(x, x).style('background-color', 'black').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black');
 
     //--------------------------------F BLOCK -----------------------------------------------------------------------------------------------------------------------------------------------
     // lanthanide series
-      Lanthenite.position(MapX(3),MapY(7)).size(x,x).style('font-size','4px').style('background-color','rgb(20,170,100)').style('color','white').style('border-radius','3px');
+      Lanthenite.position(MapX(3),MapY(7)).size(x,x).style('font-size','4px').style('background-color','rgb(20,170,100)').style('color','white').style('border-radius','3px').style('border','1px solid black');
 
     var La_1=[La,Ce,Pr,Nd,Pm,Sm,Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb,Lu];
     for (var i=0;i<15;i++){
-      La_1[i].position(MapX(i+4), MapY(9.2)).size(x, x).style('background-color', 'rgb(20,170,100)').style('color', 'white').style('font-size', font).style('border-radius', '3px').hide();
+      La_1[i].position(MapX(i+4), MapY(9.2)).size(x, x).style('background-color', 'rgb(20,170,100)').style('color', 'white').style('font-size', font).style('border-radius', '3px').style('border','1px solid black').hide();
     }
 
     // actinide series
-    Actinide.position(MapX(3), MapY(8)).size(x, x).style('font-size','4px').style('background-color', 'rgb(20,170,100)').style('color', 'white').style('border-radius', '3px');
+    Actinide.position(MapX(3), MapY(8)).size(x, x).style('font-size','4px').style('background-color', 'rgb(20,170,100)').style('color', 'white').style('border-radius', '3px').style('border','1px solid black');
 
     var Ac_1=[Ac,Th,Pa,U,Np,Pu,Am,Cm,Bk,Cf,Es,Fm,Md,No,Lr];
     for (var i=0;i<15;i++){
-      Ac_1[i].position(MapX(i+4),MapY(10.2)).size(x,x).style('background-color','rgb(20,170,100)').style('color','white').style('font-size',font).style('border-radius','3px');
+      Ac_1[i].position(MapX(i+4),MapY(10.2)).size(x,x).style('background-color','rgb(20,170,100)').style('color','white').style('font-size',font).style('border-radius','3px').style('border','1px solid black');
       Ac_1[i].hide();
     }
 

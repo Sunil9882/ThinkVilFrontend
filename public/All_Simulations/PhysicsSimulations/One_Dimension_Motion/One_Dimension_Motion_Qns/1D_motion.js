@@ -52,7 +52,7 @@ class boxmotion{
         //Observer displacement and velocity equations
         this.X_O=this.V_O*this.T+this.A_O*this.T**2/2;
         this.U_O=this.V_O+this.A_O*this.T;
-        screen=5*this.X_O;                                          // Now update screen(screen=global variable) for view w.r.t observer velocity                       
+        scren_X=5*this.X_O;                                          // Now update screen(screen=global variable) for view w.r.t observer velocity                       
         push();                                                   // OBSERVER Movement
             translate(5*this.X_O+200,-105);
             image(observer,0,0,150,220);
@@ -86,7 +86,7 @@ class boxmotion{
         push();
             textSize(22);
             fill(225);
-            for(let i=floor(screen/1000);i<10+floor(screen/1000);i++){               //milestone shift according observer speed (screen) and new milestone autoupdate after 1000px distance
+            for(let i=floor(scren_X/1000);i<10+floor(scren_X/1000);i++){               //milestone shift according observer speed (screen) and new milestone autoupdate after 1000px distance
                 image(stone,200+200*5*i,-64,90,120);
                 text(200*i+'m',165+200*5*i,-80);
             }
@@ -99,13 +99,13 @@ class boxmotion{
             translate(200,-100);                       // coordinate shifted at observer (0,0)
             push();
                 translate(5*this.X_O,0);
-                this.Vect(0,0,this.U_O,'red')
+                this.Vect(0,0,this.U_O/2,'red')        //divide by 2 for reduce vector length
                 this.Vect(0,30,this.A_O,'blue')         //multiply Acc by 2 times because of good vector change visibility
             pop();
             if(Vech_show){
                 push()
                     translate(5*this.X_V,0);
-                    this.Vect(0,0,this.U_V,'red')
+                    this.Vect(0,0,this.U_V/2,'red');        //divide by 2 for reduce vector length
                     this.Vect(0,30,this.A_V,'blue') 
                 pop();
             }
@@ -158,7 +158,7 @@ class boxmotion{
                 fill(255);
                 textSize(50);
                 textFont(clockfont);
-                text(round(this.T,1),25,58);
+                text(round(this.T,2),25,58);
                 textSize(14);
                 text('SECOND',90,70);
                 text('TIME',10,15);
