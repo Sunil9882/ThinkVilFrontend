@@ -69,7 +69,7 @@ export default function HomeSection() {
               animate={hovered ? { x: [0, 20, -20, 0] } : { x: 0 }}
               transition={{ repeat: hovered ? Infinity : 0, duration: 2 }}
             >
-              Elevate Your Learning with
+              Let's Simplify 
             </motion.h1>
 
             {/* Second Line (Hover Triggers Animation) */}
@@ -78,7 +78,7 @@ export default function HomeSection() {
               animate={hovered ? { x: [0, -20, 20, 0] } : { x: 0 }}
               transition={{ repeat: hovered ? Infinity : 0, duration: 2 }}
             >
-              ThinkViL
+              Science
             </motion.h1>
 
             {/* Description Text (Hover Triggers Animation) */}
@@ -89,8 +89,8 @@ export default function HomeSection() {
             >
               Explore interactive simulations that spark creativity and critical thinking in{" "}
               <span className="text-yellow-400 font-semibold">Physics</span>,{" "}
-              <span className="text-green-400 font-semibold">Maths</span>, and{" "}
-              <span className="text-red-400 font-semibold">Chemistry</span>.
+              <span className="text-green-400 font-semibold">Chemistry</span>, and{" "}
+              <span className="text-red-400 font-semibold">Mathematics</span>.
             </motion.p>
           </div>
         </motion.div>

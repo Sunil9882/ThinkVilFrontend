@@ -34,7 +34,7 @@ const RelativeMotion = () => {
       <div className="w-full max-w-3xl flex justify-center mb-6">
         <iframe
           className="w-full aspect-video rounded-xl shadow-lg"
-          src="https://www.youtube.com/embed/OGoetWCRVyM"
+          src="https://www.youtube.com/embed/viAyte5yfcE"
           title="Relative Motion Tutorial"
           allowFullScreen
         ></iframe>

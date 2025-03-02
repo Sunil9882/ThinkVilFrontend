@@ -22,20 +22,20 @@ const VernierCaliper = () => {
     <div className="min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-100 to-green-300 animate-bg px-4 py-6 rounded-2xl">
       {/* Header */}
       <header className="bg-indigo-600 w-full text-white text-center py-6 text-2xl font-semibold mt-12 rounded-xl shadow-lg">
-        Vernier Caliper Simulation
+        Vernier Calipers Simulation
       </header>
 
       {/* Title */}
       <h2 className="text-center text-xl md:text-2xl font-bold mt-2 mb-6 rounded-xl">
-        How to Use Vernier Caliper - Interactive Simulation
+        How to Use Vernier Calipers - Interactive Simulation
       </h2>
 
       {/* Video Section */}
       <div className="w-full max-w-3xl flex justify-center mb-6">
         <iframe
           className="w-full aspect-video rounded-xl shadow-lg"
-          src="https://www.youtube.com/embed/OGoetWCRVyM"
-          title="Vernier Caliper Tutorial"
+          src="https://www.youtube.com/embed/9xPHCgmA6V0"
+          title="Vernier Calipers Tutorial"
           allowFullScreen
         ></iframe>
       </div>

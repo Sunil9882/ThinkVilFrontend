@@ -34,7 +34,7 @@ const OneDimensionMotion = () => {
       <div className="w-full max-w-3xl flex justify-center mb-6">
         <iframe
           className="w-full aspect-video rounded-xl shadow-lg"
-          src="https://www.youtube.com/embed/OGoetWCRVyM"
+          src="https://www.youtube.com/embed/M6SqalWizaw"
           title="One Dimensional Motion Tutorial"
           allowFullScreen
         ></iframe>
